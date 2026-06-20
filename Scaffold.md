@@ -26,7 +26,7 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 6. i18n next-intl (routing, request, navigation, proxy, messages)
 - [x] 7. Segment `[locale]` (layout + page + not-found)
 - [x] 8. Helpers transverses (cn, ActionResult, site config)
-- [ ] 9. MDX (config + mdx-components + 1 case study démo)
+- [x] 9. MDX (config + mdx-components + 1 case study démo)
 - [ ] 10. Smooth scroll Lenis (provider client-only)
 - [ ] 11. Fil rouge `RedThread` (motion `useScroll` + `pathLength`)
 - [ ] 12. Sections home + layout (Header, Footer, LocaleSwitcher)

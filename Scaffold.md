@@ -21,7 +21,7 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 1. Bootstrap Next 16 (racine, `--empty`, pnpm) + install
 - [x] 2. Outillage : Prettier + eslint-config-prettier + scripts (`format`, `typecheck`)
 - [x] 3. Squelette de dossiers (features, components, lib, i18n, messages, content…)
-- [ ] 4. Design tokens Tailwind v4 (`@theme` : palette light-warm)
+- [x] 4. Design tokens Tailwind v4 (`@theme` : palette light-warm)
 - [ ] 5. Fonts next/font + bind tokens (`@theme inline`)
 - [ ] 6. i18n next-intl (routing, request, navigation, proxy, messages)
 - [ ] 7. Segment `[locale]` (layout + page + not-found)
@@ -37,3 +37,11 @@ Ce fichier suit l'avancement et sert de référence rapide.
 ## Hors scope (phase 2)
 
 IA concierge · contenu réel des projets · dark mode · Cal.com live · contact fonctionnel · tests/CI/deploy
+
+## Gotcha environnement (agent Claude Code)
+
+L'environnement de l'agent injecte `NODE_ENV=development`, ce qui casse `next build` (prerender →
+`useContext` null, React chargé en mode dev). Le terminal de Thibault et Vercel ne sont PAS affectés.
+
+- Quand **l'agent** build : préfixer `NODE_ENV=production pnpm build`.
+- En dev (`pnpm dev`) ou dans le terminal de Thibault : rien à faire.

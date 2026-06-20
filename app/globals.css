@@ -1,1 +1,18 @@
 @import 'tailwindcss';
+
+/* ===== Design tokens — palette light-warm ===== */
+@theme {
+  --color-paper: #f5f1ea;
+  --color-surface: #fbf8f3;
+  --color-ink: #1a1a18;
+  --color-ink-muted: #6f6a60;
+  --color-accent: #d85a30;
+  --color-hairline: #e5e0d8;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+}

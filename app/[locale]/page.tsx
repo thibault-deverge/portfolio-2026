@@ -1,7 +1,10 @@
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 
-export default function Home() {
-  const t = useTranslations('Home')
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  // Requis dans la page (pas seulement le layout) pour autoriser le rendu statique.
+  setRequestLocale(locale)
+  const t = await getTranslations('Home')
 
   return (
     <main className="min-h-dvh bg-paper text-ink">

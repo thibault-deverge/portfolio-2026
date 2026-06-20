@@ -4,6 +4,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { fraunces, geistSans, geistMono } from '@/styles/fonts'
+import { SmoothScrollProvider } from '@/components/layout/SmoothScrollProvider'
 import '../globals.css'
 
 export const metadata: Metadata = {
@@ -37,7 +38,9 @@ export default async function LocaleLayout({
       className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="font-sans antialiased">
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

@@ -10,6 +10,13 @@
   --color-hairline: #e5e0d8;
 }
 
+/* ===== Fonts — liées aux variables next/font ===== */
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
 @layer base {
   body {
     background-color: var(--color-paper);

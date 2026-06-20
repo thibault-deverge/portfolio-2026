@@ -22,7 +22,7 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 2. Outillage : Prettier + eslint-config-prettier + scripts (`format`, `typecheck`)
 - [x] 3. Squelette de dossiers (features, components, lib, i18n, messages, content…)
 - [x] 4. Design tokens Tailwind v4 (`@theme` : palette light-warm)
-- [ ] 5. Fonts next/font + bind tokens (`@theme inline`)
+- [x] 5. Fonts next/font + bind tokens (`@theme inline`)
 - [ ] 6. i18n next-intl (routing, request, navigation, proxy, messages)
 - [ ] 7. Segment `[locale]` (layout + page + not-found)
 - [ ] 8. Helpers transverses (cn, ActionResult, site config)

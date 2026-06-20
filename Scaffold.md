@@ -25,7 +25,7 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 5. Fonts next/font + bind tokens (`@theme inline`)
 - [x] 6. i18n next-intl (routing, request, navigation, proxy, messages)
 - [x] 7. Segment `[locale]` (layout + page + not-found)
-- [ ] 8. Helpers transverses (cn, ActionResult, site config)
+- [x] 8. Helpers transverses (cn, ActionResult, site config)
 - [ ] 9. MDX (config + mdx-components + 1 case study démo)
 - [ ] 10. Smooth scroll Lenis (provider client-only)
 - [ ] 11. Fil rouge `RedThread` (motion `useScroll` + `pathLength`)

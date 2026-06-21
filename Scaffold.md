@@ -31,8 +31,8 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 11. Fil rouge `RedThread` (motion `useScroll` + `pathLength`)
 - [x] 12. Sections home + layout (Header, Footer, LocaleSwitcher)
 - [x] 13. Réserver la phase 2 (concierge, contact schemas, TODO PHASE 2)
-- [ ] 14. Commits incrémentaux + commit final du scaffold
-- [ ] 15. CLAUDE.md projet + config `.claude/` (rules + skills, inspiré de np-evolution + propositions)
+- [x] 14. Commits incrémentaux + commit final du scaffold
+- [x] 15. CLAUDE.md projet + config `.claude/` (rules + skills, inspiré de np-evolution + propositions)
 
 ## Hors scope (phase 2)
 

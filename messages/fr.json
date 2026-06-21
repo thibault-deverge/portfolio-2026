@@ -4,5 +4,24 @@
     "title": "Le fil <accent>rouge</accent>",
     "subtitle": "Témoin de palette : papier, surface, encre, accent terracotta.",
     "locale": "Langue active : Français"
+  },
+  "Journey": {
+    "title": "Le fil rouge",
+    "law": {
+      "title": "Le droit",
+      "text": "Une licence de droit — la rigueur de l'argumentation et de l'analyse."
+    },
+    "asia": {
+      "title": "L'Asie",
+      "text": "Trois ans de voyage, dont le Vietnam à moto. L'autonomie et le hors-piste."
+    },
+    "school42": {
+      "title": "L'École 42",
+      "text": "Le C, les systèmes, les fondamentaux appris à la dure."
+    },
+    "today": {
+      "title": "Aujourd'hui",
+      "text": "Développeur Next.js end-to-end, du design à la base de données."
+    }
   }
 }

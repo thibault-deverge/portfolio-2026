@@ -28,7 +28,7 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 8. Helpers transverses (cn, ActionResult, site config)
 - [x] 9. MDX (config + mdx-components + 1 case study démo)
 - [x] 10. Smooth scroll Lenis (provider client-only)
-- [ ] 11. Fil rouge `RedThread` (motion `useScroll` + `pathLength`)
+- [x] 11. Fil rouge `RedThread` (motion `useScroll` + `pathLength`)
 - [ ] 12. Sections home + layout (Header, Footer, LocaleSwitcher)
 - [ ] 13. Réserver la phase 2 (concierge, contact schemas, TODO PHASE 2)
 - [ ] 14. Commits incrémentaux + commit final du scaffold

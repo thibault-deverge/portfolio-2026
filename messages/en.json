@@ -4,5 +4,24 @@
     "title": "The red <accent>thread</accent>",
     "subtitle": "Palette preview: paper, surface, ink, terracotta accent.",
     "locale": "Active language: English"
+  },
+  "Journey": {
+    "title": "The red thread",
+    "law": {
+      "title": "Law",
+      "text": "A law degree — the rigor of argument and analysis."
+    },
+    "asia": {
+      "title": "Asia",
+      "text": "Three years travelling, including Vietnam by motorbike. Autonomy and going off-road."
+    },
+    "school42": {
+      "title": "School 42",
+      "text": "C, systems, the fundamentals learned the hard way."
+    },
+    "today": {
+      "title": "Today",
+      "text": "End-to-end Next.js developer, from design to the database."
+    }
   }
 }

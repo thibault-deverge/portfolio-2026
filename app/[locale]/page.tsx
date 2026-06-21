@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { JourneySection } from '@/features/journey'
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -24,6 +25,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <span className="size-10 rounded-md border border-hairline bg-accent" />
         </div>
       </section>
+
+      <JourneySection />
     </main>
   )
 }

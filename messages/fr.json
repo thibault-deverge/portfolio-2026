@@ -5,6 +5,11 @@
     "subtitle": "Témoin de palette : papier, surface, encre, accent terracotta.",
     "locale": "Langue active : Français"
   },
+  "Nav": {
+    "journey": "Parcours",
+    "work": "Projets",
+    "contact": "Contact"
+  },
   "Journey": {
     "title": "Le fil rouge",
     "law": {
@@ -23,5 +28,14 @@
       "title": "Aujourd'hui",
       "text": "Développeur Next.js end-to-end, du design à la base de données."
     }
+  },
+  "Work": {
+    "title": "Projets",
+    "viewCaseStudy": "Voir l'étude de cas"
+  },
+  "Contact": {
+    "title": "Travaillons ensemble",
+    "text": "Un projet en tête ? Disponible pour des missions freelance Next.js.",
+    "cta": "M'écrire"
   }
 }

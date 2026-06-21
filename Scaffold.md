@@ -29,7 +29,7 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 9. MDX (config + mdx-components + 1 case study démo)
 - [x] 10. Smooth scroll Lenis (provider client-only)
 - [x] 11. Fil rouge `RedThread` (motion `useScroll` + `pathLength`)
-- [ ] 12. Sections home + layout (Header, Footer, LocaleSwitcher)
+- [x] 12. Sections home + layout (Header, Footer, LocaleSwitcher)
 - [ ] 13. Réserver la phase 2 (concierge, contact schemas, TODO PHASE 2)
 - [ ] 14. Commits incrémentaux + commit final du scaffold
 - [ ] 15. CLAUDE.md projet + config `.claude/` (rules + skills, inspiré de np-evolution + propositions)

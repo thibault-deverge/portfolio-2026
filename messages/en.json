@@ -5,6 +5,11 @@
     "subtitle": "Palette preview: paper, surface, ink, terracotta accent.",
     "locale": "Active language: English"
   },
+  "Nav": {
+    "journey": "Journey",
+    "work": "Work",
+    "contact": "Contact"
+  },
   "Journey": {
     "title": "The red thread",
     "law": {
@@ -23,5 +28,14 @@
       "title": "Today",
       "text": "End-to-end Next.js developer, from design to the database."
     }
+  },
+  "Work": {
+    "title": "Work",
+    "viewCaseStudy": "View case study"
+  },
+  "Contact": {
+    "title": "Let's work together",
+    "text": "Got a project in mind? Available for freelance Next.js work.",
+    "cta": "Get in touch"
   }
 }

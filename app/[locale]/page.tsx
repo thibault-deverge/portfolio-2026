@@ -1,5 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { JourneySection } from '@/features/journey'
+import { WorkSection } from '@/features/work'
+import { ContactSection } from '@/features/contact'
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -27,6 +29,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       <JourneySection />
+      <WorkSection />
+      <ContactSection />
     </main>
   )
 }

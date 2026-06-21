@@ -59,9 +59,21 @@ Cal.com, dark mode. Variables dans `.env.example`. Dossiers `features/concierge/
 
 ## Skills / outils pertinents
 
+Skills projet (`.claude/skills/`) :
+
+- `/new-case-study` — scaffold une étude de cas MDX bilingue + enregistrement dans le registre.
+- `/review-changes` — review pré-commit (tokens, parité i18n fr/en, a11y du motion, conventions).
+
+Globaux utiles :
+
 - `/frontend-design` — passe design (hero, sections, art direction).
 - `a11y-check`, `perf-audit` — audits accessibilité / performance.
 - `find-docs` (Context7) — doc des libs (Next 16, next-intl 4, motion, Tailwind v4…).
 - `implement`, `debug` — workflows structurés.
+
+## Rules détaillées (chargées automatiquement)
+
+@.claude/rules/ui-conventions.md
+@.claude/rules/i18n.md
 
 @AGENTS.md

@@ -30,7 +30,7 @@ Ce fichier suit l'avancement et sert de référence rapide.
 - [x] 10. Smooth scroll Lenis (provider client-only)
 - [x] 11. Fil rouge `RedThread` (motion `useScroll` + `pathLength`)
 - [x] 12. Sections home + layout (Header, Footer, LocaleSwitcher)
-- [ ] 13. Réserver la phase 2 (concierge, contact schemas, TODO PHASE 2)
+- [x] 13. Réserver la phase 2 (concierge, contact schemas, TODO PHASE 2)
 - [ ] 14. Commits incrémentaux + commit final du scaffold
 - [ ] 15. CLAUDE.md projet + config `.claude/` (rules + skills, inspiré de np-evolution + propositions)
 

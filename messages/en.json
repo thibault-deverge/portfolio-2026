@@ -1,9 +1,13 @@
 {
   "Home": {
-    "tagline": "portfolio · scaffold",
-    "title": "The red <accent>thread</accent>",
-    "subtitle": "Palette preview: paper, surface, ink, terracotta accent.",
-    "locale": "Active language: English"
+    "eyebrow": "Next.js developer · Freelance",
+    "headlineLead": "My path is anything but linear.",
+    "headlinePunch": "My code is.",
+    "subtitle": "I design and build complete web apps with Next.js — from the interface to the database.",
+    "ctaPrimary": "View my work",
+    "ctaSecondary": "Let's talk about your project",
+    "availability": "Open to freelance work",
+    "scrollHint": "Scroll — the thread draws itself"
   },
   "Nav": {
     "journey": "Journey",

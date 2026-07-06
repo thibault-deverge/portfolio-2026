@@ -38,11 +38,14 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-310 items-center justify-between px-6 py-5 sm:px-10 lg:px-14">
         <Link
           href="/"
-          className="font-sans text-[15px] font-medium tracking-tight text-ink"
+          className="group font-display text-lg font-medium italic tracking-tight text-ink"
         >
           {siteConfig.name}
-          {/* Écho du nœud d'origine du fil rouge. */}
-          <span className="text-accent">.</span>
+          {/* Nœud d'origine du fil rouge ; au hover, un bout de fil s'en étire. */}
+          <span className="ml-1 inline-flex items-center" aria-hidden>
+            <span className="size-1.5 rounded-full bg-accent" />
+            <span className="h-0.5 w-0 rounded-full bg-accent transition-[width] duration-200 ease-out group-hover:w-3 motion-reduce:transition-none" />
+          </span>
         </Link>
         <LocaleSwitcher />
       </div>

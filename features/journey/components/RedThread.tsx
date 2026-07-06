@@ -2,7 +2,7 @@
 
 import { motion, type MotionValue } from 'motion/react'
 
-// Le tracé vertical (fil rouge) ; son `pathLength` est piloté de l'extérieur (scroll).
+/** Trait du fil rouge ; `pathLength` (0→1) piloté de l'extérieur. */
 export function RedThread({ pathLength }: { pathLength: MotionValue<number> | number }) {
   return (
     <svg

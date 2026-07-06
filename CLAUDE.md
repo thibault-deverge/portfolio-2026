@@ -7,7 +7,7 @@ Avancement : `Scaffold.md`. Plan détaillé : `~/.claude/plans/parfait-je-valide
 ## Stack
 
 - Next.js 16 (App Router, RSC, Turbopack) · React 19 · TypeScript strict
-- Tailwind v4 (tokens dans `@theme`, `app/globals.css`) · next-intl 4 (fr défaut + en)
+- Tailwind v4 (tokens dans `@theme`, `styles/theme.css`) · next-intl 4 (fr défaut + en)
 - `motion` (`motion/react`) + Lenis (smooth scroll) · MDX local (case studies) · zod
 - Fonts via `next/font` : Fraunces (display) / Geist (texte) / Geist Mono
 - pnpm · ESLint + Prettier (`semi: false`, single quotes, 90 cols)
@@ -28,11 +28,17 @@ Avancement : `Scaffold.md`. Plan détaillé : `~/.claude/plans/parfait-je-valide
 - `lib/{core,utils,schemas,config}/` — `cn`, `ActionResult` (`successResult`/`errorResult`), `site.ts`.
 - `i18n/` (routing, request, navigation) · `proxy.ts` (middleware next-intl, nom Next 16) ·
   `messages/{fr,en}.json` · `content/work/<slug>/{fr,en}.mdx`.
+- `styles/` — tout le style : `fonts.ts`, `theme.css` (tokens `@theme` + base), un CSS par domaine
+  (`hero.css`…). `app/globals.css` = simple manifest d'`@import`.
 
 ## Conventions
 
 - Dossiers racine (pas de `src/`) · alias `@/*` → `./*`.
-- Composants `PascalCase.tsx` · reste `kebab-case.ts` · délimiteurs `// ===== Section =====`.
+- Composants `PascalCase.tsx` · reste `kebab-case.ts` · délimiteurs `// ===== Section =====`
+  (réservés aux fichiers multi-sections).
+- Commentaires **minimalistes mais présents** : JSDoc court (1-2 lignes) sur les exports ; balises
+  de zones dans le JSX (`{/* Bloc central : … */}`) bienvenues ; inline `//` brefs pour le
+  « pourquoi » non évident. Ce qu'on bannit : les pavés multi-lignes au-dessus des composants.
 - Forms : react-hook-form + zod. Server actions : type `ActionResult`.
 - Styles via tokens Tailwind (`bg-paper`, `text-accent`, `font-display`…), **un seul accent**.
 - i18n : `setRequestLocale(locale)` dans le layout **ET** chaque page (sinon perte du rendu statique).

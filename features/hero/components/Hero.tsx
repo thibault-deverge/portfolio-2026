@@ -1,34 +1,25 @@
 import { getTranslations } from 'next-intl/server'
+import { BlueprintGrid } from './BlueprintGrid'
 
-// ================================
-// ==           Hero             ==
-// ================================
-
-// Server Component : les animations d'entrée sont du CSS pur (cf. globals.css),
-// donc pas besoin de `'use client'`. Le fil rouge animé au scroll viendra dans un
-// wrapper client séparé (étape sections).
+/**
+ * Premier écran : titre éditorial, CTA et grille blueprint.
+ * Animations d'entrée en CSS pur (styles/hero.css).
+ */
 export async function Hero() {
   const t = await getTranslations('Home')
 
   return (
     <header className="relative flex min-h-dvh w-full flex-col overflow-hidden">
-      {/* Filigrane : grille blueprint sur la moitié droite, ≥ lg uniquement. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[56%] lg:block"
-      >
-        <div className="blueprint-grid hero-grid-in absolute inset-0" />
-      </div>
+      {/* Filigrane : grille blueprint + halo curseur (≥ lg). */}
+      <BlueprintGrid />
 
-      {/* Nœud d'origine du fil rouge : posé dans une zone vide de la grille, à l'écart
-          du texte. Sa position définitive sera calée avec le tracé du fil (étape sections). */}
+      {/* nœud d'origine du fil rouge — position provisoire, à caler sur le tracé (étape fil) */}
       <span
         aria-hidden
-        className="hero-node-in absolute z-30 hidden size-3 rounded-full bg-accent ring-4 ring-paper lg:block"
-        style={{ left: '78%', top: '32%', transform: 'translate(-50%, -50%)' }}
+        className="hero-node-in absolute left-[78%] top-[32%] z-30 hidden size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent ring-4 ring-paper lg:block"
       />
 
-      {/* Bloc central : titre, sous-titre, CTA. La seule barre haute est le Header global. */}
+      {/* Bloc central : titre, sous-titre, CTA. */}
       <div className="relative z-10 mx-auto flex w-full max-w-310 flex-1 flex-col justify-center px-6 py-14 sm:px-10 lg:px-14">
         <h1 className="font-display font-normal tracking-tight text-ink font-features-['ss01'] [font-optical-sizing:auto]">
           <span

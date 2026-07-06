@@ -7,13 +7,10 @@ import { siteConfig } from '@/lib/config/site'
 import { cn } from '@/lib/utils'
 import { LocaleSwitcher } from './LocaleSwitcher'
 
-// TOP : jusqu'où (en px) on considère être « en haut » → header transparent.
-// HIDE : avant ce point, on ne masque jamais le header, même en descendant.
-const TOP_THRESHOLD = 24
-const HIDE_THRESHOLD = 80
+const TOP_THRESHOLD = 24 // en deçà : header transparent
+const HIDE_THRESHOLD = 80 // en deçà : jamais masqué
 
-// Bandeau d'identité minimal : pas de liens de section — la page se découvre en
-// scrollant (le fil rouge est la navigation). Client : lit la position de scroll.
+/** Bandeau d'identité (nom + FR/EN). Pas de nav : la page se découvre en scrollant. */
 export function Header() {
   const [atTop, setAtTop] = useState(true)
   const [hidden, setHidden] = useState(false)
@@ -23,7 +20,7 @@ export function Header() {
   useMotionValueEvent(scrollY, 'change', (y) => {
     const previous = scrollY.getPrevious() ?? 0
     setAtTop(y < TOP_THRESHOLD)
-    // Reduced motion : le header ne glisse jamais hors écran, il reste posé.
+    // masqué en descendant — jamais en reduced-motion
     setHidden(!reduceMotion && y > previous && y > HIDE_THRESHOLD)
   })
 
@@ -41,7 +38,7 @@ export function Header() {
           className="group font-display text-lg font-medium italic tracking-tight text-ink"
         >
           {siteConfig.name}
-          {/* Nœud d'origine du fil rouge ; au hover, un bout de fil s'en étire. */}
+          {/* nœud du fil rouge ; un bout de fil s'étire au hover */}
           <span className="ml-1 inline-flex items-center" aria-hidden>
             <span className="size-1.5 rounded-full bg-accent" />
             <span className="h-0.5 w-0 rounded-full bg-accent transition-[width] duration-200 ease-out group-hover:w-3 motion-reduce:transition-none" />

@@ -4,7 +4,7 @@ Conventions visuelles du portfolio. But : rendu soigné, cohérent, **non-géné
 
 ## Tokens (Tailwind v4)
 
-Toujours passer par les utilities générées depuis `@theme` (`app/globals.css`), **jamais de hex en dur** :
+Toujours passer par les utilities générées depuis `@theme` (`styles/theme.css`), **jamais de hex en dur** :
 
 | Rôle               | Utility                                       | Token     |
 | ------------------ | --------------------------------------------- | --------- |

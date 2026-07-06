@@ -1,0 +1,101 @@
+/* ===== Grille blueprint (filigrane) ===== */
+/* CSS pur : deux gradients croisés, masqués pour n'apparaître que vers la
+   droite et s'estomper en haut/bas. Aucun asset, aucun JS. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--color-hairline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-hairline) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 4%, #000 48%),
+    linear-gradient(0deg, transparent 6%, #000 26%, #000 82%, transparent 98%);
+  mask-image:
+    linear-gradient(90deg, transparent 4%, #000 48%),
+    linear-gradient(0deg, transparent 6%, #000 26%, #000 82%, transparent 98%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  opacity: 0.7;
+}
+
+/* Couche « lumière » : même grille, lignes tirées vers l'accent, visible dans
+   un halo suivant le curseur (--mx/--my écrites par BlueprintGrid.tsx).
+   Défaut hors-écran : sans mouvement de souris, rien n'apparaît. */
+.blueprint-grid-light {
+  --mx: -999px;
+  --my: -999px;
+  --grid-lit: color-mix(in oklab, var(--color-accent) 22%, var(--color-hairline));
+  background-image:
+    linear-gradient(var(--grid-lit) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-lit) 1px, transparent 1px);
+  background-size: 46px 46px;
+  /* halo curseur ∩ même enveloppe de fondu que la grille de base */
+  -webkit-mask-image:
+    radial-gradient(circle 220px at var(--mx) var(--my), #000 30%, transparent 75%),
+    linear-gradient(90deg, transparent 4%, #000 48%),
+    linear-gradient(0deg, transparent 6%, #000 26%, #000 82%, transparent 98%);
+  mask-image:
+    radial-gradient(circle 220px at var(--mx) var(--my), #000 30%, transparent 75%),
+    linear-gradient(90deg, transparent 4%, #000 48%),
+    linear-gradient(0deg, transparent 6%, #000 26%, #000 82%, transparent 98%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+/* ===== Animations d'entrée ===== */
+/* Uniquement sous no-preference : en reduced-motion, ces classes n'existent
+   pas et les éléments restent à leur état final (visibles, statiques). */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-rise {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .hero-grid-in {
+    opacity: 0;
+    animation: hero-grid-in 1.4s ease 0.3s forwards;
+  }
+  .hero-node-in {
+    opacity: 0;
+    transform: scale(0);
+    animation: hero-pop 0.6s cubic-bezier(0.22, 1.4, 0.4, 1) 0.9s forwards;
+  }
+  .hero-hint-in {
+    opacity: 0;
+    animation: hero-fade 0.8s ease 1.2s forwards;
+  }
+  .hero-bob {
+    animation: hero-bob 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hero-grid-in {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes hero-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes hero-fade {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hero-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}

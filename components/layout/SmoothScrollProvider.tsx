@@ -3,7 +3,7 @@
 import { ReactLenis } from 'lenis/react'
 import 'lenis/dist/lenis.css'
 
-// Smooth scroll global (inertie). Client-only : Lenis touche au DOM/scroll.
+/** Smooth scroll global (Lenis). */
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   return (
     <ReactLenis root options={{ lerp: 0.1 }}>

@@ -8,6 +8,7 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => workSlugs.map((slug) => ({ locale, slug })))
 }
 
+// Desactive le rendu dynamique pour les slugs non listés dans workSlugs.
 export const dynamicParams = false
 
 export default async function WorkPage({

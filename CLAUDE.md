@@ -75,5 +75,6 @@ Globaux utiles :
 
 @.claude/rules/ui-conventions.md
 @.claude/rules/i18n.md
+@.claude/rules/pedagogie.md
 
 @AGENTS.md

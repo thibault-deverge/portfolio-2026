@@ -1,18 +1,11 @@
 {
   "Home": {
-    "eyebrow": "Développeur Next.js · Freelance",
     "headlineLead": "Mon parcours n'a rien de linéaire.",
     "headlinePunch": "Mon code, si.",
     "subtitle": "Je conçois et développe des applications web complètes avec Next.js — du design à la base de données.",
     "ctaPrimary": "Voir mes projets",
     "ctaSecondary": "Parler de votre projet",
-    "availability": "Ouvert aux missions freelance",
     "scrollHint": "Défilez — le fil se dessine"
-  },
-  "Nav": {
-    "journey": "Parcours",
-    "work": "Projets",
-    "contact": "Contact"
   },
   "Journey": {
     "title": "Le fil rouge",

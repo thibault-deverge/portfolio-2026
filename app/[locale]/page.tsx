@@ -6,7 +6,6 @@ import { ContactSection } from '@/features/contact'
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  // Requis dans la page (pas seulement le layout) pour autoriser le rendu statique.
   setRequestLocale(locale)
 
   return (

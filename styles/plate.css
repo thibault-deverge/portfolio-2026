@@ -1,0 +1,83 @@
+/* ===== Planche technique (Plate) ===== */
+/* Cadre annoté façon dossier : repères de coupe, cadre hairline, hachures en
+   attente d'image. Reveal + parallax pilotés par Plate.tsx (classes + --plate-shift). */
+
+.plate {
+  position: relative;
+  margin: 0;
+}
+
+.plate-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-hairline);
+  border-radius: 6px;
+  background: var(--color-surface);
+}
+
+/* Repères de coupe : deux « L » opposés, débordant légèrement du cadre. */
+.plate-marks {
+  position: absolute;
+  inset: -8px;
+  pointer-events: none;
+}
+.plate-marks::before,
+.plate-marks::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+}
+.plate-marks::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--color-ink-muted);
+  border-left: 1px solid var(--color-ink-muted);
+}
+.plate-marks::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid var(--color-ink-muted);
+  border-right: 1px solid var(--color-ink-muted);
+}
+
+/* Wrapper image 110% de haut : absorbe le glissement du parallax (±5%).
+   Sans JS / reduced-motion, le fallback 0% pose l'image au centre. */
+.plate-shift {
+  position: absolute;
+  inset: -5% 0;
+  transform: translateY(var(--plate-shift, 0%));
+  will-change: transform;
+}
+
+/* En attente d'image : hachures diagonales, façon planche « à compléter ». */
+.plate-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 9px,
+    color-mix(in oklab, var(--color-hairline) 60%, transparent) 9px,
+    color-mix(in oklab, var(--color-hairline) 60%, transparent) 10px
+  );
+}
+
+/* Reveal : masqué APRÈS hydratation (classe posée en JS), révélé à l'entrée
+   dans le viewport. Sans JS / reduced-motion : visible, statique. */
+@media (prefers-reduced-motion: no-preference) {
+  .plate--pending {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  .plate--pending.plate--in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 280ms ease-out,
+      transform 280ms ease-out;
+  }
+}

@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import { FilNode } from '@/features/journey'
 import { BlueprintGrid } from './BlueprintGrid'
 
 /**
@@ -14,10 +15,7 @@ export async function Hero() {
       <BlueprintGrid />
 
       {/* nœud d'origine du fil rouge — position provisoire, à caler sur le tracé (étape fil) */}
-      <span
-        aria-hidden
-        className="hero-node-in absolute left-[78%] top-[32%] z-30 hidden size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent ring-4 ring-paper lg:block"
-      />
+      <FilNode className="absolute left-[78%] top-[32%] z-30 hidden -translate-x-1/2 -translate-y-1/2 lg:block" />
 
       {/* Bloc central : titre, sous-titre, CTA. */}
       <div className="relative z-10 mx-auto flex w-full max-w-310 flex-1 flex-col justify-center px-6 py-14 sm:px-10 lg:px-14">
@@ -48,7 +46,7 @@ export async function Hero() {
           style={{ animationDelay: '0.64s' }}
         >
           <a
-            href="#work"
+            href="#np-evolution"
             className="group inline-flex items-center gap-2 text-base font-medium text-accent"
           >
             {t('ctaPrimary')}

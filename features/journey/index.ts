@@ -1,3 +1,5 @@
 // ===== Components =====
-export { JourneySection } from './components/JourneySection'
-export { RedThread } from './components/RedThread'
+export { ChapterFondations } from './components/ChapterFondations'
+export { ChapterNpEvolution } from './components/ChapterNpEvolution'
+export { ChapterElloha } from './components/ChapterElloha'
+export { FilNode } from './components/FilNode'

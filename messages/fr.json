@@ -8,7 +8,6 @@
     "scrollHint": "Défilez — le fil se dessine"
   },
   "Journey": {
-    "title": "Le fil rouge",
     "fondations": {
       "label": "01 · Le parcours",
       "meta": "2018 → 2026",
@@ -58,26 +57,9 @@
         "founded": { "value": "2019", "label": "année de création" }
       }
     },
-    "strip": "interface → api → base de données · next.js · typescript · prisma · postgresql · react · node",
-    "law": {
-      "title": "Le droit",
-      "text": "Une licence de droit — la rigueur de l'argumentation et de l'analyse."
-    },
-    "asia": {
-      "title": "L'Asie",
-      "text": "Trois ans de voyage, dont le Vietnam à moto. L'autonomie et le hors-piste."
-    },
-    "school42": {
-      "title": "L'École 42",
-      "text": "Le C, les systèmes, les fondamentaux appris à la dure."
-    },
-    "today": {
-      "title": "Aujourd'hui",
-      "text": "Développeur Next.js end-to-end, du design à la base de données."
-    }
+    "strip": "interface → api → base de données · next.js · typescript · prisma · postgresql · react · node"
   },
   "Work": {
-    "title": "Projets",
     "viewCaseStudy": "Voir l'étude de cas"
   },
   "Contact": {

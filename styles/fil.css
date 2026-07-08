@@ -1,0 +1,11 @@
+/* ===== Fil rouge — nœuds d'ancrage ===== */
+/* Visibles par défaut (SSR / sans JS / reduced-motion) ; à l'étape fil, FilRouge
+   les masquera (.fil-node--hidden) puis les révélera quand le tracé les atteint. */
+.fil-node {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-paper);
+}

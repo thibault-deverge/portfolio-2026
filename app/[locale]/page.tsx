@@ -1,7 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import { Hero } from '@/features/hero'
-import { JourneySection } from '@/features/journey'
-import { WorkSection } from '@/features/work'
+import { ChapterElloha, ChapterFondations, ChapterNpEvolution } from '@/features/journey'
 import { ContactSection } from '@/features/contact'
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -9,10 +8,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   setRequestLocale(locale)
 
   return (
-    <main className="bg-paper text-ink">
+    <main className="relative bg-paper text-ink">
       <Hero />
-      <JourneySection />
-      <WorkSection />
+      <ChapterFondations />
+      <ChapterNpEvolution />
+      <ChapterElloha />
       <ContactSection />
     </main>
   )

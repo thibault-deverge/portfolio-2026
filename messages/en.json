@@ -8,7 +8,6 @@
     "scrollHint": "Scroll — the thread draws itself"
   },
   "Journey": {
-    "title": "The red thread",
     "fondations": {
       "label": "01 · The journey",
       "meta": "2018 → 2026",
@@ -58,26 +57,9 @@
         "founded": { "value": "2019", "label": "founded" }
       }
     },
-    "strip": "interface → api → database · next.js · typescript · prisma · postgresql · react · node",
-    "law": {
-      "title": "Law",
-      "text": "A law degree — the rigor of argument and analysis."
-    },
-    "asia": {
-      "title": "Asia",
-      "text": "Three years travelling, including Vietnam by motorbike. Autonomy and going off-road."
-    },
-    "school42": {
-      "title": "School 42",
-      "text": "C, systems, the fundamentals learned the hard way."
-    },
-    "today": {
-      "title": "Today",
-      "text": "End-to-end Next.js developer, from design to the database."
-    }
+    "strip": "interface → api → database · next.js · typescript · prisma · postgresql · react · node"
   },
   "Work": {
-    "title": "Work",
     "viewCaseStudy": "View case study"
   },
   "Contact": {

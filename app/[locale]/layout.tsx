@@ -6,7 +6,6 @@ import { routing } from '@/i18n/routing'
 import { fraunces, geistSans, geistMono } from '@/styles/fonts'
 import { SmoothScrollProvider } from '@/components/layout/SmoothScrollProvider'
 import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
 import '../globals.css'
 
 export const metadata: Metadata = {
@@ -44,7 +43,6 @@ export default async function LocaleLayout({
           <SmoothScrollProvider>
             <Header />
             {children}
-            <Footer />
           </SmoothScrollProvider>
         </NextIntlClientProvider>
       </body>

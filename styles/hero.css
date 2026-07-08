@@ -1,3 +1,38 @@
+/* ===== Rideau d'entrée ===== */
+/* Visible UNIQUEMENT si les animations sont permises : en reduced-motion (ou
+   sans support), il n'existe pas et le hero est immédiatement lisible. */
+.hero-curtain {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-curtain {
+    display: flex;
+    animation: hero-curtain-lift 0.95s cubic-bezier(0.76, 0, 0.24, 1) 1.05s forwards;
+  }
+  .hero-curtain-sig {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: hero-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+  }
+}
+@keyframes hero-curtain-lift {
+  to {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
+
+/* ===== Nœud du fil rouge ===== */
+/* Le point terracotta d'origine ; sera l'ancre de mesure du futur fil (data-fil-node). */
+.fil-node {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-paper);
+}
+
 /* ===== Grille blueprint (filigrane) ===== */
 /* CSS pur : deux gradients croisés, masqués pour n'apparaître que vers la
    droite et s'estomper en haut/bas. Aucun asset, aucun JS. */
@@ -47,19 +82,17 @@
 @media (prefers-reduced-motion: no-preference) {
   .hero-rise {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(28px);
     animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  /* Ligne de titre révélée sous masque (le parent porte overflow-hidden). */
+  .hero-line {
+    transform: translateY(112%);
+    animation: hero-line 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
   .hero-grid-in {
     opacity: 0;
-    animation: hero-grid-in 1.4s ease 0.3s forwards;
-  }
-  .hero-hint-in {
-    opacity: 0;
-    animation: hero-fade 0.8s ease 1.2s forwards;
-  }
-  .hero-bob {
-    animation: hero-bob 1.8s ease-in-out infinite;
+    animation: hero-grid-in 1.4s ease 1.7s forwards;
   }
 }
 
@@ -69,22 +102,13 @@
     transform: none;
   }
 }
+@keyframes hero-line {
+  to {
+    transform: none;
+  }
+}
 @keyframes hero-grid-in {
   to {
     opacity: 0.7;
-  }
-}
-@keyframes hero-fade {
-  to {
-    opacity: 1;
-  }
-}
-@keyframes hero-bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
   }
 }

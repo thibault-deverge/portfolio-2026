@@ -4,67 +4,6 @@
     "headlinePunch": "Mon code, si.",
     "subtitle": "Je conçois et développe des applications web complètes avec Next.js — du design à la base de données.",
     "ctaPrimary": "Voir mes projets",
-    "ctaSecondary": "Parler de votre projet",
-    "scrollHint": "Défilez — le fil se dessine"
-  },
-  "Journey": {
-    "fondations": {
-      "label": "01 · Le parcours",
-      "meta": "2018 → 2026",
-      "title": "Trois détours, <i>une même idée</i> : construire des choses qui tiennent.",
-      "intro": "La rigueur du droit, l'autonomie apprise sur la route, les fondamentaux du code appris à la dure — chaque détour sert vos projets aujourd'hui.",
-      "portraitCaption": "Thibault Deverge",
-      "cards": {
-        "law": {
-          "year": "2018",
-          "title": "Licence de droit",
-          "text": "Lire des systèmes qui ne tolèrent pas l'à-peu-près. La rigueur, avant le code."
-        },
-        "asia": {
-          "year": "2019",
-          "title": "Trois ans en Asie",
-          "text": "Le Vietnam à moto. Décider, avancer et livrer sans supervision."
-        },
-        "school42": {
-          "year": "2022",
-          "title": "École 42",
-          "text": "Les fondamentaux, appris à la dure — en C, sans professeur."
-        }
-      }
-    },
-    "npe": {
-      "label": "02 · NP-Evolution",
-      "meta": "Dossier freelance · livré seul",
-      "title": "De l'interface à la base de données, <i>livré seul</i>.",
-      "intro": "Un consultant en bilans de compétences gérait dossiers, rendez-vous et documents à la main. NP-Evolution structure tout le parcours — du premier entretien à la signature finale.",
-      "bullets": {
-        "gestion": "Gestion des consultants et des bénéficiaires",
-        "pdf": "PDF interactifs générés à la volée",
-        "signatures": "Signatures électroniques conformes eIDAS"
-      },
-      "captionDesktop": "espace consultant — desktop",
-      "captionMobile": "↖ parcours mobile"
-    },
-    "elloha": {
-      "label": "03 · Elloha",
-      "meta": "En poste · front-end",
-      "title": "Tenir <i>à l'échelle</i>.",
-      "intro": "Elloha est une plateforme française de réservation pour les indépendants du tourisme : moteur de réservation, channel manager connecté à plus de 60 canaux — Booking, Airbnb, Expedia, Google — et générateur de site. J'y développe le front-end, au sein de l'équipe produit.",
-      "team": "À cette échelle, chaque régression a un coût immédiat pour de vrais commerçants : revues de code, tests, mises en production progressives — la fiabilité est un travail d'équipe.",
-      "stats": {
-        "pros": { "value": "10 000+", "label": "pros du tourisme" },
-        "channels": { "value": "60+", "label": "canaux connectés" },
-        "founded": { "value": "2019", "label": "année de création" }
-      }
-    },
-    "strip": "interface → api → base de données · next.js · typescript · prisma · postgresql · react · node"
-  },
-  "Work": {
-    "viewCaseStudy": "Voir l'étude de cas"
-  },
-  "Contact": {
-    "title": "Travaillons ensemble",
-    "text": "Un projet en tête ? Disponible pour des missions freelance Next.js.",
-    "cta": "M'écrire"
+    "ctaSecondary": "Parler de votre projet"
   }
 }

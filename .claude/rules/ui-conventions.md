@@ -25,12 +25,19 @@ Toujours passer par les utilities générées depuis `@theme` (`styles/theme.css
 - `font-mono` (Geist Mono) — labels techniques, chiffres, futur ⌘K.
 - Hiérarchie de taille **affirmée** (vrai contraste titre/corps).
 
-## Motion
+## Motion (recalibré 2026-07 — références : enricodeiana.design, koysor.me)
 
 - Lib : `motion` (`motion/react`). Composants animés = **client-only** (`'use client'`), isolés dans de petits wrappers (le layout reste Server Component).
-- Raffiné : durées **150–300 ms**, `ease-out`, reveals en léger stagger.
-- **Toujours respecter `prefers-reduced-motion`** (`useReducedMotion`) → version statique (ex : le fil rouge s'affiche complet, `pathLength: 1`).
-- Une seule signature forte (le **fil rouge**). Le reste reste sobre.
+- **Motion ASSUMÉ, pas murmuré** : les reveals doivent se VOIR. Titres révélés **ligne par ligne
+  sous masque** (translateY 110%→0, 700-900 ms, stagger 100-150 ms, `cubic-bezier(0.22,1,0.36,1)`) ;
+  images en **wipe** (`clip-path`) + dé-zoom 1.12→1 (~900 ms) ; **parallax multi-vitesses** franc
+  (±12-15 % sur les images, couches à vitesses différenciées). Micro-interactions (hover, liens) :
+  150-300 ms.
+- Scroll flotté : Lenis `lerp: 0.075`.
+- **Toujours respecter `prefers-reduced-motion`** (`useReducedMotion`) → version statique complète.
+  Patterns SSR-safe obligatoires : IO + classes, CSS vars par ref — le HTML serveur reste visible.
+- Le **fil rouge** = la signature narrative qui relie le tout ; le reste du motion l'accompagne
+  sans le parodier (pas de deuxième élément « spectaculaire » concurrent).
 
 ## Garde-fous anti-générique (important)
 

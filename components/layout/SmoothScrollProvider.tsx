@@ -6,7 +6,7 @@ import 'lenis/dist/lenis.css'
 /** Smooth scroll global (Lenis). */
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   return (
-    <ReactLenis root options={{ lerp: 0.1 }}>
+    <ReactLenis root options={{ lerp: 0.075 }}>
       {children}
     </ReactLenis>
   )

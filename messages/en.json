@@ -4,67 +4,6 @@
     "headlinePunch": "My code is.",
     "subtitle": "I design and build complete web apps with Next.js — from the interface to the database.",
     "ctaPrimary": "View my work",
-    "ctaSecondary": "Let's talk about your project",
-    "scrollHint": "Scroll — the thread draws itself"
-  },
-  "Journey": {
-    "fondations": {
-      "label": "01 · The journey",
-      "meta": "2018 → 2026",
-      "title": "Three detours, <i>one guiding idea</i>: building things that last.",
-      "intro": "The rigor of law, self-reliance learned on the road, code fundamentals learned the hard way — every detour serves your projects today.",
-      "portraitCaption": "Thibault Deverge",
-      "cards": {
-        "law": {
-          "year": "2018",
-          "title": "Law degree",
-          "text": "Reading systems that tolerate no approximation. Rigor, before code."
-        },
-        "asia": {
-          "year": "2019",
-          "title": "Three years across Asia",
-          "text": "Vietnam by motorbike. Deciding, moving and delivering without supervision."
-        },
-        "school42": {
-          "year": "2022",
-          "title": "École 42",
-          "text": "The fundamentals, learned the hard way — in C, with no teachers."
-        }
-      }
-    },
-    "npe": {
-      "label": "02 · NP-Evolution",
-      "meta": "Freelance project · shipped solo",
-      "title": "From the interface to the database, <i>shipped solo</i>.",
-      "intro": "A career-coaching consultant was managing files, appointments and documents by hand. NP-Evolution structures the entire journey — from first interview to final signature.",
-      "bullets": {
-        "gestion": "Consultant and client management",
-        "pdf": "Interactive PDFs generated on the fly",
-        "signatures": "eIDAS-compliant electronic signatures"
-      },
-      "captionDesktop": "consultant workspace — desktop",
-      "captionMobile": "↖ mobile flow"
-    },
-    "elloha": {
-      "label": "03 · Elloha",
-      "meta": "Current role · front-end",
-      "title": "Holding up <i>at scale</i>.",
-      "intro": "Elloha is a French booking platform for independent tourism businesses: a booking engine, a channel manager connected to 60+ channels — Booking, Airbnb, Expedia, Google — and a website builder. I work on the front end, within the product team.",
-      "team": "At this scale, every regression has an immediate cost for real merchants: code reviews, tests, progressive rollouts — reliability is a team effort.",
-      "stats": {
-        "pros": { "value": "10 000+", "label": "tourism professionals" },
-        "channels": { "value": "60+", "label": "connected channels" },
-        "founded": { "value": "2019", "label": "founded" }
-      }
-    },
-    "strip": "interface → api → database · next.js · typescript · prisma · postgresql · react · node"
-  },
-  "Work": {
-    "viewCaseStudy": "View case study"
-  },
-  "Contact": {
-    "title": "Let's work together",
-    "text": "Got a project in mind? Available for freelance Next.js work.",
-    "cta": "Get in touch"
+    "ctaSecondary": "Let's talk about your project"
   }
 }

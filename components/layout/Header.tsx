@@ -7,8 +7,8 @@ import { siteConfig } from '@/lib/config/site'
 import { cn } from '@/lib/utils'
 import { LocaleSwitcher } from './LocaleSwitcher'
 
-const TOP_THRESHOLD = 24 // en deçà : header transparent
-const HIDE_THRESHOLD = 80 // en deçà : jamais masqué
+const TOP_ZONE_PX = 24
+const MIN_Y_TO_HIDE_PX = 80
 
 /** Bandeau d'identité (nom + FR/EN). Pas de nav : la page se découvre en scrollant. */
 export function Header() {
@@ -19,9 +19,9 @@ export function Header() {
 
   useMotionValueEvent(scrollY, 'change', (y) => {
     const previous = scrollY.getPrevious() ?? 0
-    setAtTop(y < TOP_THRESHOLD)
+    setAtTop(y < TOP_ZONE_PX)
     // masqué en descendant — jamais en reduced-motion
-    setHidden(!reduceMotion && y > previous && y > HIDE_THRESHOLD)
+    setHidden(!reduceMotion && y > previous && y > MIN_Y_TO_HIDE_PX)
   })
 
   return (

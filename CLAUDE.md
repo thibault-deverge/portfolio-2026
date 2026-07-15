@@ -15,8 +15,8 @@ roadmap : `~/.claude/plans/tout-m-interesse-j-aimerais-maitriser-goofy-curry.md`
 - Tailwind v4 (tokens dans `@theme`, `styles/theme.css`) · next-intl 4 (fr défaut + en)
 - `motion` (`motion/react`) + Lenis (`lerp: 0.075`) — UN seul système d'animation, pas de GSAP
   (les références n'en ont pas besoin ; motion couvre scrub/pin/masques)
-- MDX configuré mais dormant (`mdx-components.tsx` + next.config gardés ; la route `/work` et le
-  registre reviendront avec les scènes)
+- Pas de MDX (retiré 2026-07-15, YAGNI — le réintroduire seulement si de vraies pages d'études
+  de cas reviennent ; setup documenté dans le skill /new-case-study)
 - Fonts via `next/font` : Fraunces normal+italic (display) / Geist (texte) / Geist Mono
 - pnpm · ESLint + Prettier (`semi: false`, single quotes, 90 cols)
 
@@ -47,8 +47,9 @@ roadmap : `~/.claude/plans/tout-m-interesse-j-aimerais-maitriser-goofy-curry.md`
 
 - **E1 (fait, en calibrage)** : rideau d'encre plein écran (signature Fraunces italique paper +
   point accent) → levée 0.95s `cubic-bezier(0.76,0,0.24,1)` après 1.05s → cascade du hero (lignes
-  de titre sous masques 1.45s/1.6s, sous-titre 1.85s, CTA 2s, grille 1.7s) → au scroll, les deux
-  lignes du titre dérivent en s'écartant (`DriftLine`, −90px/+120px sur 600px de scroll).
+  de titre sous masques 1.45s/1.6s, sous-titre 1.85s, grille 1.7s — CTA supprimés, le template
+  n'en a pas) → au scroll, les deux lignes du titre dérivent en s'écartant (`DriftLine`,
+  −90px/+120px sur 600px de scroll). Hero/rideau à REFAIRE sur le modèle portfolio-cinetique.
 - **E2** : scène pinnée « Fondations » (pattern « diplômes » d'enrico : sticky ~300vh, les cartes
   2018 droit / 2019 Asie / 2022 École 42 traversent l'écran au scroll).
 - **E3** : scène NP-Evolution (titre en convergence scrubbed, collage produit multi-vitesses,

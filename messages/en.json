@@ -12,8 +12,6 @@
   "Home": {
     "headlineLead": "My path is anything but linear.",
     "headlinePunch": "My code is.",
-    "subtitle": "I design and build complete web apps with Next.js — from the interface to the database.",
-    "ctaPrimary": "View my work",
-    "ctaSecondary": "Let's talk about your project"
+    "subtitle": "I design and build complete web apps with Next.js — from the interface to the database."
   }
 }

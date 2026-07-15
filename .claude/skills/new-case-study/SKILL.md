@@ -7,8 +7,10 @@ description: Scaffold une nouvelle étude de cas (case study) MDX bilingue pour 
 
 > ⚠️ **DORMANT depuis le reset « animation-first »** (branche `feat/scroll-scenes`) : la route
 > `/work/[slug]`, le registre `features/work/lib/content.ts` et `content/work/` ont été retirés
-> (récupérables dans `~/.trash/scenes-reset/` et l'historique de `main`). Redevient utilisable à
-> la scène E3 (NP-Evolution) — restaurer d'abord la mécanique work si ce n'est pas fait.
+> (récupérables dans `~/.trash/scenes-reset/` et l'historique de `main`). Depuis le 2026-07-15,
+> MDX lui-même est désinstallé (deps `@next/mdx`/`@mdx-js/*`/`@types/mdx`, `mdx-components.tsx`,
+> `pageExtensions` + plugin dans next.config). Pour réactiver : réinstaller les deps, restaurer
+> `mdx-components.tsx` (trash/git) et le plugin, PUIS restaurer la mécanique work.
 
 Crée une étude de cas bilingue et la branche dans le registre. L'utilisateur n'a plus qu'à écrire le contenu.
 

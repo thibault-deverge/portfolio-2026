@@ -1,3 +1,2 @@
-// Barrel : permet `import { cn, successResult } from '@/lib/utils'`
+// Barrel : permet `import { cn } from '@/lib/utils'`
 export * from './cn'
-export * from './action-result'

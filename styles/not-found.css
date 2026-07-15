@@ -1,0 +1,36 @@
+/* ===== 404 — le fil interrompu ===== */
+
+.nf-thread-line {
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nf-thread-line {
+    animation: nf-draw 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .nf-thread-node {
+    animation: nf-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both;
+  }
+  .nf-copy {
+    animation: nf-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  }
+}
+
+@keyframes nf-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes nf-pop {
+  from {
+    transform: scale(0);
+  }
+}
+
+@keyframes nf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}

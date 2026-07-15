@@ -13,5 +13,7 @@
 - Sortie locale : `ds-bundle/` (gitignoré). Source de vérité du style : `styles/theme.css`
   + `styles/hero.css` du repo — toute évolution de tokens doit être répercutée à la main
   dans le bundle avant re-sync.
-- Scope exclu volontairement : sections scaffold (Journey/Work/Contact/Footer) — à ajouter
-  après leur passe design (Étapes 2-3).
+- 2026-07-15 : la direction design vit désormais côté Claude Design — template
+  `templates/portfolio-cinetique/` = référence n°1 des scènes (lisible via DesignSync
+  `get_file`). Les futures sections seront ajoutées à la vitrine après leur implémentation
+  (roadmap E2→E5).

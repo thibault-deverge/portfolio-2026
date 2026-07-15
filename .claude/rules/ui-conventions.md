@@ -25,7 +25,7 @@ Toujours passer par les utilities générées depuis `@theme` (`styles/theme.css
 - `font-mono` (Geist Mono) — labels techniques, chiffres, futur ⌘K.
 - Hiérarchie de taille **affirmée** (vrai contraste titre/corps).
 
-## Motion (recalibré 2026-07 — références : enricodeiana.design, koysor.me)
+## Motion (recalibré 2026-07 — référence n°1 : template `portfolio-cinetique` du projet Claude Design ; secondaires : enricodeiana.design, koysor.me)
 
 - Lib : `motion` (`motion/react`). Composants animés = **client-only** (`'use client'`), isolés dans de petits wrappers (le layout reste Server Component).
 - **Motion ASSUMÉ, pas murmuré** : les reveals doivent se VOIR. Titres révélés **ligne par ligne
@@ -42,7 +42,8 @@ Toujours passer par les utilities générées depuis `@theme` (`styles/theme.css
 ## Garde-fous anti-générique (important)
 
 À **éviter** (clichés « portfolio IA ») : dark indigo/violet + gradient blob, particules sur canvas,
-glassmorphism partout, barres de compétences en %, hero « Hi, I'm X, passionate dev », curseur custom géant.
+glassmorphism partout, barres de compétences en %, hero « Hi, I'm X, passionate dev ».
+(Le curseur custom dot+ring du template portfolio-cinetique est ACCEPTÉ — revirement 2026-07-15.)
 
 Privilégier : typo choisie, **une** animation signature maîtrisée, case studies honnêtes et spécifiques,
 ton éditorial cohérent.

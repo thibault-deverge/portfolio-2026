@@ -17,6 +17,9 @@ Review pré-commit des changements locaux. Direct et actionnable, comme un mento
    - **i18n** : aucun **texte visible hardcodé** (doit passer par `t()`). Toute nouvelle clé présente dans
      **`fr.json` ET `en.json`** (parité de structure).
    - **Motion / a11y** : toute nouvelle animation respecte **`prefers-reduced-motion`** ? Motion isolé en client-only ?
+     **Patterns SSR-safe** : render jamais dépendant de `useReducedMotion()`/mesures ; reveals =
+     IO + classes post-hydratation (pas de `whileInView` qui sérialise `opacity:0`) ; mouvement
+     continu (scrub/parallax) = écritures par ref, zéro re-render ; HTML serveur visible sans JS.
    - **Conventions** : composants `PascalCase.tsx`, reste `kebab-case.ts`, barrels `index.ts` à jour,
      délimiteurs `// ===== Section =====`.
    - **Propreté** : pas de `console.log` oublié, pas de `any` évitable, pas de dead code.

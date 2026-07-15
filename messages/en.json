@@ -1,4 +1,14 @@
 {
+  "Metadata": {
+    "title": "Thibault Deverge — Next.js Developer",
+    "description": "Portfolio of Thibault Deverge, front-end / end-to-end Next.js developer."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "The thread ends here.",
+    "body": "This page doesn't exist — or not anymore.",
+    "cta": "Pick up the thread"
+  },
   "Home": {
     "headlineLead": "My path is anything but linear.",
     "headlinePunch": "My code is.",

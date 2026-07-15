@@ -29,10 +29,13 @@ corps) · `--font-mono` (Geist Mono — labels techniques, eyebrows, chiffres ; 
   contraste ink vs ink-muted pour les deux temps d'une phrase.
 - Espacements : contenu max 1240px, padding latéral 24/40/56px, indentation éditoriale 6-8vw
   pour les « chutes » de titres. Rayons 6px max.
-- Motion : 150-300 ms ease-out, reveals en léger stagger ; UNE signature spectaculaire (le fil
-  qui se dessine au scroll), tout le reste murmure ; toujours respecter prefers-reduced-motion.
+- Motion ASSUMÉ (recalibré 2026-07, référence : template `portfolio-cinetique`) : reveals
+  ligne par ligne sous masque (~1.1s, stagger), parallax scrubbed, scènes pinnées (sticky),
+  scramble des labels mono, curseur custom dot+ring, marquee ; le fil rouge dessiné au scroll
+  reste LA signature narrative ; micro-interactions 150-300 ms ; toujours respecter
+  prefers-reduced-motion (fallback statique complet).
 - Interdits (anti-générique) : gradients violets, glassmorphism décoratif, particules, barres
-  de compétences, hero « Hi, I'm X », dark indigo, curseur custom géant.
+  de compétences, hero « Hi, I'm X », dark indigo.
 
 ## Exemple idiomatique
 
@@ -46,6 +49,7 @@ corps) · `--font-mono` (Geist Mono — labels techniques, eyebrows, chiffres ; 
 </section>
 ```
 
-Références visuelles : cartes `Colors`, `Type`, `Header` (bandeau d'identité, 2 états),
-`Hero` (écran d'ouverture). Les sections Parcours/Projets/Contact ne sont pas encore
-designées — les concevoir dans ce langage.
+Références visuelles : cartes `Colors`, `Type`, `Header`, `Hero`, et surtout le template
+**`templates/portfolio-cinetique/`** — la référence retenue (2026-07-15) pour toute la
+one-page : structure des scènes, grammaire d'animation, ton éditorial. Toute nouvelle
+exploration design part de lui.

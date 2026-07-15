@@ -1,4 +1,14 @@
 {
+  "Metadata": {
+    "title": "Thibault Deverge — Développeur Next.js",
+    "description": "Portfolio de Thibault Deverge, développeur front-end / Next.js end-to-end."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Le fil s'arrête ici.",
+    "body": "Cette page n'existe pas — ou plus.",
+    "cta": "Reprendre le fil"
+  },
   "Home": {
     "headlineLead": "Mon parcours n'a rien de linéaire.",
     "headlinePunch": "Mon code, si.",

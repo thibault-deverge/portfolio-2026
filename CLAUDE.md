@@ -7,8 +7,9 @@ le template `templates/portfolio-cinetique/` du projet Claude Design** (id
 `25a8ead9-8c98-4830-8a48-0d4c313f910d`, lisible via DesignSync `get_file`) — la version finale
 hyper-animée validée par Thibault, à suivre quasi à l'identique étape par étape. Références
 secondaires : enricodeiana.design/about, koysor.me. Le reset animation-first est mergé sur
-`main` ; chaque chantier de scène se fait sur une branche `feat/*` dédiée. Chantier sur la branche **`feat/scroll-scenes`** ;
-roadmap : `~/.claude/plans/tout-m-interesse-j-aimerais-maitriser-goofy-curry.md`.
+`main` ; chaque chantier de scène se fait sur une branche `feat/*` dédiée.
+**Roadmap et avancement : `.claude/progression.md`** (modules M1→M11, à cocher/mettre à
+jour à chaque fin de module).
 
 ## Stack
 
@@ -44,22 +45,13 @@ roadmap : `~/.claude/plans/tout-m-interesse-j-aimerais-maitriser-goofy-curry.md`
 - Anciens composants du pivot précédent : récupérables dans `~/.trash/scenes-reset/` et l'historique
   de `main` (Plate, chapitres, registre work…) — les réintroduire SEULEMENT au service d'une scène.
 
-## L'expérience (état + roadmap E1→E5)
+## L'expérience (roadmap)
 
-- **E1 (fait, en calibrage)** : rideau d'encre plein écran (signature Fraunces italique paper +
-  point accent) → levée 0.95s `cubic-bezier(0.76,0,0.24,1)` après 1.05s → cascade du hero (lignes
-  de titre sous masques 1.45s/1.6s, sous-titre 1.85s, grille 1.7s — CTA supprimés, le template
-  n'en a pas) → au scroll, les deux lignes du titre dérivent en s'écartant (`DriftLine`,
-  −90px/+120px sur 600px de scroll). Hero/rideau à REFAIRE sur le modèle portfolio-cinetique.
-- **E2** : scène pinnée « Fondations » (pattern « diplômes » d'enrico : sticky ~300vh, les cartes
-  2018 droit / 2019 Asie / 2022 École 42 traversent l'écran au scroll).
-- **E3** : scène NP-Evolution (titre en convergence scrubbed, collage produit multi-vitesses,
-  étude de cas MDX réactivée).
-- **E4** : scène Elloha (galerie pinnée multi-vitesses, paragraphes dans les trous, stats
-  10 000+/60+/2019 — visuels PUBLICS uniquement, NDA).
-- **E5** : contact (CTA mailto, pas de formulaire avant la phase Resend) + **fil rouge** qui coud
-  les scènes (SVG mesuré sur les `data-fil-node`, spline Catmull-Rom, dessin à la ligne de
-  révélation ~62% du viewport — architecture détaillée dans le plan).
+- La page cible = les scènes du template portfolio-cinetique : arrivée (loader/header/hero/
+  curseur) → à propos → NP-Evolution → Elloha (galerie pinnée) → manifeste → projets
+  (horizontal pinné) → marquee + chiffres → contact/footer → fil rouge (couture finale) →
+  polish → mise en ligne. **Détail, ordre et avancement : `.claude/progression.md`** (M1→M11).
+- Hero/rideau actuels (v1) : à REFAIRE en M1 sur le modèle du template.
 - Contraintes produit qui tiennent : AUCUNE mention « disponible/freelance » visible (contrainte
   employeur — la copy du template est un placeholder à reformuler scène par scène) ; curseur
   custom et ancres de nav du template ACCEPTÉS (revirement assumé 2026-07-15) ; mobile = versions

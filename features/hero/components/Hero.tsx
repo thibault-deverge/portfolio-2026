@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { BlueprintGrid } from './BlueprintGrid'
 import { DriftLine } from './DriftLine'
 import { FilNode } from './FilNode'
+import { Preloader } from './Preloader'
 
 /**
  * Premier écran : titre éditorial, CTA et grille blueprint.
@@ -12,17 +13,7 @@ export async function Hero() {
 
   return (
     <header className="relative flex min-h-dvh w-full flex-col overflow-hidden">
-      {/* Rideau d'entrée : panneau d'encre plein écran, signature posée, puis il
-          remonte et révèle le hero (CSS pur — absent en reduced-motion / après 2s). */}
-      <div
-        aria-hidden
-        className="hero-curtain fixed inset-0 z-70 flex items-center justify-center bg-ink"
-      >
-        <span className="hero-curtain-sig font-display text-2xl font-medium italic tracking-tight text-paper md:text-3xl">
-          Thibault Deverge
-          <span className="ml-1.5 inline-block size-2 rounded-full bg-accent" />
-        </span>
-      </div>
+      <Preloader />
 
       {/* Filigrane : grille blueprint + halo curseur (≥ lg). */}
       <BlueprintGrid />
@@ -38,7 +29,7 @@ export async function Hero() {
             <span className="mb-[-0.12em] block overflow-hidden pb-[0.12em]">
               <span
                 className="hero-line block text-[clamp(2.4rem,6.6vw,5.5rem)] leading-[0.98] text-ink-muted"
-                style={{ animationDelay: '1.45s' }}
+                style={{ animationDelay: '2.5s' }}
               >
                 {t('headlineLead')}
               </span>
@@ -48,7 +39,7 @@ export async function Hero() {
             <span className="mb-[-0.12em] mt-3 block overflow-hidden pb-[0.12em]">
               <span
                 className="hero-line block pl-[6vw] text-[clamp(3rem,9vw,7.5rem)] font-medium leading-[0.92] text-ink lg:pl-[8vw]"
-                style={{ animationDelay: '1.6s' }}
+                style={{ animationDelay: '2.65s' }}
               >
                 {t('headlinePunch')}
               </span>
@@ -58,7 +49,7 @@ export async function Hero() {
 
         <p
           className="hero-rise mt-10 max-w-[42ch] pl-[6vw] text-pretty text-[clamp(1.05rem,1.5vw,1.3rem)] leading-relaxed text-ink-muted lg:pl-[8vw]"
-          style={{ animationDelay: '1.85s' }}
+          style={{ animationDelay: '2.9s' }}
         >
           {t('subtitle')}
         </p>

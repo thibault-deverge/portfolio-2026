@@ -1,23 +1,72 @@
-/* ===== Rideau d'entrée ===== */
-/* Visible UNIQUEMENT si les animations sont permises : en reduced-motion (ou
-   sans support), il n'existe pas et le hero est immédiatement lisible. */
-.hero-curtain {
+/* ===== Preloader (salutations du parcours) ===== */
+/* Joue à l'instant zéro en CSS pur (aucun JS requis). En reduced-motion (ou sans
+   support), il n'existe pas et le hero est immédiatement lisible.
+   Timeline : Bonjour 0.1s → Hola 0.6s → Hello 1.1s → Xin chào 1.6s (reste) → levée 2.15s (0.9s). */
+.hero-loader {
   display: none;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .hero-curtain {
-    display: flex;
-    animation: hero-curtain-lift 0.95s cubic-bezier(0.76, 0, 0.24, 1) 1.05s forwards;
+  .hero-loader {
+    display: block;
+    /* bord inférieur courbé (sous le viewport au repos), révélé pendant la levée */
+    border-radius: 0 0 50% 50% / 0 0 5vh 5vh;
+    animation: hero-loader-lift 0.8s cubic-bezier(0.87, 0, 0.13, 1) 2.15s forwards;
   }
-  .hero-curtain-sig {
+  .hero-loader-word {
     opacity: 0;
-    transform: translateY(18px);
-    animation: hero-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    animation: hero-loader-word 0.55s ease-in-out forwards;
+  }
+  .hero-loader-word-last {
+    animation-name: hero-loader-word-last;
   }
 }
-@keyframes hero-curtain-lift {
+
+/* Matière du voile : la grille blueprint en filigrane (pré-écho de celle du hero),
+   plus forte au centre, fondue vers les bords. */
+.hero-loader-grid {
+  --loader-grid-line: color-mix(in oklab, var(--color-paper) 4%, transparent);
+  background-image:
+    linear-gradient(var(--loader-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--loader-grid-line) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 25%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 25%, transparent 100%);
+}
+
+/* Grain papier : bruit SVG en data-URI, aucun asset externe. */
+.hero-loader-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}
+@keyframes hero-loader-word {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  20%,
+  80% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+@keyframes hero-loader-word-last {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  20%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hero-loader-lift {
   to {
-    transform: translateY(-100%);
+    transform: translateY(-106%);
     visibility: hidden;
   }
 }
@@ -92,7 +141,7 @@
   }
   .hero-grid-in {
     opacity: 0;
-    animation: hero-grid-in 1.4s ease 1.7s forwards;
+    animation: hero-grid-in 1.4s ease 2.7s forwards;
   }
 }
 

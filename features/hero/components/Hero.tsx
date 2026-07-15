@@ -16,7 +16,7 @@ export async function Hero() {
           remonte et révèle le hero (CSS pur — absent en reduced-motion / après 2s). */}
       <div
         aria-hidden
-        className="hero-curtain fixed inset-0 z-[70] flex items-center justify-center bg-ink"
+        className="hero-curtain fixed inset-0 z-70 flex items-center justify-center bg-ink"
       >
         <span className="hero-curtain-sig font-display text-2xl font-medium italic tracking-tight text-paper md:text-3xl">
           Thibault Deverge

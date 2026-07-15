@@ -6,7 +6,8 @@ chorégraphiées par le scroll, adaptée à l'identité papier/terracotta/fil ro
 le template `templates/portfolio-cinetique/` du projet Claude Design** (id
 `25a8ead9-8c98-4830-8a48-0d4c313f910d`, lisible via DesignSync `get_file`) — la version finale
 hyper-animée validée par Thibault, à suivre quasi à l'identique étape par étape. Références
-secondaires : enricodeiana.design/about, koysor.me. Chantier sur la branche **`feat/scroll-scenes`** ;
+secondaires : enricodeiana.design/about, koysor.me. Le reset animation-first est mergé sur
+`main` ; chaque chantier de scène se fait sur une branche `feat/*` dédiée. Chantier sur la branche **`feat/scroll-scenes`** ;
 roadmap : `~/.claude/plans/tout-m-interesse-j-aimerais-maitriser-goofy-curry.md`.
 
 ## Stack

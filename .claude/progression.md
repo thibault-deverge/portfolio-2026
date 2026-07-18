@@ -60,7 +60,7 @@ _Le but : la première impression du template — preloader, levée du voile, he
 **Cours F — Copy, calibrage, rituel**
 
 - [x] F1 ⚙️ Atelier copy hero FR→EN : « Concevoir, coder, livrer. » / « Design, build, ship. », eyebrow « Concepteur · Développeur — Freelance », sous-titre preuve Elloha nommée (10 000+ pros) + « menées seul jusqu'à la production » — 3 recherches (best practices, portfolios FR, faits Elloha sourcés) + fiches `.claude/refs/{np-evolution,elloha}.md` (gitignorées NDA) + skills copywriting/stop-slop. Voix : vouvoiement, pro chaleureux direct.
-- [ ] F2 ⚙️ Calibrage global + mobile + reduced-motion + retouches finales preloader
+- [x] F2 ⚙️ Calibrage global : mobile (eyebrow resserré 1 ligne, pas d'overflow au drift), reduced-motion (contenu immédiat, curseur custom absent — vérifié DOM), EN — preloader gardé tel quel. 💎 Nœud voyageur : reporté (2e temps, ou M9)
 - [ ] F3 🎯 Rituel de fin de module + merge sur main + M1 coché ✅
 
 ## ⬜ M2 — Scène « À propos » (bio + portrait)

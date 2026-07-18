@@ -26,7 +26,7 @@ export async function Hero() {
       <div className="relative z-10 mx-auto flex w-full max-w-310 flex-1 flex-col justify-center px-6 py-14 sm:px-10 lg:px-14">
         <ScrambleText
           text={t('eyebrow')}
-          className="hero-rise mb-[clamp(20px,4vh,44px)] font-mono text-xs uppercase tracking-[0.2em] text-ink-muted"
+          className="hero-rise mb-[clamp(20px,4vh,44px)] font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted sm:text-xs sm:tracking-[0.2em]"
           style={{ animationDelay: '2.45s' }}
         />
 

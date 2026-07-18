@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import { Parallax } from '@/components/motion/Parallax'
 import { RevealGroup } from '@/components/motion/RevealGroup'
 
 /**
@@ -44,7 +45,10 @@ export async function About() {
         {/* Colonne portrait : cadre 3/4, placeholder soigné (E2), vraie photo plus tard */}
         <div aria-hidden className="relative" data-cursor="link">
           <div className="relative aspect-3/4 overflow-hidden rounded-md border border-hairline bg-surface">
-            <div className="blueprint-grid absolute inset-0" />
+            {/* couche parallax : le contenu déborde de ±12% pour couvrir la course */}
+            <Parallax amount={0.16} className="absolute inset-0">
+              <div className="blueprint-grid absolute inset-x-0 inset-y-[-12%]" />
+            </Parallax>
           </div>
         </div>
       </div>

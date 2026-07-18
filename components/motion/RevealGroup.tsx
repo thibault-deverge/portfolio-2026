@@ -2,7 +2,9 @@
 
 import { useEffect, useRef } from 'react'
 
-const IO_BOTTOM_MARGIN = '-18%' // = le « top 82% » du template
+// Le template déclenche à « top 82% » (-18%) ; trop tôt chez nous — l'animation
+// était finie avant la fin du geste de scroll. -30% : on voit le début du reveal.
+const IO_BOTTOM_MARGIN = '-30%'
 const ALREADY_VISIBLE_RATIO = 0.92
 
 /**

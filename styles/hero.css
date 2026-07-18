@@ -73,8 +73,9 @@
 
 /* ===== Nœud du fil rouge ===== */
 /* Le point terracotta d'origine ; sera l'ancre de mesure du futur fil (data-fil-node). */
+/* Pas de display ici : posé par le composant en utility (sinon cette règle
+   non-layered écraserait `hidden` — les utilities vivent en @layer). */
 .fil-node {
-  display: inline-block;
   width: 12px;
   height: 12px;
   border-radius: 9999px;

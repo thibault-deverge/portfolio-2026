@@ -63,13 +63,15 @@ _Le but : la première impression du template — preloader, levée du voile, he
 - [x] F2 ⚙️ Calibrage global : mobile (eyebrow resserré 1 ligne, pas d'overflow au drift), reduced-motion (contenu immédiat, curseur custom absent — vérifié DOM), EN — preloader gardé tel quel. 💎 Nœud voyageur : reporté (2e temps, ou M9)
 - [x] F3 🎯 Review branche (i18n/tokens/SSR-safe/a11y ✅), build prod SSG ✅, fixes finaux (descendante du « g » 0.18em, IntroLock : scroll verrouillé pendant l'arrivée), 💎 nœud voyageur LIVRÉ, validation Thibault, merge fast-forward → main, branche supprimée
 
-## ⬜ M2 — Scène « À propos » (bio + portrait)
+## ⬜ M2 — Scène « À propos » (bio + portrait) — construction FAITE, merge en attente de validation
 
-- [ ] 2.1 Structure : grid bio 1.35fr/1fr, numéro scramble `01`, titre 2 lignes, portrait 3/4
-- [ ] 2.2 Système de reveal au scroll réutilisable (masques + stagger, déjà-visible vs on-scroll)
-- [ ] 2.3 Parallax image (le portrait qui glisse dans son cadre)
-- [ ] 2.4 Atelier copy bio (droit → Asie → 42 → dev, SA vraie histoire) + portrait (asset/Higgsfield)
-- [ ] 2.5 Rituel de fin de module
+- [x] 2.1 Structure : grid 1.35fr/1fr, numéro `01` scramble in-view, titre « Enchanté, / Thibault Deverge. », première entrée nav (`Nav.about`, Header traduit désormais ses labels)
+- [x] 2.2 Système de reveal réutilisable : `components/motion/RevealGroup` (IO + classes post-hydratation, stagger CSS 90ms, cas déjà-visible +150ms) — **décision : trigger à -30% au lieu du -18% template** (sinon l'animation était finie avant la fin du geste)
+- [x] 2.3 Parallax : `components/motion/Parallax` (±amount×60% scrubbed, contenu débordant ±12%) — effet discret tant que la page s'arrête à la scène (course amputée), s'exprimera dès M3
+- [x] 2.4 Copy bio définitive (recherches best practices + reconversion) : pivot dit UNE fois converti en méthode, CDI Elloha + freelance en évidence, PAS de moto/déclic/âge/Xin chào (trop perso), « Enchanté, » gardé en EN (signature) ; prose « en escalier » généralisée (fragments espacés, mots-clés encre, clôture italique) + hero en « deux voix » (thèse Fraunces italique / preuve Geist) ; portrait = **placeholder soigné** (grille + crop marks + nœud épinglé au coin), la vraie photo se glissera dans la couche Parallax
+- [ ] 2.5 Rituel : passes mobile/reduced/EN ✅, review ✅, build prod SSG ✅ — reste validation Thibault + merge
+
+_Notes M2 : ScrambleText déménagé dans `components/motion/` (+ trigger 'in-view'), FilNode dans `components/fil/` ; ancre `data-fil-node` posée au coin du cadre portrait (Thibault envisage de la déplacer sur le « 01 — À propos » — à retrancher en M9) ; fix IntroLock : reload scrollé → retour en haut pendant l'intro ; leçon ICU : apostrophe droite = échappement → apostrophes typographiques partout dans les messages._
 
 ## ⬜ M3 — Scène « NP-Evolution » (mission freelance)
 

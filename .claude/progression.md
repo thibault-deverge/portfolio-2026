@@ -24,7 +24,7 @@
 
 Scaffold Next 16 + design system (tokens/fonts) + i18n fr/en + Lenis + Header v1 + Hero v1 (rideau/cascade/dérive — sera refait en M1) + 404 « Le fil s'arrête ici » + grand nettoyage (YAGNI : MDX, zod, gitkeep, orphelins) + visite guidée de la codebase.
 
-## ⬜ M1 — L'arrivée : loader, header/nav, hero, curseur
+## ✅ M1 — L'arrivée : loader, header/nav, hero, curseur (mergé sur main le 2026-07-18)
 
 _Le but : la première impression du template — preloader, levée du voile, hero manifeste qui cascade, curseur custom. Branche `feat/arrivee`. Plan détaillé : `~/.claude/plans/tout-m-interesse-...-goofy-curry.md`._
 
@@ -61,7 +61,7 @@ _Le but : la première impression du template — preloader, levée du voile, he
 
 - [x] F1 ⚙️ Atelier copy hero FR→EN : « Concevoir, coder, livrer. » / « Design, build, ship. », eyebrow « Concepteur · Développeur — Freelance », sous-titre preuve Elloha nommée (10 000+ pros) + « menées seul jusqu'à la production » — 3 recherches (best practices, portfolios FR, faits Elloha sourcés) + fiches `.claude/refs/{np-evolution,elloha}.md` (gitignorées NDA) + skills copywriting/stop-slop. Voix : vouvoiement, pro chaleureux direct.
 - [x] F2 ⚙️ Calibrage global : mobile (eyebrow resserré 1 ligne, pas d'overflow au drift), reduced-motion (contenu immédiat, curseur custom absent — vérifié DOM), EN — preloader gardé tel quel. 💎 Nœud voyageur : reporté (2e temps, ou M9)
-- [ ] F3 🎯 Rituel de fin de module + merge sur main + M1 coché ✅
+- [x] F3 🎯 Review branche (i18n/tokens/SSR-safe/a11y ✅), build prod SSG ✅, fixes finaux (descendante du « g » 0.18em, IntroLock : scroll verrouillé pendant l'arrivée), 💎 nœud voyageur LIVRÉ, validation Thibault, merge fast-forward → main, branche supprimée
 
 ## ⬜ M2 — Scène « À propos » (bio + portrait)
 

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { FilNode } from '@/components/fil/FilNode'
+import { ImageLightbox } from '@/components/ui/ImageLightbox'
 import { BrowserFrame } from './BrowserFrame'
 
 /**
@@ -34,28 +35,56 @@ export async function NpEvolution() {
           </p>
         </div>
 
-        {/* Intro en escalier : le problème (cadre légal, paperasse) puis la réponse */}
-        <div className="mb-[clamp(48px,8vh,96px)] max-w-[54ch] text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.7] text-ink-muted">
-          <p className="text-pretty">
-            {t.rich('intro1', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
-          </p>
-          <p className="mt-5 text-pretty">
-            {t.rich('intro2', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
-          </p>
+        {/* Intro : problème / réponse (kickers tiret accent) + carte client à droite */}
+        <div className="mb-[clamp(48px,8vh,96px)] grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
+          <div className="text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.7] text-ink-muted lg:col-span-7">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+              — {t('intro1Label')}
+            </p>
+            <p className="text-pretty">
+              {t.rich('intro1', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+            </p>
+            <p className="mb-2 mt-7 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+              — {t('intro2Label')}
+            </p>
+            <p className="text-pretty">
+              {t.rich('intro2', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+            </p>
+          </div>
+          {/* Le client : la preuve humaine (lien LinkedIn réel) */}
+          <div className="self-end lg:col-span-4 lg:col-start-9">
+            <div className="rounded-lg border border-hairline bg-surface p-6">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                {t('clientLabel')}
+              </p>
+              <p className="font-display text-xl italic text-ink">{t('clientName')}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{t('clientRole')}</p>
+              <a
+                href="https://www.linkedin.com/in/nicolas-picaut-9455a9179/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block font-mono text-xs uppercase tracking-[0.12em] text-ink-muted underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-accent"
+              >
+                {t('clientLink')} ↗
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* La planche : 4 moments du général au concret, en quinconce (12 col) */}
         <div className="grid grid-cols-1 gap-y-[clamp(40px,7vh,80px)] lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[clamp(56px,9vh,110px)]">
           {/* 01 — la supervision (vue générale, fenêtre navigateur) */}
-          <div className="relative lg:col-span-7 lg:col-start-1 lg:row-start-1" data-cursor="link">
-            <BrowserFrame>
-              <div className="relative aspect-[1988/1000]">
-                <Image src="/images/np-dashboard.jpg" alt="" fill sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
-              </div>
-              <span className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">
-                {t('badge')}
-              </span>
-            </BrowserFrame>
+          <div className="relative lg:col-span-7 lg:col-start-1 lg:row-start-1">
+            <ImageLightbox src="/images/np-dashboard.jpg" label={t('zoom')}>
+              <BrowserFrame>
+                <div className="relative aspect-[1988/1000]">
+                  <Image src="/images/np-dashboard.jpg" alt="" fill sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
+                </div>
+                <span className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">
+                  {t('badge')}
+                </span>
+              </BrowserFrame>
+            </ImageLightbox>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-9 lg:row-start-1">
@@ -69,9 +98,11 @@ export async function NpEvolution() {
 
           {/* 02 — les livrets (le cœur du produit) */}
           <div className="relative lg:col-span-6 lg:col-start-7 lg:row-start-2">
-            <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-              <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
-            </div>
+            <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')}>
+              <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+                <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
+              </div>
+            </ImageLightbox>
             <FilNode className="absolute -right-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-1 lg:row-start-2">
@@ -85,9 +116,11 @@ export async function NpEvolution() {
 
           {/* 03 — la signature & l'émargement (la conformité) */}
           <div className="relative lg:col-span-6 lg:col-start-1 lg:row-start-3">
-            <div className="relative aspect-[1040/660] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-              <Image src="/images/np-signature.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
-            </div>
+            <ImageLightbox src="/images/np-signature.jpg" label={t('zoom')}>
+              <div className="relative aspect-[1040/660] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+                <Image src="/images/np-signature.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
+              </div>
+            </ImageLightbox>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-8 lg:row-start-3">
@@ -101,9 +134,11 @@ export async function NpEvolution() {
 
           {/* 04 — tests + rapport IA */}
           <div className="relative lg:col-span-4 lg:col-start-8 lg:row-start-4">
-            <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-              <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 92vw" className="object-cover" />
-            </div>
+            <ImageLightbox src="/images/np-radar.jpg" label={t('zoom')}>
+              <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+                <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 92vw" className="object-cover" />
+              </div>
+            </ImageLightbox>
             <FilNode className="absolute -right-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-2 lg:row-start-4">

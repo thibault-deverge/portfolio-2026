@@ -34,10 +34,10 @@
     "title": "NP-<accent>Evolution</accent>",
     "tag": "Plateforme SaaS · Bilans de compétences · 2025",
     "badge": "En production",
-    "intro1": "Un bilan de compétences est un parcours encadré par la loi : chaque séance doit être <k>tracée, signée et archivée</k> pour les financements (CPF, Qualiopi) et les contrôles. Dans la pratique, ça donne des PDF imprimés puis scannés, des feuilles d’émargement papier et des relances par mail.",
-    "intro2": "NP-Evolution remplace toute cette chaîne par une <k>plateforme unique</k>, que j’ai construite seul et qui sert chaque jour : le cabinet supervise ses consultants, chaque bénéficiaire remplit ses livrets en ligne, le temps se mesure automatiquement — et la signature verrouille le tout.",
+    "intro1": "Un bilan de compétences est un parcours encadré par la loi : chaque séance doit être tracée, signée et archivée pour les financements (CPF, Qualiopi) et les contrôles. Dans la pratique, ça donne des <k>PDF imprimés puis scannés</k>, des <k>feuilles d’émargement papier</k> et des relances par mail — chronophage, fragile, source d’erreurs.",
+    "intro2": "NP-Evolution remplace toute cette chaîne par une <k>plateforme unique</k>, que j’ai conçue, développée et mise en production <k>seul, en freelance</k> — utilisée chaque jour depuis : le cabinet supervise ses consultants, chaque bénéficiaire remplit ses livrets en ligne, le temps se mesure automatiquement, et la signature verrouille le tout.",
     "feat1Label": "La supervision",
-    "feat1Body": "Un tableau de bord par rôle : le cabinet pilote ses consultants, chaque consultant suit ses bénéficiaires — progression, signatures et temps passé, d’un seul regard.",
+    "feat1Body": "Trois espaces distincts — admin, consultant, bénéficiaire — chacun avec ses accès et son tableau de bord : le cabinet pilote ses consultants, chaque consultant suit la progression, les signatures et le temps passé de ses bénéficiaires.",
     "feat2Label": "Les livrets interactifs",
     "feat2Body": "Les PDF officiels deviennent des formulaires en ligne : chaque champ sauvegardé automatiquement, chaque minute comptée, la progression recalculée à la volée.",
     "feat3Label": "Signature & émargement",
@@ -49,6 +49,13 @@
     "stat2Value": "3",
     "stat2Label": "espaces dédiés",
     "stat3Value": "2025",
-    "stat3Label": "en production depuis"
+    "stat3Label": "en production depuis",
+    "intro1Label": "Le problème métier",
+    "intro2Label": "La réponse",
+    "clientLabel": "Le client",
+    "clientName": "Nicolas Picaut",
+    "clientRole": "Fondateur de NP-Evolution — cabinet de bilans de compétences",
+    "clientLink": "LinkedIn",
+    "zoom": "Agrandir la capture"
   }
 }

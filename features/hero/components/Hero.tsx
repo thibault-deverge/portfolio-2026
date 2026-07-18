@@ -68,12 +68,18 @@ export async function Hero() {
           </DriftLine>
         </h1>
 
-        <p
-          className="hero-rise mt-[clamp(28px,5vh,52px)] max-w-[56ch] pl-[8vw] text-pretty text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-ink-muted"
+        {/* Sous-titre en deux temps : la thèse (encre), puis la preuve (muted) */}
+        <div
+          className="hero-rise mt-[clamp(28px,5vh,52px)] max-w-[56ch] pl-[8vw]"
           style={{ animationDelay: '2.95s' }}
         >
-          {t('subtitle')}
-        </p>
+          <p className="text-pretty text-[clamp(1.05rem,1.5vw,1.35rem)] leading-snug text-ink">
+            {t('subtitle1')}
+          </p>
+          <p className="mt-3 max-w-[48ch] text-pretty text-[clamp(0.95rem,1.25vw,1.1rem)] leading-relaxed text-ink-muted">
+            {t('subtitle2')}
+          </p>
+        </div>
       </div>
     </header>
   )

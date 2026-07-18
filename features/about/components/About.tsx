@@ -35,14 +35,26 @@ export async function About() {
               </span>
             </span>
           </h2>
-          <p className="max-w-[52ch] overflow-hidden">
-            <span
-              data-reveal
-              className="block text-pretty text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.75] text-ink-muted"
-            >
-              {t('body')}
-            </span>
-          </p>
+          {/* Body en escalier : parcours / méthode (cousue au fil) / relais aux projets */}
+          <div className="max-w-[52ch] text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.7] text-ink-muted">
+            <p className="overflow-hidden">
+              <span data-reveal className="block text-pretty">
+                {t.rich('body1', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+              </span>
+            </p>
+            <p className="mt-5 overflow-hidden">
+              <span data-reveal className="relative block pl-7 text-pretty">
+                {/* le fil s'invite : petit trait terracotta qui coud la phrase-méthode */}
+                <span aria-hidden className="absolute left-0 top-[0.72em] h-px w-4 bg-accent" />
+                {t.rich('body2', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+              </span>
+            </p>
+            <p className="mt-5 overflow-hidden">
+              <span data-reveal className="block pl-7 font-display italic">
+                {t('body3')}
+              </span>
+            </p>
+          </div>
         </RevealGroup>
 
         {/* Colonne portrait : cadre 3/4, placeholder soigné (E2), vraie photo plus tard */}

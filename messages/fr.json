@@ -5,8 +5,8 @@
   },
   "NotFound": {
     "code": "404",
-    "title": "Le fil s'arrête ici.",
-    "body": "Cette page n'existe pas — ou plus.",
+    "title": "Le fil s’arrête ici.",
+    "body": "Cette page n’existe pas — ou plus.",
     "cta": "Reprendre le fil"
   },
   "Nav": {
@@ -16,13 +16,16 @@
     "num": "01 — À propos",
     "title1": "Enchanté,",
     "title2": "Thibault Deverge.",
-    "body": "Développeur web. Avant le code : une licence de droit, trois ans sur les routes d'Asie, puis l'École 42, où j'ai appris à décomposer les problèmes et à trouver mes réponses seul. Cette exigence, je la mets aujourd'hui dans chaque projet — du composant soigné à la plateforme livrée en production. La suite, ce sont mes projets qui la racontent le mieux."
+    "body1": "Développeur web. Avant le code : une licence de <k>droit</k>, trois ans sur les <k>routes d’Asie</k>, puis l’<k>École 42</k>, où j’ai appris à décomposer les problèmes et à trouver mes réponses seul.",
+    "body2": "Cette exigence, je la mets aujourd’hui dans chaque projet — du composant soigné à la <k>plateforme livrée en production</k>.",
+    "body3": "La suite, ce sont mes projets qui la racontent le mieux."
   },
   "Home": {
     "eyebrow": "Concepteur · Développeur — Freelance",
     "headline1": "Concevoir,",
     "headline2": "coder,",
     "headline3": "livrer.",
-    "subtitle": "Des applications complètes, de l'interface à la base de données. Au quotidien sur le SaaS d'Elloha, utilisé par plus de 10 000 professionnels du tourisme — en freelance, des plateformes menées seul jusqu'à la production."
+    "subtitle1": "Des applications complètes, de l’interface à la base de données.",
+    "subtitle2": "Au quotidien sur le SaaS d’Elloha, utilisé par plus de 10 000 professionnels du tourisme — en freelance, des plateformes menées seul jusqu’à la production."
   }
 }

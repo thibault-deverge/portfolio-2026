@@ -1,0 +1,23 @@
+/* ===== Reveals au scroll ===== */
+/* Posées par RevealGroup post-hydratation — sans JS ou en reduced-motion, tout reste visible.
+   Template : 115% -> 0, 1.1s ~power4.out, stagger 90ms. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-pending {
+    opacity: 0;
+    transform: translateY(115%);
+  }
+  .reveal-in {
+    animation: reveal-up 1.1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation-delay: calc(var(--reveal-i, 0) * 90ms);
+  }
+  /* groupe déjà visible au chargement : petit délai pour laisser la page se poser */
+  .reveal-now .reveal-in {
+    animation-delay: calc(150ms + var(--reveal-i, 0) * 90ms);
+  }
+}
+@keyframes reveal-up {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

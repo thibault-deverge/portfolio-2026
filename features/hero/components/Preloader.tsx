@@ -32,7 +32,11 @@ export function Preloader() {
               style={{ animationDelay: `${0.1 + i * 0.5}s` }}
             >
               {word}
-              <span className="ml-1.5 inline-block size-2 rounded-full bg-accent" />
+              {/* le point du dernier mot est l'origine du « nœud voyageur » */}
+              <span
+                data-loader-node={i === last ? '' : undefined}
+                className="ml-1.5 inline-block size-2 rounded-full bg-accent"
+              />
             </span>
           ))}
         </span>

@@ -4,6 +4,7 @@ import { DriftLine } from './DriftLine'
 import { FilNode } from './FilNode'
 import { Preloader } from './Preloader'
 import { ScrambleText } from './ScrambleText'
+import { TravelingNode } from './TravelingNode'
 
 /**
  * Premier écran : titre éditorial, CTA et grille blueprint.
@@ -15,6 +16,7 @@ export async function Hero() {
   return (
     <header className="relative flex min-h-dvh w-full flex-col overflow-hidden">
       <Preloader />
+      <TravelingNode />
 
       {/* Filigrane : grille blueprint + halo curseur (≥ lg). */}
       <BlueprintGrid />

@@ -10,7 +10,8 @@
     "cta": "Pick up the thread"
   },
   "Nav": {
-    "about": "About"
+    "about": "About",
+    "npEvolution": "NP-Evolution"
   },
   "About": {
     "num": "01 — About",
@@ -27,5 +28,14 @@
     "headline3": "ship.",
     "subtitle1": "Complete web applications, from the interface to the database.",
     "subtitle2": "Day to day on Elloha’s SaaS, serving 10,000+ tourism professionals — and freelance platforms shipped to production."
+  },
+  "NpEvolution": {
+    "num": "02 — Freelance mission",
+    "title": "NP-<accent>Evolution</accent>",
+    "tag": "SaaS platform · Skills assessments · 2025",
+    "badge": "In production",
+    "body": "A platform that digitalises career skills assessments, built solo end to end — from the database to electronic signatures. Provisional copy: the final version comes from the E1 workshop.",
+    "statValue": "6",
+    "statLabel": "Interactive workbooks, from discovery to signature"
   }
 }

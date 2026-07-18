@@ -14,7 +14,10 @@ const MIN_Y_TO_HIDE_PX = 80
 
 // La nav « pousse » avec le site : une entrée par scène livrée (décision D5).
 // Labels dans le namespace Nav (messages/{fr,en}.json).
-const SECTIONS: { id: string; labelKey: 'about' }[] = [{ id: 'apropos', labelKey: 'about' }]
+const SECTIONS: { id: string; labelKey: 'about' | 'npEvolution' }[] = [
+  { id: 'apropos', labelKey: 'about' },
+  { id: 'np-evolution', labelKey: 'npEvolution' },
+]
 
 /** Bandeau d'identité (nom + FR/EN). Pas de nav : la page se découvre en scrollant. */
 export function Header() {

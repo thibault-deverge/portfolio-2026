@@ -10,7 +10,8 @@
     "cta": "Reprendre le fil"
   },
   "Nav": {
-    "about": "À propos"
+    "about": "À propos",
+    "npEvolution": "NP-Evolution"
   },
   "About": {
     "num": "01 — À propos",
@@ -27,5 +28,14 @@
     "headline3": "livrer.",
     "subtitle1": "Des applications complètes, de l’interface à la base de données.",
     "subtitle2": "Au quotidien sur le SaaS d’Elloha et ses 10 000+ professionnels du tourisme — en freelance, des plateformes livrées en production."
+  },
+  "NpEvolution": {
+    "num": "02 — Mission freelance",
+    "title": "NP-<accent>Evolution</accent>",
+    "tag": "Plateforme SaaS · Bilans de compétences · 2025",
+    "badge": "En production",
+    "body": "Plateforme de digitalisation des bilans de compétences, construite seul de bout en bout — de la base de données aux signatures électroniques. Copy provisoire : la version définitive s’écrit à l’atelier E1.",
+    "statValue": "6",
+    "statLabel": "Livrets interactifs, de la découverte à la signature"
   }
 }

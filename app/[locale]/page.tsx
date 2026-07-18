@@ -1,8 +1,9 @@
 import { setRequestLocale } from 'next-intl/server'
 import { About } from '@/features/about'
 import { Hero } from '@/features/hero'
+import { NpEvolution } from '@/features/np-evolution'
 
-// La page se remplit scène par scène : hero (M1), à propos (M2), puis les suivantes.
+// La page se remplit scène par scène : hero (M1), à propos (M2), NP-Evolution (M3)…
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
@@ -11,6 +12,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <main className="relative bg-paper text-ink">
       <Hero />
       <About />
+      <NpEvolution />
     </main>
   )
 }

@@ -34,18 +34,28 @@ export async function NpEvolution() {
           </p>
         </div>
 
-        {/* Intro : la thèse en deux phrases */}
-        <p className="mb-[clamp(48px,8vh,96px)] max-w-[46ch] text-pretty text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.7] text-ink-muted">
-          {t('intro')}
-        </p>
+        {/* Intro en escalier : le problème (cadre légal, paperasse) puis la réponse */}
+        <div className="mb-[clamp(48px,8vh,96px)] max-w-[54ch] text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.7] text-ink-muted">
+          <p className="text-pretty">
+            {t.rich('intro1', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+          </p>
+          <p className="mt-5 text-pretty">
+            {t.rich('intro2', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+          </p>
+        </div>
 
-        {/* La planche : 3 spécimens épinglés + 3 textes, en quinconce (12 col) */}
-        <div className="grid grid-cols-1 gap-y-[clamp(40px,7vh,80px)] lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[clamp(56px,9vh,120px)]">
-          {/* 01 — livrets signés */}
-          <div className="relative lg:col-span-6 lg:col-start-1 lg:row-start-1">
-            <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-              <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
-            </div>
+        {/* La planche : 4 moments du général au concret, en quinconce (12 col) */}
+        <div className="grid grid-cols-1 gap-y-[clamp(40px,7vh,80px)] lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[clamp(56px,9vh,110px)]">
+          {/* 01 — la supervision (vue générale, fenêtre navigateur) */}
+          <div className="relative lg:col-span-7 lg:col-start-1 lg:row-start-1" data-cursor="link">
+            <BrowserFrame>
+              <div className="relative aspect-[1988/1000]">
+                <Image src="/images/np-dashboard.jpg" alt="" fill sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
+              </div>
+              <span className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">
+                {t('badge')}
+              </span>
+            </BrowserFrame>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-9 lg:row-start-1">
@@ -57,16 +67,11 @@ export async function NpEvolution() {
             </p>
           </div>
 
-          {/* 02 — pad de signature (fenêtre navigateur) */}
-          <div className="relative lg:col-span-7 lg:col-start-6 lg:row-start-2" data-cursor="link">
-            <BrowserFrame>
-              <div className="relative aspect-[1040/660]">
-                <Image src="/images/np-signature.jpg" alt="" fill sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
-              </div>
-              <span className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">
-                {t('badge')}
-              </span>
-            </BrowserFrame>
+          {/* 02 — les livrets (le cœur du produit) */}
+          <div className="relative lg:col-span-6 lg:col-start-7 lg:row-start-2">
+            <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+              <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
+            </div>
             <FilNode className="absolute -right-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-1 lg:row-start-2">
@@ -78,10 +83,10 @@ export async function NpEvolution() {
             </p>
           </div>
 
-          {/* 03 — radar de test */}
-          <div className="relative lg:col-span-4 lg:col-start-2 lg:row-start-3">
-            <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-              <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 92vw" className="object-cover" />
+          {/* 03 — la signature & l'émargement (la conformité) */}
+          <div className="relative lg:col-span-6 lg:col-start-1 lg:row-start-3">
+            <div className="relative aspect-[1040/660] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+              <Image src="/images/np-signature.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
             </div>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </div>
@@ -91,6 +96,22 @@ export async function NpEvolution() {
             </p>
             <p className="max-w-[36ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.65] text-ink-muted">
               {t('feat3Body')}
+            </p>
+          </div>
+
+          {/* 04 — tests + rapport IA */}
+          <div className="relative lg:col-span-4 lg:col-start-8 lg:row-start-4">
+            <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+              <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 92vw" className="object-cover" />
+            </div>
+            <FilNode className="absolute -right-1.5 -top-1.5" />
+          </div>
+          <div className="self-center lg:col-span-4 lg:col-start-2 lg:row-start-4">
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+              {t('feat4Label')}
+            </p>
+            <p className="max-w-[36ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.65] text-ink-muted">
+              {t('feat4Body')}
             </p>
           </div>
         </div>

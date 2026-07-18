@@ -4,9 +4,8 @@ import { cn } from '@/lib/utils'
 const GREETINGS = ['Bonjour', 'Hola', 'Hello', 'Xin chào']
 
 /**
- * Voile d'entrée : salutations signées du nœud terracotta sur grille filigrane
- * + grain papier, crop marks, puis levée à bord courbé. CSS pur (styles/hero.css)
- * — absent en reduced-motion, joue avant toute hydratation.
+ * Voile d'entrée : salutations + nœud terracotta, grille filigrane, grain, crop marks.
+ * CSS pur (styles/hero.css), joue avant toute hydratation — absent en reduced-motion.
  */
 export function Preloader() {
   const last = GREETINGS.length - 1

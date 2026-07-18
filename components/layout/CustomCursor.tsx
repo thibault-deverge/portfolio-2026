@@ -6,9 +6,8 @@ const RING_LERP = 0.16 // vitesse de rattrapage de l'anneau (plus bas = plus de 
 const INTERACTIVE = 'a, button, [data-cursor="link"]'
 
 /**
- * Curseur custom dot + ring (îlot global). Actif uniquement pointeur fin +
- * motion autorisé, décidé post-hydratation : le HTML serveur garde le curseur
- * natif. Positions écrites par ref (rAF), zéro re-render.
+ * Curseur custom dot + ring, activé post-hydratation (pointeur fin + motion OK) :
+ * le HTML serveur garde le curseur natif. Positions par ref (rAF), zéro re-render.
  */
 export function CustomCursor() {
   const rootRef = useRef<HTMLDivElement>(null)
@@ -23,10 +22,12 @@ export function CustomCursor() {
     const circle = circleRef.current
     if (!root || !dot || !ring || !circle) return
 
+    // 1. Garde-fous : tactile ou reduced-motion → curseur natif
     const finePointer = window.matchMedia('(pointer: fine)').matches
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (!finePointer || reduced) return
 
+    // 2. Activer : cursor:none piloté par la classe sur <html>
     document.documentElement.classList.add('has-custom-cursor')
 
     let x = innerWidth / 2
@@ -35,15 +36,15 @@ export function CustomCursor() {
     let ringY = y
     let frame = 0
 
+    // 3. Le point colle au pointeur, sans latence
     const onPointerMove = (e: PointerEvent) => {
       x = e.clientX
       y = e.clientY
-      // le point colle au pointeur, sans latence
       dot.style.transform = `translate(${x}px, ${y}px)`
       root.classList.add('cursor-seen')
     }
 
-    // l'anneau rattrape le point en douceur (lerp), une écriture par frame
+    // 4. L'anneau rattrape en douceur (lerp), une écriture par frame
     const tick = () => {
       ringX += (x - ringX) * RING_LERP
       ringY += (y - ringY) * RING_LERP
@@ -52,7 +53,7 @@ export function CustomCursor() {
     }
     frame = requestAnimationFrame(tick)
 
-    // l'anneau grossit au survol des éléments interactifs (délégation globale)
+    // 5. L'anneau grossit sur l'interactif (délégation globale pointerover)
     const onPointerOver = (e: PointerEvent) => {
       const target = e.target as Element | null
       circle.classList.toggle('cursor-grow', !!target?.closest(INTERACTIVE))

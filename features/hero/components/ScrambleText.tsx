@@ -8,8 +8,7 @@ const CHARS_PER_FRAME = 1.6
 
 /**
  * Texte « scramble » : rendu final côté serveur, puis les lettres défilent et se
- * fixent une à une. Déclenché par l'animationstart CSS de l'élément (hero-rise) —
- * en reduced-motion l'animation n'existe pas, donc le scramble non plus.
+ * fixent de gauche à droite. Déclenché par l'animationstart CSS — donc jamais en reduced-motion.
  */
 export function ScrambleText({
   text,
@@ -28,11 +27,11 @@ export function ScrambleText({
 
     let interval: ReturnType<typeof setInterval> | undefined
 
-    // Synchronisé sur le début de l'animation CSS d'apparition (écriture par ref,
-    // zéro re-render). Si l'hydratation arrive trop tard, le texte reste statique.
+    // 1. Au signal : le début de l'animation CSS d'apparition (hero-rise)
     const onStart = () => {
       let frame = 0
       clearInterval(interval)
+      // 2. Défiler, et figer progressivement (textContent par ref, zéro re-render)
       interval = setInterval(() => {
         frame++
         const settled = frame / CHARS_PER_FRAME
@@ -51,6 +50,7 @@ export function ScrambleText({
     }
 
     el.addEventListener('animationstart', onStart)
+    // 3. Nettoyage : texte final garanti quoi qu'il arrive
     return () => {
       el.removeEventListener('animationstart', onStart)
       clearInterval(interval)

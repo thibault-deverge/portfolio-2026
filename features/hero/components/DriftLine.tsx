@@ -5,9 +5,8 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 const DRIFT_RANGE_PX = 600 // distance de scroll sur laquelle la dérive se déploie
 
 /**
- * Ligne du hero qui dérive horizontalement au fil du scroll (scrubbed, réversible).
- * `amount` en px : négatif = vers la gauche, positif = vers la droite.
- * Les enfants restent rendus côté serveur (donut) ; reduced-motion → aucune dérive.
+ * Ligne du hero qui dérive horizontalement au scroll (scrubbed, réversible).
+ * `amount` en px (négatif = gauche) ; enfants rendus serveur ; reduced-motion → immobile.
  */
 export function DriftLine({
   amount,

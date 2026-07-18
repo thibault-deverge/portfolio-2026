@@ -7,19 +7,17 @@ const FLIGHT_S = 1.05
 const ARC_PX = 110 // hauteur de l'arc au-dessus de la ligne de vol
 
 /**
- * Le « nœud voyageur » : au départ de la levée du voile, le point terracotta du
- * dernier « Xin chào » se détache et vole se poser à la place du FilNode du hero
- * — le preloader coud le premier point du fil rouge. Ne fait rien si la cible
- * n'est pas mesurable (mobile), en reduced-motion, ou si JS arrive trop tard.
+ * Nœud voyageur : pendant la levée du voile, le point du dernier « Xin chào »
+ * se détache et vole se poser sur le FilNode du hero — le premier point du fil rouge.
  */
 export function TravelingNode() {
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
+    // 1. Garde-fous : reduced-motion, éléments absents, cible non mesurable (mobile)
     const traveler = ref.current
     if (!traveler) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-
     const loader = document.querySelector<HTMLElement>('.hero-loader')
     const dot = document.querySelector<HTMLElement>('[data-loader-node]')
     const target = document.querySelector<HTMLElement>('[data-fil-node]')
@@ -29,6 +27,8 @@ export function TravelingNode() {
 
     const onLiftStart = (e: AnimationEvent) => {
       if (e.animationName !== 'hero-loader-lift') return
+
+      // 2. Mesurer : départ (point du mot) et arrivée (FilNode du hero)
       const from = dot.getBoundingClientRect()
       const to = target.getBoundingClientRect()
       const x0 = from.left + from.width / 2
@@ -36,11 +36,12 @@ export function TravelingNode() {
       const x1 = to.left + to.width / 2
       const y1 = to.top + to.height / 2
 
-      // le point quitte le mot, la cible attend son arrivée
+      // 3. Échanger : le point quitte le mot, la cible attend, le voyageur apparaît
       dot.style.visibility = 'hidden'
       target.classList.add('fil-node-waiting')
       traveler.style.visibility = 'visible'
 
+      // 4. Voler en arc, puis atterrir (rebond CSS fil-node-landing)
       controls = animate(
         traveler,
         {

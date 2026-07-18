@@ -9,6 +9,15 @@
     "body": "Cette page n'existe pas — ou plus.",
     "cta": "Reprendre le fil"
   },
+  "Nav": {
+    "about": "À propos"
+  },
+  "About": {
+    "num": "01 — À propos",
+    "title1": "Enchanté,",
+    "title2": "on fait connaissance ?",
+    "body": "Je m'appelle Thibault Deverge. Depuis cinq ans, je transforme des problèmes complexes en interfaces simples et évidentes — du premier trait de design jusqu'à la dernière ligne de code. Next.js, TypeScript, une obsession pour le mouvement juste et un œil qui ne lâche rien sur le détail. Mon parcours n'a rien de linéaire : c'est justement le fil qui le relie."
+  },
   "Home": {
     "eyebrow": "Concepteur · Développeur — Freelance",
     "headline1": "Concevoir,",

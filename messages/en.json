@@ -9,6 +9,15 @@
     "body": "This page doesn't exist — or not anymore.",
     "cta": "Pick up the thread"
   },
+  "Nav": {
+    "about": "About"
+  },
+  "About": {
+    "num": "01 — About",
+    "title1": "Enchanté,",
+    "title2": "let's get acquainted?",
+    "body": "My name is Thibault Deverge. For five years I've turned complex problems into simple, obvious interfaces — from the first design stroke to the last line of code. Next.js, TypeScript, an obsession with the right motion and an eye that never lets a detail slide. My path is anything but linear: the thread is exactly what ties it together."
+  },
   "Home": {
     "eyebrow": "Designer · Developer — Freelance",
     "headline1": "Design,",

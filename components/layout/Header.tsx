@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useMotionValueEvent, useReducedMotion, useScroll } from 'motion/react'
 import { useLenis } from 'lenis/react'
+import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { siteConfig } from '@/lib/config/site'
 import { cn } from '@/lib/utils'
@@ -12,8 +13,8 @@ const TOP_ZONE_PX = 24
 const MIN_Y_TO_HIDE_PX = 80
 
 // La nav « pousse » avec le site : une entrée par scène livrée (décision D5).
-// Format : { id: 'apropos', labelKey: 'about' } — labels dans le namespace Nav.
-const SECTIONS: { id: string; labelKey: string }[] = []
+// Labels dans le namespace Nav (messages/{fr,en}.json).
+const SECTIONS: { id: string; labelKey: 'about' }[] = [{ id: 'apropos', labelKey: 'about' }]
 
 /** Bandeau d'identité (nom + FR/EN). Pas de nav : la page se découvre en scrollant. */
 export function Header() {
@@ -22,6 +23,7 @@ export function Header() {
   const { scrollY } = useScroll()
   const reduceMotion = useReducedMotion()
   const lenis = useLenis()
+  const t = useTranslations('Nav')
 
   useMotionValueEvent(scrollY, 'change', (y) => {
     const previous = scrollY.getPrevious() ?? 0
@@ -66,7 +68,7 @@ export function Header() {
                   }}
                   className="text-ink-muted transition-colors duration-200 hover:text-ink"
                 >
-                  {section.labelKey}
+                  {t(section.labelKey)}
                 </a>
               ))}
             </nav>

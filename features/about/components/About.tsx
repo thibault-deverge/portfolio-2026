@@ -72,6 +72,9 @@ export async function About() {
                 />
               </div>
             </Parallax>
+            {/* verre du cadre : grain papier + voile terracotta, fixes au-dessus du parallax */}
+            <span aria-hidden className="hero-loader-grain absolute inset-0" />
+            <span aria-hidden className="absolute inset-0 bg-accent/10 mix-blend-multiply" />
           </div>
           {/* le nœud épingle le cadre — ancre du fil rouge (M9) */}
           <FilNode className="absolute -right-1.5 -top-1.5" />

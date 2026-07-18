@@ -10,8 +10,10 @@
     "cta": "Pick up the thread"
   },
   "Home": {
-    "headlineLead": "My path is anything but linear.",
-    "headlinePunch": "My code is.",
+    "eyebrow": "Designer · Developer — Next.js",
+    "headline1": "Developer",
+    "headline2": "of living",
+    "headline3": "interfaces.",
     "subtitle": "I design and build complete web apps with Next.js — from the interface to the database."
   }
 }

@@ -10,8 +10,10 @@
     "cta": "Reprendre le fil"
   },
   "Home": {
-    "headlineLead": "Mon parcours n'a rien de linéaire.",
-    "headlinePunch": "Mon code, si.",
+    "eyebrow": "Concepteur · Développeur — Next.js",
+    "headline1": "Développeur",
+    "headline2": "d'interfaces",
+    "headline3": "vivantes.",
     "subtitle": "Je conçois et développe des applications web complètes avec Next.js — du design à la base de données."
   }
 }

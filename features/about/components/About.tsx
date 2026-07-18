@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { FilNode } from '@/components/fil/FilNode'
 import { Parallax } from '@/components/motion/Parallax'
@@ -56,18 +57,21 @@ export async function About() {
           </div>
         </RevealGroup>
 
-        {/* Colonne portrait : cadre épinglé, placeholder dans le thème */}
+        {/* Colonne portrait : photo épinglée (café au Vietnam — l'écho du parcours, sans légende) */}
         <div aria-hidden className="relative" data-cursor="link">
           <div className="relative aspect-3/4 overflow-hidden rounded-md border border-hairline bg-surface">
-            {/* couche parallax (débord ±12%) — la vraie photo remplacera la grille ici (<Image fill> surdimensionnée) */}
+            {/* couche parallax : l'image déborde de ±12% pour couvrir la course */}
             <Parallax amount={0.16} className="absolute inset-0">
-              <div className="absolute inset-x-0 inset-y-[-12%] bg-[linear-gradient(var(--color-hairline)_1px,transparent_1px),linear-gradient(90deg,var(--color-hairline)_1px,transparent_1px)] bg-size-[46px_46px] mask-[radial-gradient(ellipse_85%_85%_at_50%_45%,#000_30%,transparent_100%)]" />
+              <div className="absolute inset-x-0 inset-y-[-12%]">
+                <Image
+                  src="/images/portrait-about.jpg"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 92vw"
+                  className="object-cover"
+                />
+              </div>
             </Parallax>
-            {/* repères de planche (crop marks, écho du preloader) */}
-            <span className="absolute left-3 top-3 size-3 border-l border-t border-ink-muted/30" />
-            <span className="absolute right-3 top-3 size-3 border-r border-t border-ink-muted/30" />
-            <span className="absolute bottom-3 left-3 size-3 border-b border-l border-ink-muted/30" />
-            <span className="absolute bottom-3 right-3 size-3 border-b border-r border-ink-muted/30" />
           </div>
           {/* le nœud épingle le cadre — ancre du fil rouge (M9) */}
           <FilNode className="absolute -right-1.5 -top-1.5" />

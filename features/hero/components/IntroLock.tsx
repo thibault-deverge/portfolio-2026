@@ -8,7 +8,7 @@ const SAFETY_UNLOCK_MS = 4000
 /**
  * Verrouille le scroll pendant l'arrivée (preloader → levée du voile), le
  * libère à l'animationend de la levée. Sans JS ou en reduced-motion : aucun
- * verrou. Filet de sécurité si l'événement n'arrive jamais.
+ * verrou (et la position restaurée par le navigateur est respectée).
  */
 export function IntroLock() {
   const lenis = useLenis()
@@ -21,6 +21,9 @@ export function IntroLock() {
     // hydratation tardive : si le voile est déjà parti, ne rien verrouiller
     if (!loader || getComputedStyle(loader).visibility === 'hidden') return
 
+    // Reload déjà scrollé : le voile se lève toujours sur le hero (sinon la
+    // cascade et le nœud voyageur visent hors écran). `force` : agit même stoppé.
+    lenis.scrollTo(0, { immediate: true, force: true })
     lenis.stop()
     document.documentElement.classList.add('intro-lock') // bloque aussi clavier/scrollbar
 

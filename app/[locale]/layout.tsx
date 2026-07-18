@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import { fraunces, geistSans, geistMono } from '@/styles/fonts'
 import { SmoothScrollProvider } from '@/components/layout/SmoothScrollProvider'
 import { Header } from '@/components/layout/Header'
+import { CustomCursor } from '@/components/layout/CustomCursor'
 import '../globals.css'
 
 // Métadonnées localisées (titre d'onglet + description) par locale.
@@ -46,6 +47,7 @@ export default async function LocaleLayout({
       <body className="font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <SmoothScrollProvider>
+            <CustomCursor />
             <Header />
             {children}
           </SmoothScrollProvider>

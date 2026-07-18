@@ -2,4 +2,5 @@
 @import 'tailwindcss';
 @import '../styles/theme.css';
 @import '../styles/hero.css';
+@import '../styles/cursor.css';
 @import '../styles/not-found.css';

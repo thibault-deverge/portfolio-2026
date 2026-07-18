@@ -45,15 +45,15 @@ _Le but : la première impression du template — preloader, levée du voile, he
 - [x] C3 ⚙️ ScrambleText (eyebrow) — îlot client SSR-safe, déclenché par `animationstart` de hero-rise, textContent par ref
 - [x] C4 🎯 Checkpoint complet (EN/mobile/reduced ✅) — grille déjà identique au template (rien à recaler) ; bug attrapé et corrigé : `.fil-node` display non-layered écrasait `hidden` (leçon CSS layers)
 
-**Cours D — Header & nav**
+**Cours D — Header & nav** ✅
 
-- [ ] D1 ⚙️ Nav SECTIONS (scroll doux Lenis) + application décision voile
-- [ ] D2 ⚙️🎯 Pastille FR/EN + timing d'entrée + checkpoint
+- [x] D1 ⚙️ Nav SECTIONS (vide au départ, scroll doux `lenis.scrollTo`, repli ancre native) — voile gardé (D3)
+- [x] D2 ⚙️🎯 Pastille FR/EN bordée + entrée du header en fondu à 2.6s (opacité seule, le transform reste libre pour le masquage au scroll)
 
-**Cours E — Le curseur custom**
+**Cours E — Le curseur custom** ✅
 
-- [ ] E1 ⚙️ Dot + ring (rAF/lerp par ref, desktop only, cursor:none post-hydratation)
-- [ ] E2 ⚙️🎯 Grossissement sur interactifs + checkpoint traversée complète
+- [x] E1 ⚙️ `CustomCursor.tsx` + `styles/cursor.css` : dot collé + ring lerp 0.16 (rAF/ref), activation post-hydratation (pointeur fin + motion OK), cursor:none piloté par classe sur html
+- [x] E2 ⚙️🎯 Grossissement ×2.3 par délégation pointerover (transition CSS sur span interne) — checkpoint captures OK, interplay halo grille + curseur validé
 
 **Idée retenue pour la fin du module (ou backlog M9)** : 💎 le nœud terracotta du dernier « Xin chào » se détache du mot pendant la levée du voile et vient se poser à sa place définitive dans le hero — le point du preloader DEVIENT le premier nœud du fil rouge (JS soigné : mesures + technique FLIP). Validé par Thibault, à tenter en F2 si le budget temps le permet, sinon à raccrocher au module fil rouge (M9).
 

@@ -1,0 +1,52 @@
+/* ===== Curseur custom (dot + ring) ===== */
+/* Activé par CustomCursor.tsx via la classe has-custom-cursor sur <html> —
+   jamais posée sur tactile ni en reduced-motion : le curseur natif reste. */
+
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+.cursor-root {
+  opacity: 0;
+}
+/* visible seulement quand l'îlot est actif ET que la souris a bougé une fois */
+.has-custom-cursor .cursor-root.cursor-seen {
+  opacity: 1;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.cursor-dot {
+  z-index: 91;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+}
+
+.cursor-ring {
+  z-index: 90;
+}
+
+/* l'échelle vit sur un span interne : transition CSS, le JS ne gère que la position */
+.cursor-circle {
+  display: block;
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 1px solid var(--color-accent);
+  border-radius: 9999px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cursor-circle.cursor-grow {
+  transform: scale(2.3);
+}

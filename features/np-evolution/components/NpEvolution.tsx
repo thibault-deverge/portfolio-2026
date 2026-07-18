@@ -51,23 +51,28 @@ export async function NpEvolution() {
               {t.rich('intro2', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
             </p>
           </div>
-          {/* Le client : la preuve humaine (lien LinkedIn réel) */}
+          {/* Le client : témoignage réel (recommandation LinkedIn, citée verbatim) */}
           <div className="self-end lg:col-span-4 lg:col-start-9">
-            <div className="rounded-lg border border-hairline bg-surface p-6">
+            <figure className="rounded-lg border border-hairline bg-surface p-6">
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
                 {t('clientLabel')}
               </p>
-              <p className="font-display text-xl italic text-ink">{t('clientName')}</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{t('clientRole')}</p>
-              <a
-                href="https://www.linkedin.com/in/nicolas-picaut-9455a9179/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block font-mono text-xs uppercase tracking-[0.12em] text-ink-muted underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-accent"
-              >
-                {t('clientLink')} ↗
-              </a>
-            </div>
+              <blockquote className="font-display text-[1.05rem] italic leading-snug text-ink">
+                {t('clientQuote')}
+              </blockquote>
+              <figcaption className="mt-4">
+                <p className="text-sm font-medium text-ink">{t('clientName')}</p>
+                <p className="mt-0.5 text-sm leading-relaxed text-ink-muted">{t('clientRole')}</p>
+                <a
+                  href="https://www.linkedin.com/in/thibault-deverge/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block font-mono text-xs uppercase tracking-[0.12em] text-ink-muted underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-accent"
+                >
+                  {t('clientLink')} ↗
+                </a>
+              </figcaption>
+            </figure>
           </div>
         </div>
 
@@ -91,33 +96,56 @@ export async function NpEvolution() {
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
               {t('feat1Label')}
             </p>
-            <p className="max-w-[36ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.65] text-ink-muted">
-              {t('feat1Body')}
+            <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
+              {t('feat1Intro')}
             </p>
+            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
+              {(['feat1Item1', 'feat1Item2', 'feat1Item3'] as const).map((key) => (
+                <li key={key} className="flex gap-2.5">
+                  <span aria-hidden className="text-accent">—</span>
+                  <span className="text-pretty">{t(key)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* 02 — les livrets (le cœur du produit) */}
+          {/* 02 — les livrets : la page interactive + les cartes de progression, empilées */}
           <div className="relative lg:col-span-6 lg:col-start-7 lg:row-start-2">
-            <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')}>
-              <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
-              </div>
-            </ImageLightbox>
+            <div className="relative aspect-[100/78]">
+              <ImageLightbox src="/images/np-livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[54%]">
+                <div className="relative aspect-[900/1180] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+                  <Image src="/images/np-livret-page.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 50vw" className="object-cover" />
+                </div>
+              </ImageLightbox>
+              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-[6%] right-0 w-[62%]">
+                <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
+                  <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 60vw" className="object-cover" />
+                </div>
+              </ImageLightbox>
+            </div>
             <FilNode className="absolute -right-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-1 lg:row-start-2">
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
               {t('feat2Label')}
             </p>
-            <p className="max-w-[36ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.65] text-ink-muted">
-              {t('feat2Body')}
+            <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
+              {t('feat2Intro')}
             </p>
+            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
+              {(['feat2Item1', 'feat2Item2', 'feat2Item3'] as const).map((key) => (
+                <li key={key} className="flex gap-2.5">
+                  <span aria-hidden className="text-accent">—</span>
+                  <span className="text-pretty">{t(key)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* 03 — la signature & l'émargement (la conformité) */}
           <div className="relative lg:col-span-6 lg:col-start-1 lg:row-start-3">
             <ImageLightbox src="/images/np-signature.jpg" label={t('zoom')}>
-              <div className="relative aspect-[1040/660] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+              <div className="relative aspect-[790/680] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
                 <Image src="/images/np-signature.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
               </div>
             </ImageLightbox>
@@ -127,9 +155,17 @@ export async function NpEvolution() {
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
               {t('feat3Label')}
             </p>
-            <p className="max-w-[36ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.65] text-ink-muted">
-              {t('feat3Body')}
+            <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
+              {t('feat3Intro')}
             </p>
+            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
+              {(['feat3Item1', 'feat3Item2', 'feat3Item3'] as const).map((key) => (
+                <li key={key} className="flex gap-2.5">
+                  <span aria-hidden className="text-accent">—</span>
+                  <span className="text-pretty">{t(key)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* 04 — tests + rapport IA */}
@@ -145,24 +181,37 @@ export async function NpEvolution() {
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
               {t('feat4Label')}
             </p>
-            <p className="max-w-[36ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.65] text-ink-muted">
-              {t('feat4Body')}
+            <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
+              {t('feat4Intro')}
             </p>
+            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
+              {(['feat4Item1', 'feat4Item2', 'feat4Item3'] as const).map((key) => (
+                <li key={key} className="flex gap-2.5">
+                  <span aria-hidden className="text-accent">—</span>
+                  <span className="text-pretty">{t(key)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Rangée de stats entre filets */}
-        <div className="mt-[clamp(56px,9vh,110px)] grid grid-cols-1 gap-6 border-y border-hairline py-7 sm:grid-cols-3">
-          {(['stat1', 'stat2', 'stat3'] as const).map((key) => (
-            <div key={key} className="flex items-baseline gap-3">
-              <span className="font-display text-[clamp(1.9rem,2.6vw,2.6rem)] font-normal leading-none tracking-tight text-accent">
-                {t(`${key}Value`)}
-              </span>
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted">
-                {t(`${key}Label`)}
-              </span>
-            </div>
-          ))}
+        {/* Usage réel (chiffres de prod) entre filets + la ligne « sous le capot » */}
+        <div className="mt-[clamp(56px,9vh,110px)] border-y border-hairline">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-7 py-8 lg:grid-cols-4">
+            {(['stat1', 'stat2', 'stat3', 'stat4'] as const).map((key) => (
+              <div key={key}>
+                <div className="font-display text-[clamp(2rem,2.8vw,2.8rem)] font-normal leading-none tracking-tight text-accent">
+                  {t(`${key}Value`)}
+                </div>
+                <p className="mt-2 font-mono text-[11px] uppercase leading-relaxed tracking-[0.12em] text-ink-muted">
+                  {t(`${key}Label`)}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="border-t border-hairline py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted">
+            {t('hood')}
+          </p>
         </div>
       </div>
     </section>

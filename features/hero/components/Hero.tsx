@@ -76,7 +76,7 @@ export async function Hero() {
           <p className="text-pretty text-[clamp(1.05rem,1.5vw,1.35rem)] leading-snug text-ink">
             {t('subtitle1')}
           </p>
-          <p className="mt-3 max-w-[48ch] text-pretty text-[clamp(0.95rem,1.25vw,1.1rem)] leading-relaxed text-ink-muted">
+          <p className="mt-5 max-w-[44ch] text-pretty text-[clamp(0.95rem,1.25vw,1.1rem)] leading-relaxed text-ink-muted">
             {t('subtitle2')}
           </p>
         </div>

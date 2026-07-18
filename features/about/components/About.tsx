@@ -42,15 +42,13 @@ export async function About() {
                 {t.rich('body1', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
               </span>
             </p>
-            <p className="mt-5 overflow-hidden">
-              <span data-reveal className="relative block pl-7 text-pretty">
-                {/* le fil s'invite : petit trait terracotta qui coud la phrase-méthode */}
-                <span aria-hidden className="absolute left-0 top-[0.72em] h-px w-4 bg-accent" />
+            <p className="mt-6 overflow-hidden">
+              <span data-reveal className="block text-pretty">
                 {t.rich('body2', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
               </span>
             </p>
-            <p className="mt-5 overflow-hidden">
-              <span data-reveal className="block pl-7 font-display italic">
+            <p className="mt-6 overflow-hidden">
+              <span data-reveal className="block font-display italic">
                 {t('body3')}
               </span>
             </p>

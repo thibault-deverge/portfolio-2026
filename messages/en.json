@@ -17,7 +17,7 @@
     "title1": "Enchanté,",
     "title2": "Thibault Deverge.",
     "body1": "Web developer. Before code: a <k>law degree</k>, three years on the <k>roads of Asia</k>, then <k>École 42</k>, where I learned to break down problems and find my own answers.",
-    "body2": "I bring that same rigor to every project, from the polished component to the <k>platform shipped to production</k>.",
+    "body2": "Now a full-time developer at <k>Elloha</k> and a Next.js freelancer, I bring that same rigor to every project, from the polished component to the <k>platform shipped to production</k>.",
     "body3": "From here, my projects do the talking."
   },
   "Home": {
@@ -26,6 +26,6 @@
     "headline2": "build,",
     "headline3": "ship.",
     "subtitle1": "Complete web applications, from the interface to the database.",
-    "subtitle2": "Day to day on Elloha’s SaaS, used by 10,000+ tourism professionals — and freelance platforms carried solo all the way to production."
+    "subtitle2": "Day to day on Elloha’s SaaS, serving 10,000+ tourism professionals — and freelance platforms shipped to production."
   }
 }

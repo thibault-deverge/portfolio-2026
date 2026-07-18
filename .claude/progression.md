@@ -143,6 +143,8 @@ _La signature : le SVG qui se dessine au scroll à travers toutes les scènes, a
 
 Formulaire contact (Resend) · prise de RDV Cal.com · palette ⌘K IA (Q&A sur son profil, claude-haiku) · dark mode · étude de cas détaillée par projet si besoin (réintroduire MDX).
 
+**Backlog médias (décisions 2026-07-18)** : portrait actuel gardé (photo Vietnam traitée : grade + grain + voile terracotta, brutes sur `~/Desktop/photos-portrait/`) — Thibault envisage un abonnement Higgsfield début août pour retravailler les portraits (Soul entraîné sur ses photos) · boucle vidéo NP-Evolution reportée (outil pressenti : Cap, gratuit — sinon Screen Studio) ; M3 démarrera avec des captures fixes traitées.
+
 ---
 
 _Historique des décisions : voir CLAUDE.md (contraintes) et la mémoire projet. Ce fichier est LA source de vérité de l'avancement — le mettre à jour à chaque fin de module. Rédaction : pas de hard wrap (une idée = une ligne, l'éditeur plie tout seul)._

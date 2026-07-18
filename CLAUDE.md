@@ -52,8 +52,9 @@ jour à chaque fin de module).
   (horizontal pinné) → marquee + chiffres → contact/footer → fil rouge (couture finale) →
   polish → mise en ligne. **Détail, ordre et avancement : `.claude/progression.md`** (M1→M11).
 - Hero/rideau actuels (v1) : à REFAIRE en M1 sur le modèle du template.
-- Contraintes produit qui tiennent : AUCUNE mention « disponible/freelance » visible (contrainte
-  employeur — la copy du template est un placeholder à reformuler scène par scène) ; curseur
+- Contraintes produit qui tiennent : le mot « freelance » est OK (assumé), mais AUCUN signal de
+  disponibilité/démarchage (« open to work », « disponible pour missions ») — précisé 2026-07-18 ;
+  la copy du template reste un placeholder à reformuler scène par scène ; curseur
   custom et ancres de nav du template ACCEPTÉS (revirement assumé 2026-07-15) ; mobile = versions
   simplifiées des scènes ; images : assets Thibault + MCP Higgsfield au fil de l'eau (l'ancienne liste de
   courses vit dans `~/.trash/design-refs-2026-07-15/images-todo.md` si besoin).

@@ -44,3 +44,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 ds-bundle/
+
+# fiches projets internes (NDA Elloha — jamais sur GitHub)
+/.claude/refs/

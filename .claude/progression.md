@@ -12,7 +12,7 @@
 
 ## Contraintes permanentes (rappel — détail dans CLAUDE.md et les rules)
 
-- Employeur : AUCUNE mention « disponible / freelance » visible (la copy du template en a → reformuler)
+- Employeur : le mot « freelance » est OK ; AUCUN signal de disponibilité (« open to work », « disponible pour missions ») — précisé 2026-07-18
 - Elloha : visuels PUBLICS uniquement (NDA) · NP-Evolution : anonymisé (pas de données réelles)
 - i18n : parité fr/en stricte, zéro texte hardcodé · tokens only, un seul accent
 - Patterns SSR-safe (coquilles identiques, IO+classes, écritures par ref) · reduced-motion partout
@@ -59,7 +59,7 @@ _Le but : la première impression du template — preloader, levée du voile, he
 
 **Cours F — Copy, calibrage, rituel**
 
-- [ ] F1 ⚙️ Atelier copy hero FR→EN (employeur-safe)
+- [x] F1 ⚙️ Atelier copy hero FR→EN : « Concevoir, coder, livrer. » / « Design, build, ship. », eyebrow « Concepteur · Développeur — Freelance », sous-titre preuve Elloha nommée (10 000+ pros) + « menées seul jusqu'à la production » — 3 recherches (best practices, portfolios FR, faits Elloha sourcés) + fiches `.claude/refs/{np-evolution,elloha}.md` (gitignorées NDA) + skills copywriting/stop-slop. Voix : vouvoiement, pro chaleureux direct.
 - [ ] F2 ⚙️ Calibrage global + mobile + reduced-motion + retouches finales preloader
 - [ ] F3 🎯 Rituel de fin de module + merge sur main + M1 coché ✅
 

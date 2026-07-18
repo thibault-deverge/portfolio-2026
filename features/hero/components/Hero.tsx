@@ -65,7 +65,7 @@ export async function Hero() {
         </h1>
 
         <p
-          className="hero-rise mt-[clamp(28px,5vh,52px)] max-w-[46ch] pl-[8vw] text-pretty text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-ink-muted"
+          className="hero-rise mt-[clamp(28px,5vh,52px)] max-w-[56ch] pl-[8vw] text-pretty text-[clamp(1rem,1.4vw,1.25rem)] leading-relaxed text-ink-muted"
           style={{ animationDelay: '2.95s' }}
         >
           {t('subtitle')}

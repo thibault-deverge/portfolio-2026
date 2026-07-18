@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { BlueprintGrid } from './BlueprintGrid'
 import { DriftLine } from './DriftLine'
 import { FilNode } from './FilNode'
+import { IntroLock } from './IntroLock'
 import { Preloader } from './Preloader'
 import { ScrambleText } from './ScrambleText'
 import { TravelingNode } from './TravelingNode'
@@ -17,6 +18,7 @@ export async function Hero() {
     <header className="relative flex min-h-dvh w-full flex-col overflow-hidden">
       <Preloader />
       <TravelingNode />
+      <IntroLock />
 
       {/* Filigrane : grille blueprint + halo curseur (≥ lg). */}
       <BlueprintGrid />
@@ -35,7 +37,7 @@ export async function Hero() {
         <h1 className="font-display text-[clamp(3.2rem,12vw,10rem)] font-normal leading-[0.9] tracking-[-0.03em] text-ink font-features-['ss01'] [font-optical-sizing:auto]">
           {/* Chaque ligne : reveal sous masque à l'entrée, puis dérive scrubbed au scroll */}
           <DriftLine amount={-70}>
-            <span className="mb-[-0.12em] block overflow-hidden pb-[0.12em]">
+            <span className="mb-[-0.18em] block overflow-hidden pb-[0.18em]">
               <span
                 className="hero-line block text-ink-muted"
                 style={{ animationDelay: '2.5s' }}
@@ -45,7 +47,7 @@ export async function Hero() {
             </span>
           </DriftLine>
           <DriftLine amount={110}>
-            <span className="mb-[-0.12em] block overflow-hidden pb-[0.12em] pl-[8vw]">
+            <span className="mb-[-0.18em] block overflow-hidden pb-[0.18em] pl-[8vw]">
               <span
                 className="hero-line block italic"
                 style={{ animationDelay: '2.62s' }}
@@ -55,7 +57,7 @@ export async function Hero() {
             </span>
           </DriftLine>
           <DriftLine amount={-50}>
-            <span className="mb-[-0.12em] block overflow-hidden pb-[0.12em] pl-[8vw]">
+            <span className="mb-[-0.18em] block overflow-hidden pb-[0.18em] pl-[8vw]">
               <span
                 className="hero-line block font-medium text-accent"
                 style={{ animationDelay: '2.74s' }}

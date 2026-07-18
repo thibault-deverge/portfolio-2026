@@ -98,6 +98,11 @@
   box-shadow: 0 0 0 4px var(--color-paper);
 }
 
+/* ===== Verrou de scroll pendant l'arrivée (posé/retiré par IntroLock) ===== */
+.intro-lock {
+  overflow: hidden;
+}
+
 /* ===== Nœud voyageur (preloader → hero) ===== */
 .traveling-node {
   position: fixed;

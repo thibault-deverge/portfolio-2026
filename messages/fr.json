@@ -34,8 +34,18 @@
     "title": "NP-<accent>Evolution</accent>",
     "tag": "Plateforme SaaS · Bilans de compétences · 2025",
     "badge": "En production",
-    "body": "Plateforme de digitalisation des bilans de compétences, construite seul de bout en bout — de la base de données aux signatures électroniques. Copy provisoire : la version définitive s’écrit à l’atelier E1.",
-    "statValue": "6",
-    "statLabel": "Livrets interactifs, de la découverte à la signature"
+    "intro": "Plateforme SaaS qui digitalise les bilans de compétences d’un cabinet — construite seul de bout en bout, en production, utilisée au quotidien par les consultants et leurs bénéficiaires.",
+    "feat1Label": "Livrets interactifs",
+    "feat1Body": "Six livrets PDF devenus formulaires vivants — remplis, suivis et verrouillés dans le navigateur, jusqu’à la signature.",
+    "feat2Label": "Signature électronique",
+    "feat2Body": "Un pad de signature à valeur probante : empreinte du document, horodatage, traçabilité — implémenté maison, sans prestataire tiers.",
+    "feat3Label": "Tests + rapport IA",
+    "feat3Body": "Passation, scoring, radar de résultats — et l’IA rédige une première interprétation que le consultant affine.",
+    "stat1Value": "6",
+    "stat1Label": "livrets interactifs",
+    "stat2Value": "3",
+    "stat2Label": "espaces dédiés",
+    "stat3Value": "2025",
+    "stat3Label": "en production depuis"
   }
 }

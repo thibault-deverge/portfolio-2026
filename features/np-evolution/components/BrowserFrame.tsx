@@ -11,8 +11,8 @@ export function BrowserFrame({ children }: { children: React.ReactNode }) {
         <span className="size-2 rounded-full border border-hairline bg-paper" />
         <span className="size-2 rounded-full border border-hairline bg-paper" />
       </div>
-      {/* contenu (capture, placeholder…) */}
-      <div className="relative aspect-video">{children}</div>
+      {/* contenu (capture, placeholder…) — le ratio est fourni par l'appelant */}
+      <div className="relative">{children}</div>
     </div>
   )
 }

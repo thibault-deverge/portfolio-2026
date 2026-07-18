@@ -34,8 +34,18 @@
     "title": "NP-<accent>Evolution</accent>",
     "tag": "SaaS platform · Skills assessments · 2025",
     "badge": "In production",
-    "body": "A platform that digitalises career skills assessments, built solo end to end — from the database to electronic signatures. Provisional copy: the final version comes from the E1 workshop.",
-    "statValue": "6",
-    "statLabel": "Interactive workbooks, from discovery to signature"
+    "intro": "A SaaS platform that digitalises a consultancy’s career skills assessments — built solo end to end, in production, used daily by consultants and their clients.",
+    "feat1Label": "Interactive workbooks",
+    "feat1Body": "Six PDF workbooks turned into living forms — filled in, tracked and locked in the browser, all the way to signature.",
+    "feat2Label": "Electronic signature",
+    "feat2Body": "A signature pad with evidential value: document hash, timestamp, traceability — built in-house, no third-party provider.",
+    "feat3Label": "Tests + AI report",
+    "feat3Body": "Assessment, scoring, results radar — and the AI drafts a first interpretation the consultant refines.",
+    "stat1Value": "6",
+    "stat1Label": "interactive workbooks",
+    "stat2Value": "3",
+    "stat2Label": "dedicated spaces",
+    "stat3Value": "2025",
+    "stat3Label": "in production since"
   }
 }

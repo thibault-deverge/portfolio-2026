@@ -1,10 +1,10 @@
 import { getTranslations } from 'next-intl/server'
+import { ScrambleText } from '@/components/motion/ScrambleText'
 import { BlueprintGrid } from './BlueprintGrid'
 import { DriftLine } from './DriftLine'
 import { FilNode } from './FilNode'
 import { IntroLock } from './IntroLock'
 import { Preloader } from './Preloader'
-import { ScrambleText } from './ScrambleText'
 import { TravelingNode } from './TravelingNode'
 
 /**

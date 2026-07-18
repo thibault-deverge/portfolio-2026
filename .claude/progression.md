@@ -43,7 +43,7 @@ _Le but : la première impression du template — preloader, levée du voile, he
 - [x] C1 ⚙️ Structure 3 lignes (muted/italique/accent) + eyebrow + i18n refondu (`headline1/2/3`, copy placeholder jusqu'à F1) — **D2 tranchée : dérive alternée GARDÉE (−70/+110/−50)**, validé par Thibault
 - [x] C2 ⚙️ Reveals masqués recalés sur la levée (absorbé par C1 : délais 2.5/2.62/2.74 + sous-titre 2.95, validés visuellement)
 - [x] C3 ⚙️ ScrambleText (eyebrow) — îlot client SSR-safe, déclenché par `animationstart` de hero-rise, textContent par ref
-- [ ] C4 🎯 Grille recalée + checkpoint complet + commit d'étape
+- [x] C4 🎯 Checkpoint complet (EN/mobile/reduced ✅) — grille déjà identique au template (rien à recaler) ; bug attrapé et corrigé : `.fil-node` display non-layered écrasait `hidden` (leçon CSS layers)
 
 **Cours D — Header & nav**
 

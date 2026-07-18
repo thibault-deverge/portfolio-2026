@@ -10,10 +10,10 @@ export function LocaleSwitcher() {
   const pathname = usePathname()
 
   return (
-    <div className="flex items-center gap-2 font-mono text-sm">
+    <div className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5 font-mono text-xs tracking-[0.08em]">
       {routing.locales.map((loc, i) => (
-        <span key={loc} className="flex items-center gap-2">
-          {i > 0 && <span className="text-hairline">/</span>}
+        <span key={loc} className="flex items-center gap-1.5">
+          {i > 0 && <span className="text-ink-muted/50">/</span>}
           <Link
             href={pathname}
             locale={loc}
@@ -21,7 +21,7 @@ export function LocaleSwitcher() {
             className={
               loc === locale
                 ? 'text-accent'
-                : 'text-ink-muted transition-colors hover:text-ink'
+                : 'text-ink-muted transition-colors duration-200 hover:text-ink'
             }
           >
             {loc.toUpperCase()}

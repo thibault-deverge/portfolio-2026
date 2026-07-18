@@ -71,6 +71,21 @@
   }
 }
 
+/* ===== Entrée du header (calée sur la levée du voile) ===== */
+/* Opacité seule : le transform reste libre pour le masquage au scroll
+   (une animation forwards sur transform bloquerait -translate-y-full). */
+@media (prefers-reduced-motion: no-preference) {
+  .header-in {
+    opacity: 0;
+    animation: header-in 0.6s ease 2.6s forwards;
+  }
+}
+@keyframes header-in {
+  to {
+    opacity: 1;
+  }
+}
+
 /* ===== Nœud du fil rouge ===== */
 /* Le point terracotta d'origine ; sera l'ancre de mesure du futur fil (data-fil-node). */
 /* Pas de display ici : posé par le composant en utility (sinon cette règle

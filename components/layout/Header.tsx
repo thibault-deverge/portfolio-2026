@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useMotionValueEvent, useReducedMotion, useScroll } from 'motion/react'
+import { useLenis } from 'lenis/react'
 import { Link } from '@/i18n/navigation'
 import { siteConfig } from '@/lib/config/site'
 import { cn } from '@/lib/utils'
@@ -10,12 +11,17 @@ import { LocaleSwitcher } from './LocaleSwitcher'
 const TOP_ZONE_PX = 24
 const MIN_Y_TO_HIDE_PX = 80
 
+// La nav « pousse » avec le site : une entrée par scène livrée (décision D5).
+// Format : { id: 'apropos', labelKey: 'about' } — labels dans le namespace Nav.
+const SECTIONS: { id: string; labelKey: string }[] = []
+
 /** Bandeau d'identité (nom + FR/EN). Pas de nav : la page se découvre en scrollant. */
 export function Header() {
   const [atTop, setAtTop] = useState(true)
   const [hidden, setHidden] = useState(false)
   const { scrollY } = useScroll()
   const reduceMotion = useReducedMotion()
+  const lenis = useLenis()
 
   useMotionValueEvent(scrollY, 'change', (y) => {
     const previous = scrollY.getPrevious() ?? 0
@@ -27,7 +33,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300 ease-out',
+        'header-in fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300 ease-out',
         !atTop && 'border-hairline bg-paper/85 backdrop-blur-sm',
         hidden && '-translate-y-full',
       )}
@@ -44,7 +50,29 @@ export function Header() {
             <span className="h-0.5 w-0 rounded-full bg-accent transition-[width] duration-200 ease-out group-hover:w-3 motion-reduce:transition-none" />
           </span>
         </Link>
-        <LocaleSwitcher />
+        {/* Nav de sections + langue (la nav apparaît au fil des scènes livrées) */}
+        <div className="flex items-center gap-[clamp(14px,2.2vw,30px)]">
+          {SECTIONS.length > 0 && (
+            <nav className="hidden items-center gap-[clamp(14px,2.2vw,30px)] font-mono text-xs uppercase tracking-[0.08em] sm:flex">
+              {SECTIONS.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  onClick={(e) => {
+                    // Scroll doux via Lenis (window.scrollTo ne « tient » pas avec lui) ;
+                    // sans JS, l'ancre native fait le travail.
+                    e.preventDefault()
+                    lenis?.scrollTo(`#${section.id}`, { offset: -20 })
+                  }}
+                  className="text-ink-muted transition-colors duration-200 hover:text-ink"
+                >
+                  {section.labelKey}
+                </a>
+              ))}
+            </nav>
+          )}
+          <LocaleSwitcher />
+        </div>
       </div>
     </header>
   )

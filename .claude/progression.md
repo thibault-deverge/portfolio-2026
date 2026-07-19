@@ -102,13 +102,15 @@ _Notes M4 : le pinning sticky + scrub CSS vars = le socle réutilisable pour M6 
 
 _Notes M5 : la copy du template suite (« Un produit n'existe que livré ») écartée — redondante avec le hero et ton maxime ; sobriété motion VOULUE (reveals one-shot, zéro mouvement continu — l'arrêt après la dérive elloha EST l'effet). Module le plus léger du chantier (5 fichiers, +96)._
 
-## ⬜ M6 — Scène « Projets » (LISTE sobre — décision 2026-07-19, rail horizontal pinné ABANDONNÉ)
+## ✅ M6 — Scène « Projets » (LISTE sobre — décision 2026-07-19, rail horizontal pinné ABANDONNÉ)
 
-_Le template suite remplace le rail par une liste de lignes numérotées (hover surface + reveals) — cohérent « une seule animation spectaculaire » (elloha + fil rouge suffisent). Corrections vs template : « Next.js 15 · GSAP » → Next 16 · motion ; URL LinkedIn à unifier ; ligne « Votre projet ? » à jauger employeur-safe._
+_Le template suite remplace le rail par une liste de lignes numérotées (hover surface + reveals) — cohérent « une seule animation spectaculaire » (elloha + fil rouge suffisent). Corrections vs template appliquées : métas Next 16 · Motion ; **webserv du template = repo INEXISTANT (inventé)** → remplacé ; ligne « Votre projet ? » COUPÉE (signal de démarchage + doublon avec le contact M8 qui suit)._
 
-- [ ] 6.1 Liste : lignes 01/02/03 (Ce portfolio · ft_transcendence · webserv — sélection finale avec Thibault) + lien « Tout est sur GitHub ↗ »
-- [ ] 6.2 Interactions (hover fond surface, flèches) + reveals + atelier copy des métas
-- [ ] 6.3 Rituel de fin de module
+- [x] 6.1 Liste : **4 lignes** (01 Ce portfolio · 02 ft_transcendence · 03 minishell · 04 cub3d) + lien « Tout est sur GitHub ↗ » ; ↗ de « Ce portfolio » → profil GitHub (repo privé — le rendre public + pointer le ↗ dessus = backlog M11) ; entrée nav « Projets » ; FilNode sur le « 05 » (7 ancres au DOM)
+- [x] 6.2 Interactions (hover `bg-surface` + nudge de flèche `motion-reduce` safe) + rows en rise masqué staggeré ; reflux mobile par placement de grille explicite (`col-start`/`row-start`, un seul markup) ; **bonus : LinkedIn unifié** (`site.ts` corrigé avec l'URL courte réelle, NpEvolution consomme `siteConfig.links`)
+- [x] 6.3 Rituel : mobile 390 (0 overflow) ✅ · reduced-motion (0 classe, opacity 1) ✅ · EN ✅ · review ✅ · typecheck/lint/build SSG ✅ · merge ff `21c268a` → main
+
+_Notes M6 : validé SANS ajustement au checkpoint (module le plus court — 8 fichiers, +145). Backlog M10 : `sr-only` « nouvel onglet » sur les liens `target="_blank"`. Pré-M6 sur main (`20d65a2`) : `wheelMultiplier: 0.8`, acte 1 elloha 6→34 %, copy NP-E allégée, `localeDetection: false` (URL = seule source de vérité des locales)._
 
 ## ❌ M7 — Bandeau marquee + Chiffres — SUPPRIMÉ (décision Thibault 2026-07-19)
 

@@ -109,15 +109,20 @@ export async function NpEvolution() {
             </ul>
           </div>
 
-          {/* 02 — les livrets : la page interactive + les cartes de progression, empilées */}
-          <div className="relative lg:col-span-6 lg:col-start-7 lg:row-start-2">
-            <div className="relative aspect-[100/78]">
-              <ImageLightbox src="/images/np-livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[54%]">
+          {/* 02 — du livret à la signature : page interactive + modale + cartes, empilées */}
+          <div className="relative lg:col-span-7 lg:col-start-6 lg:row-start-2">
+            <div className="relative aspect-[100/90]">
+              <ImageLightbox src="/images/np-livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[46%]">
                 <div className="relative aspect-[900/1180] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                  <Image src="/images/np-livret-page.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 50vw" className="object-cover" />
+                  <Image src="/images/np-livret-page.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 46vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-[6%] right-0 w-[62%]">
+              <ImageLightbox src="/images/np-signature-modal.jpg" label={t('zoom')} className="absolute right-0 top-0 w-[46%]">
+                <div className="relative aspect-[680/745] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
+                  <Image src="/images/np-signature-modal.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 46vw" className="object-cover" />
+                </div>
+              </ImageLightbox>
+              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-0 right-[6%] w-[58%]">
                 <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                   <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 60vw" className="object-cover" />
                 </div>
@@ -133,7 +138,7 @@ export async function NpEvolution() {
               {t('feat2Intro')}
             </p>
             <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-              {(['feat2Item1', 'feat2Item2', 'feat2Item3'] as const).map((key) => (
+              {(['feat2Item1', 'feat2Item2', 'feat2Item3', 'feat2Item4'] as const).map((key) => (
                 <li key={key} className="flex gap-2.5">
                   <span aria-hidden className="text-accent">—</span>
                   <span className="text-pretty">{t(key)}</span>
@@ -142,42 +147,16 @@ export async function NpEvolution() {
             </ul>
           </div>
 
-          {/* 03 — la signature & l'émargement (la conformité) */}
-          <div className="relative lg:col-span-6 lg:col-start-1 lg:row-start-3">
-            <ImageLightbox src="/images/np-signature.jpg" label={t('zoom')}>
-              <div className="relative aspect-[790/680] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                <Image src="/images/np-signature.jpg" alt="" fill sizes="(min-width:1024px) 46vw, 92vw" className="object-cover" />
-              </div>
-            </ImageLightbox>
-            <FilNode className="absolute -left-1.5 -top-1.5" />
-          </div>
-          <div className="self-center lg:col-span-4 lg:col-start-8 lg:row-start-3">
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
-              {t('feat3Label')}
-            </p>
-            <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
-              {t('feat3Intro')}
-            </p>
-            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-              {(['feat3Item1', 'feat3Item2', 'feat3Item3'] as const).map((key) => (
-                <li key={key} className="flex gap-2.5">
-                  <span aria-hidden className="text-accent">—</span>
-                  <span className="text-pretty">{t(key)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* 04 — tests + rapport IA */}
-          <div className="relative lg:col-span-4 lg:col-start-8 lg:row-start-4">
+          {/* 03 — tests + rapport IA (medley de captures à venir) */}
+          <div className="relative lg:col-span-4 lg:col-start-1 lg:row-start-3">
             <ImageLightbox src="/images/np-radar.jpg" label={t('zoom')}>
               <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
                 <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 92vw" className="object-cover" />
               </div>
             </ImageLightbox>
-            <FilNode className="absolute -right-1.5 -top-1.5" />
+            <FilNode className="absolute -left-1.5 -top-1.5" />
           </div>
-          <div className="self-center lg:col-span-4 lg:col-start-2 lg:row-start-4">
+          <div className="self-center lg:col-span-4 lg:col-start-7 lg:row-start-3">
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
               {t('feat4Label')}
             </p>

@@ -1,6 +1,6 @@
 # Progression — Roadmap du portfolio
 
-> **La référence** : template `templates/portfolio-cinetique/` du projet Claude Design (`25a8ead9-8c98-4830-8a48-0d4c313f910d`, lisible via DesignSync `get_file`). On le suit quasi à l'identique, porté vers motion/react, copy retravaillée scène par scène.
+> **La référence** : template `templates/portfolio-cinetique/` du projet Claude Design (`25a8ead9-8c98-4830-8a48-0d4c313f910d`, lisible via DesignSync `get_file`) pour M1-M4 ; **à partir de M5, la référence est `templates/portfolio-suite/PortfolioSuite.dc.html`** (même projet, généré 2026-07-19 dans notre vocabulaire — scènes 04 manifeste / 05 projets / 06 contact). Copy retravaillée scène par scène.
 > **Méthode** : un module à la fois — on ne passe au suivant que quand le précédent est parfait, reviewé, fignolé et validé par Thibault. Les étapes listées ici sont le niveau intermédiaire ; les micro-étapes (celles qu'on exécute une par une) sont définies au moment d'attaquer le module, et cochées ici au fur et à mesure.
 
 ## Le rituel de fin de module (identique pour tous)
@@ -96,24 +96,29 @@ _Notes M4 : le pinning sticky + scrub CSS vars = le socle réutilisable pour M6 
 
 _Reframé « manière de travailler » (ton artisan, PAS gourou) : la transition entre les deux scènes d'expérience et le rail projets. Liberté actée de dévier du template (plus à jour). Réversible : si l'atelier copy ne sort rien de naturel, on coupe la scène._
 
+_Décisions 2026-07-19 : variante fond ENCRE inversé (seul moment sombre — écho preloader) · pas d'entrée nav (l'ancre #manifeste existe) · référence = template suite._
+
 - [ ] 5.1 Structure statique + reveals (100% briques M2-M4, zéro mécanique nouvelle)
 - [ ] 5.2 Atelier copy — LE cœur du module (concret, à sa hauteur, employeur-safe)
 - [ ] 5.3 Rituel de fin de module
 
-## ⬜ M6 — Scène « Projets » (scroll horizontal pinné — version SOBRE, 3-4 cartes)
+## ⬜ M6 — Scène « Projets » (LISTE sobre — décision 2026-07-19, rail horizontal pinné ABANDONNÉ)
 
-- [ ] 6.1 Track horizontal pinné (x = −(scrollWidth − viewport), scrub) + cartes
-- [ ] 6.2 Contenu réel : remplacer les 4 projets fictifs par les siens (42 : libft, minishell… + autres) — sélection et visuels avec Thibault
-- [ ] 6.3 Interactions cartes (hover zoom, numéros) + atelier copy des descriptions
-- [ ] 6.4 Rituel de fin de module
+_Le template suite remplace le rail par une liste de lignes numérotées (hover surface + reveals) — cohérent « une seule animation spectaculaire » (elloha + fil rouge suffisent). Corrections vs template : « Next.js 15 · GSAP » → Next 16 · motion ; URL LinkedIn à unifier ; ligne « Votre projet ? » à jauger employeur-safe._
+
+- [ ] 6.1 Liste : lignes 01/02/03 (Ce portfolio · ft_transcendence · webserv — sélection finale avec Thibault) + lien « Tout est sur GitHub ↗ »
+- [ ] 6.2 Interactions (hover fond surface, flèches) + reveals + atelier copy des métas
+- [ ] 6.3 Rituel de fin de module
 
 ## ❌ M7 — Bandeau marquee + Chiffres — SUPPRIMÉ (décision Thibault 2026-07-19)
 
 _Les vrais chiffres vivent déjà DANS les scènes (badges elloha, stats NP-Evolution) — une section count-up globale dupliquerait ou gonflerait artificiellement. Le marquee posait en plus un problème de copy employeur-safe. Page finale : arrivée → à propos → NP-Evolution → elloha → manifeste court → projets → contact._
 
-## ⬜ M8 — Contact + footer
+## ⬜ M8 — Contact + footer (référence : template suite section 06)
 
-- [ ] 8.1 Titre 3 lignes géant + CTA mailto pill magnétique + email en clair
+_⚠️ Le titre du template (« Le fil s'arrête ici. / À vous de le reprendre. ») DOUBLE notre 404 — trancher lequel change. Le fil se termine visuellement sur un nœud (raccord M9)._
+
+- [ ] 8.1 Titre géant + CTA mailto italique souligné + email en clair
 - [ ] 8.2 Footer : localisation réelle, GitHub/LinkedIn (pas de Dribbble), année
 - [ ] 8.3 Atelier copy + branchement des ancres de nav restées en attente
 - [ ] 8.4 Rituel de fin de module

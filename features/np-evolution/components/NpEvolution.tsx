@@ -7,6 +7,19 @@ import { ImageLightbox } from '@/components/ui/ImageLightbox'
 import { BrowserFrame } from './BrowserFrame'
 
 /**
+ * Voile terracotta discret sur chaque capture — accorde l'UI froide de l'app au
+ * papier chaud du site (version allégée du verre du portrait, l'UI doit rester lisible).
+ */
+function CaptureVeil() {
+  return (
+    <span
+      aria-hidden
+      className="pointer-events-none absolute inset-0 bg-accent/8 mix-blend-multiply"
+    />
+  )
+}
+
+/**
  * Scène 02 — NP-Evolution : header éclaté, puis « planche d'atelier » — trois
  * spécimens de l'app épinglés en quinconce, expliqués par des blocs de texte,
  * fermée par une rangée de stats. Wipe/reveals (C), copy définitive (E).
@@ -132,6 +145,7 @@ export async function NpEvolution() {
                     sizes="(min-width:1024px) 54vw, 92vw"
                     className="reveal-wipe-zoom object-cover"
                   />
+                  <CaptureVeil />
                 </div>
                 <span className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">
                   {t('badge')}
@@ -152,6 +166,7 @@ export async function NpEvolution() {
                   sizes="(min-width:1024px) 24vw, 46vw"
                   className="reveal-wipe-zoom object-cover"
                 />
+                <CaptureVeil />
               </div>
             </ImageLightbox>
             <FilNode className="absolute -left-1.5 -top-1.5" />
@@ -207,6 +222,7 @@ export async function NpEvolution() {
                     sizes="(min-width:1024px) 28vw, 48vw"
                     className="reveal-wipe-zoom object-cover"
                   />
+                  <CaptureVeil />
                 </div>
               </ImageLightbox>
               <ImageLightbox
@@ -223,6 +239,7 @@ export async function NpEvolution() {
                     sizes="(min-width:1024px) 28vw, 53vw"
                     className="reveal-wipe-zoom object-cover"
                   />
+                  <CaptureVeil />
                 </div>
               </ImageLightbox>
               <ImageLightbox
@@ -239,6 +256,7 @@ export async function NpEvolution() {
                     sizes="(min-width:1024px) 32vw, 62vw"
                     className="reveal-wipe-zoom object-cover"
                   />
+                  <CaptureVeil />
                 </div>
               </ImageLightbox>
             </div>
@@ -297,6 +315,7 @@ export async function NpEvolution() {
                     sizes="(min-width:1024px) 22vw, 54vw"
                     className="reveal-wipe-zoom object-cover"
                   />
+                  <CaptureVeil />
                 </div>
               </ImageLightbox>
               <ImageLightbox
@@ -313,6 +332,7 @@ export async function NpEvolution() {
                     sizes="(min-width:1024px) 24vw, 58vw"
                     className="reveal-wipe-zoom object-cover"
                   />
+                  <CaptureVeil />
                 </div>
               </ImageLightbox>
             </div>

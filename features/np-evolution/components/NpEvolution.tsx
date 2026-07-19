@@ -53,30 +53,40 @@ export async function NpEvolution() {
         {/* Intro : problème / réponse (kickers tiret accent) + carte client à droite */}
         <RevealGroup className="mb-[clamp(48px,8vh,96px)] grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
           <div className="text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.7] text-ink-muted lg:col-span-7">
-            <div className="overflow-hidden">
-              <div data-reveal>
-                <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">
-                  — {t('intro1Label')}
-                </p>
-                <p className="text-pretty">
-                  {t.rich('intro1', {
-                    k: (chunks) => <span className="text-ink">{chunks}</span>,
-                  })}
-                </p>
-              </div>
-            </div>
-            <div className="mt-7 overflow-hidden">
-              <div data-reveal>
-                <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">
-                  — {t('intro2Label')}
-                </p>
-                <p className="text-pretty">
-                  {t.rich('intro2', {
-                    k: (chunks) => <span className="text-ink">{chunks}</span>,
-                  })}
-                </p>
-              </div>
-            </div>
+            <span className="block overflow-hidden">
+              <p
+                data-reveal
+                className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+              >
+                <span
+                  aria-hidden
+                  className="reveal-dash mr-2 inline-block h-px w-4 bg-accent align-middle"
+                />
+                {t('intro1Label')}
+              </p>
+            </span>
+            <p data-reveal-words className="text-pretty">
+              {t.rich('intro1', {
+                k: (chunks) => <span className="text-ink">{chunks}</span>,
+              })}
+            </p>
+            <span className="mt-7 block overflow-hidden">
+              <p
+                data-reveal
+                className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+              >
+                <span
+                  aria-hidden
+                  className="reveal-dash mr-2 inline-block h-px w-4 bg-accent align-middle"
+                />
+                {t('intro2Label')}
+              </p>
+            </span>
+            <p data-reveal-words className="text-pretty">
+              {t.rich('intro2', {
+                k: (chunks) => <span className="text-ink">{chunks}</span>,
+              })}
+            </p>
           </div>
           {/* Le client : témoignage réel (recommandation LinkedIn, citée verbatim) */}
           <div className="self-end overflow-hidden lg:col-span-4 lg:col-start-9">
@@ -129,7 +139,7 @@ export async function NpEvolution() {
               </BrowserFrame>
             </ImageLightbox>
             <ImageLightbox
-              wipe
+              wipe="up"
               src="/np-evolution/consultant.jpg"
               label={t('zoom')}
               className="absolute bottom-[-9%] right-[-3%] w-[46%]"
@@ -146,32 +156,45 @@ export async function NpEvolution() {
             </ImageLightbox>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </RevealGroup>
-          <RevealGroup className="self-center overflow-hidden lg:col-span-4 lg:col-start-9 lg:row-start-1">
-            <div data-reveal>
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          <RevealGroup className="self-center lg:col-span-4 lg:col-start-9 lg:row-start-1">
+            <span className="block overflow-hidden">
+              <p
+                data-reveal
+                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+              >
+                <span
+                  aria-hidden
+                  className="reveal-dash mr-2 inline-block h-px w-4 bg-accent align-middle"
+                />
                 {t('feat1Label')}
               </p>
-              <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
-                {t('feat1Intro')}
-              </p>
-              <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-                {(['feat1Item1', 'feat1Item2', 'feat1Item3'] as const).map((key) => (
-                  <li key={key} className="flex gap-2.5">
-                    <span aria-hidden className="text-accent">
-                      —
-                    </span>
+            </span>
+            <p
+              data-reveal-words
+              className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
+            >
+              {t('feat1Intro')}
+            </p>
+            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
+              {(['feat1Item1', 'feat1Item2', 'feat1Item3'] as const).map((key) => (
+                <li key={key} className="overflow-hidden">
+                  <div data-reveal className="flex gap-2.5">
+                    <span
+                      aria-hidden
+                      className="reveal-dash mt-[0.65em] h-px w-3.5 shrink-0 bg-accent"
+                    />
                     <span className="text-pretty">{t(key)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </RevealGroup>
 
           {/* 02 — du livret à la signature : page interactive + modale + cartes, empilées */}
           <RevealGroup className="relative lg:col-span-7 lg:col-start-6 lg:row-start-2">
             <div className="relative aspect-100/70">
               <ImageLightbox
-                wipe
+                wipe="left"
                 src="/np-evolution/livret-page.jpg"
                 label={t('zoom')}
                 className="absolute left-0 top-0 w-[48%]"
@@ -203,7 +226,7 @@ export async function NpEvolution() {
                 </div>
               </ImageLightbox>
               <ImageLightbox
-                wipe
+                wipe="up"
                 src="/np-evolution/livrets.jpg"
                 label={t('zoom')}
                 className="absolute bottom-0 right-0 w-[62%]"
@@ -221,34 +244,47 @@ export async function NpEvolution() {
             </div>
             <FilNode className="absolute -right-1.5 -top-1.5" />
           </RevealGroup>
-          <RevealGroup className="self-center overflow-hidden lg:col-span-4 lg:col-start-1 lg:row-start-2">
-            <div data-reveal>
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          <RevealGroup className="self-center lg:col-span-4 lg:col-start-1 lg:row-start-2">
+            <span className="block overflow-hidden">
+              <p
+                data-reveal
+                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+              >
+                <span
+                  aria-hidden
+                  className="reveal-dash mr-2 inline-block h-px w-4 bg-accent align-middle"
+                />
                 {t('feat2Label')}
               </p>
-              <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
-                {t('feat2Intro')}
-              </p>
-              <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-                {(['feat2Item1', 'feat2Item2', 'feat2Item3', 'feat2Item4'] as const).map(
-                  (key) => (
-                    <li key={key} className="flex gap-2.5">
-                      <span aria-hidden className="text-accent">
-                        —
-                      </span>
+            </span>
+            <p
+              data-reveal-words
+              className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
+            >
+              {t('feat2Intro')}
+            </p>
+            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
+              {(['feat2Item1', 'feat2Item2', 'feat2Item3', 'feat2Item4'] as const).map(
+                (key) => (
+                  <li key={key} className="overflow-hidden">
+                    <div data-reveal className="flex gap-2.5">
+                      <span
+                        aria-hidden
+                        className="reveal-dash mt-[0.65em] h-px w-3.5 shrink-0 bg-accent"
+                      />
                       <span className="text-pretty">{t(key)}</span>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
+                    </div>
+                  </li>
+                ),
+              )}
+            </ul>
           </RevealGroup>
 
           {/* 03 — tests + rapport IA : radar + interprétation IA, empilés */}
           <RevealGroup className="relative lg:col-span-5 lg:col-start-1 lg:row-start-3">
             <div className="relative aspect-100/85">
               <ImageLightbox
-                wipe
+                wipe="left"
                 src="/np-evolution/radar.jpg"
                 label={t('zoom')}
                 className="absolute left-0 top-0 w-[54%]"
@@ -264,7 +300,7 @@ export async function NpEvolution() {
                 </div>
               </ImageLightbox>
               <ImageLightbox
-                wipe
+                wipe="up"
                 src="/np-evolution/ia.jpg"
                 label={t('zoom')}
                 className="absolute bottom-0 right-0 w-[58%]"
@@ -282,25 +318,38 @@ export async function NpEvolution() {
             </div>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </RevealGroup>
-          <RevealGroup className="self-center overflow-hidden lg:col-span-4 lg:col-start-7 lg:row-start-3">
-            <div data-reveal>
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          <RevealGroup className="self-center lg:col-span-4 lg:col-start-7 lg:row-start-3">
+            <span className="block overflow-hidden">
+              <p
+                data-reveal
+                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+              >
+                <span
+                  aria-hidden
+                  className="reveal-dash mr-2 inline-block h-px w-4 bg-accent align-middle"
+                />
                 {t('feat4Label')}
               </p>
-              <p className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink">
-                {t('feat4Intro')}
-              </p>
-              <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-                {(['feat4Item1', 'feat4Item2', 'feat4Item3'] as const).map((key) => (
-                  <li key={key} className="flex gap-2.5">
-                    <span aria-hidden className="text-accent">
-                      —
-                    </span>
+            </span>
+            <p
+              data-reveal-words
+              className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
+            >
+              {t('feat4Intro')}
+            </p>
+            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
+              {(['feat4Item1', 'feat4Item2', 'feat4Item3'] as const).map((key) => (
+                <li key={key} className="overflow-hidden">
+                  <div data-reveal className="flex gap-2.5">
+                    <span
+                      aria-hidden
+                      className="reveal-dash mt-[0.65em] h-px w-3.5 shrink-0 bg-accent"
+                    />
                     <span className="text-pretty">{t(key)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </RevealGroup>
         </div>
 

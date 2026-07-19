@@ -7,9 +7,41 @@ import { useEffect, useRef } from 'react'
 const IO_BOTTOM_MARGIN = '-30%'
 const ALREADY_VISIBLE_RATIO = 0.92
 
+/** Enveloppe chaque mot des nœuds texte dans un span .reveal-word (--word-i croissant). */
+function wrapWords(el: HTMLElement) {
+  if (el.dataset.wordsReady) return
+  el.dataset.wordsReady = ''
+  let wordIndex = 0
+  const walk = (node: Node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const parts = (node.textContent ?? '').split(/(\s+)/)
+      if (parts.filter((p) => p.trim()).length === 0) return
+      const frag = document.createDocumentFragment()
+      for (const part of parts) {
+        if (!part) continue
+        if (!part.trim()) {
+          frag.append(part)
+        } else {
+          const span = document.createElement('span')
+          span.className = 'reveal-word inline-block'
+          span.style.setProperty('--word-i', String(wordIndex++))
+          span.textContent = part
+          frag.append(span)
+        }
+      }
+      node.parentNode?.replaceChild(frag, node)
+    } else {
+      // copie : la liste vivante change pendant le remplacement
+      Array.from(node.childNodes).forEach(walk)
+    }
+  }
+  walk(el)
+}
+
 /**
- * Révèle ses descendants `[data-reveal]` à l'entrée dans le viewport (stagger 90ms).
- * SSR-safe : enfants rendus serveur, classes reveal-* (styles/reveal.css) posées post-hydratation.
+ * Révèle ses descendants marqués à l'entrée dans le viewport (stagger 90ms) :
+ * `data-reveal` (rise sous masque), `data-reveal-wipe[="left|right|up"]` (médias),
+ * `data-reveal-words` (mots en blur-in). SSR-safe : classes posées post-hydratation.
  */
 export function RevealGroup({
   className,
@@ -26,18 +58,39 @@ export function RevealGroup({
     if (!root) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    // 2. Préparer : cacher chaque élément (rise ou wipe) et lui donner son rang de stagger
+    // 2. Préparer : cacher chaque élément selon son type et lui donner son rang de stagger
     const items = Array.from(
-      root.querySelectorAll<HTMLElement>('[data-reveal], [data-reveal-wipe]'),
+      root.querySelectorAll<HTMLElement>(
+        '[data-reveal], [data-reveal-wipe], [data-reveal-words]',
+      ),
     )
     if (items.length === 0) return
-    const isWipe = (el: HTMLElement) => el.hasAttribute('data-reveal-wipe')
+    const kind = (el: HTMLElement) =>
+      el.hasAttribute('data-reveal-wipe')
+        ? 'wipe'
+        : el.hasAttribute('data-reveal-words')
+          ? 'words'
+          : 'rise'
     items.forEach((el, i) => {
       el.style.setProperty('--reveal-i', String(i))
-      el.classList.add(isWipe(el) ? 'reveal-pending-wipe' : 'reveal-pending')
+      const k = kind(el)
+      if (k === 'wipe') {
+        el.classList.add('reveal-pending-wipe')
+        const direction = el.getAttribute('data-reveal-wipe')
+        if (direction) el.classList.add(`reveal-pending-wipe--${direction}`)
+      } else if (k === 'words') {
+        wrapWords(el)
+        el.classList.add('reveal-pending-words')
+      } else {
+        el.classList.add('reveal-pending')
+      }
     })
-    const reveal = () =>
-      items.forEach((el) => el.classList.add(isWipe(el) ? 'reveal-in-wipe' : 'reveal-in'))
+    const IN_CLASS = {
+      rise: 'reveal-in',
+      wipe: 'reveal-in-wipe',
+      words: 'reveal-in-words',
+    } as const
+    const reveal = () => items.forEach((el) => el.classList.add(IN_CLASS[kind(el)]))
 
     // 3. Groupe déjà à l'écran → révéler tout de suite (un trigger déjà dépassé ne tirerait jamais)
     if (root.getBoundingClientRect().top < window.innerHeight * ALREADY_VISIBLE_RATIO) {

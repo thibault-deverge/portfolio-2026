@@ -15,9 +15,40 @@
     animation-delay: calc(150ms + var(--reveal-i, 0) * 90ms);
   }
 
-  /* variante wipe (médias) : le cache glisse vers le bas, l'image dé-zoome sur place */
+  /* variante mots (leads) : chaque mot se dé-floute en vague, 22ms d'écart */
+  .reveal-pending-words .reveal-word {
+    opacity: 0;
+    transform: translateY(0.25em);
+    filter: blur(6px);
+  }
+  .reveal-in-words .reveal-word {
+    animation: reveal-word 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--reveal-i, 0) * 90ms + var(--word-i, 0) * 22ms);
+  }
+
+  /* le tiret des kickers se dessine (largeur 0 → 100%), après l'arrivée du texte */
+  .reveal-pending .reveal-dash {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .reveal-in .reveal-dash {
+    animation: reveal-dash 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--reveal-i, 0) * 90ms + 250ms);
+  }
+
+  /* variante wipe (médias) : un cache glisse, l'image dé-zoome sur place.
+     Direction par défaut : découverte du haut vers le bas. */
   .reveal-pending-wipe {
     clip-path: inset(0 0 100% 0);
+  }
+  .reveal-pending-wipe--left {
+    clip-path: inset(0 100% 0 0);
+  }
+  .reveal-pending-wipe--right {
+    clip-path: inset(0 0 0 100%);
+  }
+  .reveal-pending-wipe--up {
+    clip-path: inset(100% 0 0 0);
   }
   .reveal-pending-wipe .reveal-wipe-zoom {
     scale: 1.12;
@@ -41,9 +72,22 @@
     transform: none;
   }
 }
+/* un seul keyframe pour toutes les directions : l'animation part de l'état pending courant */
 @keyframes reveal-wipe {
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes reveal-word {
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes reveal-dash {
+  to {
+    transform: scaleX(1);
   }
 }
 @keyframes reveal-wipe-zoom {

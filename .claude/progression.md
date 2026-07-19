@@ -92,15 +92,13 @@ _Notes M3 : grammaire de reveals V2 (validée par Thibault, réutilisable M4-M8)
 
 _Notes M4 : le pinning sticky + scrub CSS vars = le socle réutilisable pour M6 (projets horizontaux). Chiffres écartés de la copy : « 10 000+ clients » (introuvable sur le site actuel — ⚠️ le hero M1 l'utilise encore, à re-vérifier avant mise en ligne), CA (non public), « Capital 2026 » (invérifiable). 180 M€ = volume traité pour les clients, jamais « CA ». Piège appris : la rotation −5° de la couche drift REMONTE les éléments éloignés du centre (~6-10vh) — les positions CSS des vignettes de droite compensent. Portrait M2 remplacé au passage par le portrait studio Soul Higgsfield (commit `b732228`, soul_id e0ce4b99, ~1 crédit/2 images — brutes dans le scratchpad `soul-portraits/`)._
 
-## ⬜ M5 — Scène « Manifeste » (respiration courte — décision 2026-07-19)
+## ✅ M5 — Scène « Manifeste » (respiration encre) — mergé sur main le 2026-07-19
 
-_Reframé « manière de travailler » (ton artisan, PAS gourou) : la transition entre les deux scènes d'expérience et le rail projets. Liberté actée de dévier du template (plus à jour). Réversible : si l'atelier copy ne sort rien de naturel, on coupe la scène._
+- [x] 5.1 Structure : Server Component PUR (`features/manifeste/`, zéro JS client à nous), fond `bg-ink text-paper` (seul moment sombre — écho preloader), tokens + opacité (`text-paper/60`, `border-paper/15`, JAMAIS de hex), titre 2 lignes indentées sous masque + body `data-reveal-words` + tagline italique + signature mono sous filet. 8e ancre FilNode. Pas d'entrée nav (décision).
+- [x] 5.2 Copy définitive « **Codé pour ceux qui s'en servent.** » (direction choisie parmi 3 — angle utilisateur : le livret NP-E + le planning elloha renvoient aux scènes précédentes) ; body ~55 mots stop-slop ; tagline « Du premier croquis à la production — et à ce qui vit après. » ; mono « Conception · Code · Production ». EN : « Built for the people who use it. » — leçon : virgule APRÈS un `<k>` fermant = risque de virgule orpheline en début de ligne → la rentrer dans le span.
+- [x] 5.3 Rituel : mobile 390 ✅ · reduced-motion (0 classe, opacity 1) ✅ · EN ✅ · contraste paper/60 sur encre ≈ 6,3:1 AA ✅ · build prod SSG ✅ · merge ff → main
 
-_Décisions 2026-07-19 : variante fond ENCRE inversé (seul moment sombre — écho preloader) · pas d'entrée nav (l'ancre #manifeste existe) · référence = template suite._
-
-- [ ] 5.1 Structure statique + reveals (100% briques M2-M4, zéro mécanique nouvelle)
-- [ ] 5.2 Atelier copy — LE cœur du module (concret, à sa hauteur, employeur-safe)
-- [ ] 5.3 Rituel de fin de module
+_Notes M5 : la copy du template suite (« Un produit n'existe que livré ») écartée — redondante avec le hero et ton maxime ; sobriété motion VOULUE (reveals one-shot, zéro mouvement continu — l'arrêt après la dérive elloha EST l'effet). Module le plus léger du chantier (5 fichiers, +96)._
 
 ## ⬜ M6 — Scène « Projets » (LISTE sobre — décision 2026-07-19, rail horizontal pinné ABANDONNÉ)
 

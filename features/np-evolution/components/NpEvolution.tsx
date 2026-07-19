@@ -78,7 +78,7 @@ export async function NpEvolution() {
 
         {/* La planche : 4 moments du général au concret, en quinconce (12 col) */}
         <div className="grid grid-cols-1 gap-y-[clamp(40px,7vh,80px)] lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[clamp(56px,9vh,110px)]">
-          {/* 01 — la supervision (vue générale, fenêtre navigateur) */}
+          {/* 01 — la supervision : dashboard admin + détail consultant (la hiérarchie en images) */}
           <div className="relative lg:col-span-7 lg:col-start-1 lg:row-start-1">
             <ImageLightbox src="/images/np-dashboard.jpg" label={t('zoom')}>
               <BrowserFrame>
@@ -89,6 +89,11 @@ export async function NpEvolution() {
                   {t('badge')}
                 </span>
               </BrowserFrame>
+            </ImageLightbox>
+            <ImageLightbox src="/images/np-consultant.jpg" label={t('zoom')} className="absolute -bottom-[9%] -right-[3%] w-[46%]">
+              <div className="relative aspect-[965/530] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
+                <Image src="/images/np-consultant.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 46vw" className="object-cover" />
+              </div>
             </ImageLightbox>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </div>
@@ -111,18 +116,18 @@ export async function NpEvolution() {
 
           {/* 02 — du livret à la signature : page interactive + modale + cartes, empilées */}
           <div className="relative lg:col-span-7 lg:col-start-6 lg:row-start-2">
-            <div className="relative aspect-[100/90]">
+            <div className="relative aspect-[100/76]">
               <ImageLightbox src="/images/np-livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[46%]">
                 <div className="relative aspect-[900/1180] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
                   <Image src="/images/np-livret-page.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 46vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-signature-modal.jpg" label={t('zoom')} className="absolute right-0 top-0 w-[46%]">
-                <div className="relative aspect-[680/745] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                  <Image src="/images/np-signature-modal.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 46vw" className="object-cover" />
+              <ImageLightbox src="/images/np-signature-modal.jpg" label={t('zoom')} className="absolute right-0 top-0 w-[44%]">
+                <div className="relative aspect-[566/597] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
+                  <Image src="/images/np-signature-modal.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 44vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-0 right-[6%] w-[58%]">
+              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-0 right-[3%] w-[58%]">
                 <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                   <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 60vw" className="object-cover" />
                 </div>
@@ -147,13 +152,20 @@ export async function NpEvolution() {
             </ul>
           </div>
 
-          {/* 03 — tests + rapport IA (medley de captures à venir) */}
-          <div className="relative lg:col-span-4 lg:col-start-1 lg:row-start-3">
-            <ImageLightbox src="/images/np-radar.jpg" label={t('zoom')}>
-              <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 92vw" className="object-cover" />
-              </div>
-            </ImageLightbox>
+          {/* 03 — tests + rapport IA : radar + interprétation IA, empilés */}
+          <div className="relative lg:col-span-5 lg:col-start-1 lg:row-start-3">
+            <div className="relative aspect-[100/85]">
+              <ImageLightbox src="/images/np-radar.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[54%]">
+                <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
+                  <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 22vw, 54vw" className="object-cover" />
+                </div>
+              </ImageLightbox>
+              <ImageLightbox src="/images/np-ia.jpg" label={t('zoom')} className="absolute bottom-0 right-0 w-[58%]">
+                <div className="relative aspect-[835/850] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
+                  <Image src="/images/np-ia.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 58vw" className="object-cover" />
+                </div>
+              </ImageLightbox>
+            </div>
             <FilNode className="absolute -left-1.5 -top-1.5" />
           </div>
           <div className="self-center lg:col-span-4 lg:col-start-7 lg:row-start-3">
@@ -176,8 +188,8 @@ export async function NpEvolution() {
 
         {/* Usage réel (chiffres de prod) entre filets + la ligne « sous le capot » */}
         <div className="mt-[clamp(56px,9vh,110px)] border-y border-hairline">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-7 py-8 lg:grid-cols-4">
-            {(['stat1', 'stat2', 'stat3', 'stat4'] as const).map((key) => (
+          <div className="grid grid-cols-1 gap-x-6 gap-y-7 py-8 sm:grid-cols-3">
+            {(['stat1', 'stat2', 'stat3'] as const).map((key) => (
               <div key={key}>
                 <div className="font-display text-[clamp(2rem,2.8vw,2.8rem)] font-normal leading-none tracking-tight text-accent">
                   {t(`${key}Value`)}

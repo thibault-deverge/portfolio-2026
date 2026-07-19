@@ -80,6 +80,8 @@ _Notes M2 : ScrambleText déménagé dans `components/motion/` (+ trigger 'in-vi
 - [x] 3.3 Copy définitive : le BESOIN d'abord (cadre légal CPF/Qualiopi, paperasse), « plateforme privée » (pas SaaS — pas d'abonnement), listes intro+tirets, stats prod réelles (65 bénéficiaires · 298 signatures · 384 h — source NeonDB, archivé fiche refs), stop-slop passé (43/50)
 - [x] 3.4 Rituel : mobile/reduced/EN ✅, review ✅, build prod SSG ✅, merge → main
 
+_Polish 2026-07-19 (branche refactor/np-evolution, après M5) : scène raccourcie — moments 2+3 FUSIONNÉS en « Du livret au rapport final » (pile 4 visuels : page + signature + livrets + interprétation IA ; radar retiré → ~/.trash), liste condensée 3 tirets ; reveals ALLÉGÉS (plus de blur-in mot à mot hors manifeste, paragraphes en rise simple, listes et stats révélées en bloc) — décisions : ordre NP-E→elloha CONSERVÉ (preuve freelance d'abord, crescendo éditorial→pinning→encre) ; pas de 2e pause sombre entre NP-E et elloha (l'unicité du manifeste prime, le fil M9 séparera — à réévaluer M10)._
+
 _Notes M3 : grammaire de reveals V2 (validée par Thibault, réutilisable M4-M8) : mots en blur-in (`data-reveal-words`, wrap post-hydratation), wipes directionnels (`data-reveal-wipe="left|right|up"`), tirets qui se dessinent (`.reveal-dash`), listes item par item — inspirée 21st.dev, fabriquée maison. Passe Tailwind canonique faite (aspect-a/b). Capture discussion NON utilisée (messages de test) — refaire une demo propre si besoin un jour._
 
 ## ✅ M4 — Scène « elloha » (galerie pinnée) — mergé sur main le 2026-07-19

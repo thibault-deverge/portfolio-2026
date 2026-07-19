@@ -95,5 +95,13 @@
     "para2Item3": "J’interviens sur les chemins critiques — réservations, tarifs et disponibilités, paiements Stripe — où je reproduis, isole et corrige les bugs remontés par la QA, sans régression.",
     "para2Item4": "Et je fais vivre le reste : internationalisation en 5 langues, suivi des erreurs en production avec Sentry, nettoyage progressif du legacy, branchement sur l’API de l’équipe backend C#.",
     "para2Stack": "React · TypeScript · Next.js · Material UI · Stripe · i18next · Sentry"
+  },
+  "Manifeste": {
+    "num": "04 — Manifeste",
+    "title1": "Codé pour ceux",
+    "title2": "qui <accent>s’en servent</accent>.",
+    "body": "Un consultant qui fait signer un livret, un hôtelier qui ouvre son planning : je travaille <k>pour eux</k>, pas pour la démo. Des interfaces qui <k>s’expliquent seules</k>, du code que le prochain dev reprend <k>sans mode d’emploi</k>, des détails réglés avant qu’on les remarque.",
+    "tagline": "Du premier croquis à la production — et à ce qui vit après.",
+    "roles": "Conception · Code · Production"
   }
 }

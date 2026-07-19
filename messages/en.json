@@ -95,5 +95,13 @@
     "para2Item3": "I work on the critical paths — bookings, rates and availability, Stripe payments — where I reproduce, isolate and fix QA-reported bugs without regressions.",
     "para2Item4": "And I keep the rest alive: internationalization in 5 languages, production error tracking with Sentry, gradual legacy cleanup, wiring the front to the C# backend team’s API.",
     "para2Stack": "React · TypeScript · Next.js · Material UI · Stripe · i18next · Sentry"
+  },
+  "Manifeste": {
+    "num": "04 — Manifesto",
+    "title1": "Built for the people",
+    "title2": "who <accent>use it</accent>.",
+    "body": "A consultant getting a workbook signed, a hotelier opening their planning: I work <k>for them,</k> not for the demo. Interfaces that <k>explain themselves,</k> code the next developer picks up <k>without a manual,</k> details fixed before anyone notices.",
+    "tagline": "From the first sketch to production — and to what lives after.",
+    "roles": "Design · Code · Production"
   }
 }

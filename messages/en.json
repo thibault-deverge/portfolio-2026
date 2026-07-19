@@ -57,9 +57,9 @@
     "feat1Item1": "The consultancy creates its consultants and keeps the overview",
     "feat1Item2": "Each consultant follows their clients: progress, signatures, time spent",
     "feat1Item3": "Clients move forward in their own space: their workbooks and tests, at their own pace",
-    "feat2Intro": "The heart of the platform: official PDF workbooks become online forms — down to the signature and the report, drafted with AI.",
+    "feat2Intro": "The heart of the platform: official PDF workbooks become online forms — down to the signature and the report.",
     "feat2Item1": "Every field saves itself, progress recomputes from 0 to 100% — the client moves at their own pace, the consultant follows live",
-    "feat2Item2": "Signature by finger or mouse — time-stamped, tamper-proof — triggering the official attendance sheet, ready for funding audits",
+    "feat2Item2": "Electronic signature — time-stamped, tamper-proof — triggering the official attendance sheet, ready for funding audits",
     "feat2Item3": "Tests run online, and the AI drafts a first profile analysis the consultant refines before sharing",
     "hood": "Under the hood: ~42,000 lines of TypeScript · 561 tests · 22 data models · Next.js 15"
   },

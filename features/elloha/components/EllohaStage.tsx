@@ -42,10 +42,10 @@ export function EllohaStage({
     //    dans la moitié gauche en fin de piste
     style.setProperty('--drift-x', `${-21 * p}%`)
     style.setProperty('--drift-y', `${-6 * p}%`)
-    // 2. Cross-fade resserré : acte 1 sort tôt (26→38%), acte 2 installé dès 46% —
-    //    le reste de la piste laisse simplement la dérive finir
-    const fade0 = seg(p, 0, 0.1) * (1 - seg(p, 0.26, 0.38))
-    const fade1 = seg(p, 0.34, 0.46)
+    // 2. Cross-fade : acte 1 installé dès 6% et tient jusqu'à 34%, acte 2 installé
+    //    dès 54% — le reste de la piste laisse simplement la dérive finir
+    const fade0 = seg(p, 0, 0.06) * (1 - seg(p, 0.34, 0.46))
+    const fade1 = seg(p, 0.42, 0.54)
     style.setProperty('--fade-0', String(fade0))
     style.setProperty('--fade-1', String(fade1))
   }

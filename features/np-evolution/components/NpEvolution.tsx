@@ -78,10 +78,12 @@ export async function NpEvolution() {
                 {t('intro1Label')}
               </p>
             </span>
-            <p data-reveal-words className="text-pretty">
-              {t.rich('intro1', {
-                k: (chunks) => <span className="text-ink">{chunks}</span>,
-              })}
+            <p className="overflow-hidden">
+              <span data-reveal className="block text-pretty">
+                {t.rich('intro1', {
+                  k: (chunks) => <span className="text-ink">{chunks}</span>,
+                })}
+              </span>
             </p>
             <span className="mt-7 block overflow-hidden">
               <p
@@ -95,10 +97,12 @@ export async function NpEvolution() {
                 {t('intro2Label')}
               </p>
             </span>
-            <p data-reveal-words className="text-pretty">
-              {t.rich('intro2', {
-                k: (chunks) => <span className="text-ink">{chunks}</span>,
-              })}
+            <p className="overflow-hidden">
+              <span data-reveal className="block text-pretty">
+                {t.rich('intro2', {
+                  k: (chunks) => <span className="text-ink">{chunks}</span>,
+                })}
+              </span>
             </p>
           </div>
           {/* Le client : témoignage réel (recommandation LinkedIn, citée verbatim) */}
@@ -184,30 +188,36 @@ export async function NpEvolution() {
                 {t('feat1Label')}
               </p>
             </span>
-            <p
-              data-reveal-words
-              className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
-            >
-              {t('feat1Intro')}
+            <p className="max-w-[38ch] overflow-hidden">
+              <span
+                data-reveal
+                className="block text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
+              >
+                {t('feat1Intro')}
+              </span>
             </p>
-            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-              {(['feat1Item1', 'feat1Item2', 'feat1Item3'] as const).map((key) => (
-                <li key={key} className="overflow-hidden">
-                  <div data-reveal className="flex gap-2.5">
+            {/* liste révélée en un seul bloc (allègement — plus d'item par item) */}
+            <div className="overflow-hidden">
+              <ul
+                data-reveal
+                className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted"
+              >
+                {(['feat1Item1', 'feat1Item2', 'feat1Item3'] as const).map((key) => (
+                  <li key={key} className="flex gap-2.5">
                     <span
                       aria-hidden
                       className="reveal-dash mt-[0.65em] h-px w-3.5 shrink-0 bg-accent"
                     />
                     <span className="text-pretty">{t(key)}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </RevealGroup>
 
-          {/* 02 — du livret à la signature : page interactive + modale + cartes, empilées */}
+          {/* 02 — du livret au rapport final : page + signature + cartes + IA, empilées */}
           <RevealGroup className="relative lg:col-span-7 lg:col-start-6 lg:row-start-2">
-            <div className="relative aspect-100/70">
+            <div className="relative aspect-100/85">
               <ImageLightbox
                 wipe="left"
                 src="/np-evolution/livret-page.jpg"
@@ -229,14 +239,14 @@ export async function NpEvolution() {
                 wipe
                 src="/np-evolution/signature.jpg"
                 label={t('zoom')}
-                className="absolute right-0 top-[2%] w-[53%]"
+                className="absolute right-0 top-[2%] w-[52%]"
               >
                 <div className="relative aspect-756/799 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                   <Image
                     src="/np-evolution/signature.jpg"
                     alt=""
                     fill
-                    sizes="(min-width:1024px) 28vw, 53vw"
+                    sizes="(min-width:1024px) 28vw, 52vw"
                     className="reveal-wipe-zoom object-cover"
                   />
                   <CaptureVeil />
@@ -246,14 +256,31 @@ export async function NpEvolution() {
                 wipe="up"
                 src="/np-evolution/livrets.jpg"
                 label={t('zoom')}
-                className="absolute bottom-0 right-0 w-[62%]"
+                className="absolute bottom-[8%] left-0 w-[52%]"
               >
                 <div className="relative aspect-1090/520 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                   <Image
                     src="/np-evolution/livrets.jpg"
                     alt=""
                     fill
-                    sizes="(min-width:1024px) 32vw, 62vw"
+                    sizes="(min-width:1024px) 32vw, 55vw"
+                    className="reveal-wipe-zoom object-cover"
+                  />
+                  <CaptureVeil />
+                </div>
+              </ImageLightbox>
+              <ImageLightbox
+                wipe="right"
+                src="/np-evolution/ia.jpg"
+                label={t('zoom')}
+                className="absolute bottom-0 right-0 w-[46%]"
+              >
+                <div className="relative aspect-835/850 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
+                  <Image
+                    src="/np-evolution/ia.jpg"
+                    alt=""
+                    fill
+                    sizes="(min-width:1024px) 24vw, 44vw"
                     className="reveal-wipe-zoom object-cover"
                   />
                   <CaptureVeil />
@@ -275,110 +302,43 @@ export async function NpEvolution() {
                 {t('feat2Label')}
               </p>
             </span>
-            <p
-              data-reveal-words
-              className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
-            >
-              {t('feat2Intro')}
-            </p>
-            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-              {(['feat2Item1', 'feat2Item2', 'feat2Item3', 'feat2Item4'] as const).map(
-                (key) => (
-                  <li key={key} className="overflow-hidden">
-                    <div data-reveal className="flex gap-2.5">
-                      <span
-                        aria-hidden
-                        className="reveal-dash mt-[0.65em] h-px w-3.5 shrink-0 bg-accent"
-                      />
-                      <span className="text-pretty">{t(key)}</span>
-                    </div>
-                  </li>
-                ),
-              )}
-            </ul>
-          </RevealGroup>
-
-          {/* 03 — tests + rapport IA : radar + interprétation IA, empilés */}
-          <RevealGroup className="relative lg:col-span-5 lg:col-start-1 lg:row-start-3">
-            <div className="relative aspect-100/85">
-              <ImageLightbox
-                wipe="left"
-                src="/np-evolution/radar.jpg"
-                label={t('zoom')}
-                className="absolute left-0 top-0 w-[54%]"
-              >
-                <div className="relative aspect-470/445 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                  <Image
-                    src="/np-evolution/radar.jpg"
-                    alt=""
-                    fill
-                    sizes="(min-width:1024px) 22vw, 54vw"
-                    className="reveal-wipe-zoom object-cover"
-                  />
-                  <CaptureVeil />
-                </div>
-              </ImageLightbox>
-              <ImageLightbox
-                wipe="up"
-                src="/np-evolution/ia.jpg"
-                label={t('zoom')}
-                className="absolute bottom-0 right-0 w-[58%]"
-              >
-                <div className="relative aspect-835/850 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                  <Image
-                    src="/np-evolution/ia.jpg"
-                    alt=""
-                    fill
-                    sizes="(min-width:1024px) 24vw, 58vw"
-                    className="reveal-wipe-zoom object-cover"
-                  />
-                  <CaptureVeil />
-                </div>
-              </ImageLightbox>
-            </div>
-            <FilNode className="absolute -left-1.5 -top-1.5" />
-          </RevealGroup>
-          <RevealGroup className="self-center lg:col-span-4 lg:col-start-7 lg:row-start-3">
-            <span className="block overflow-hidden">
-              <p
+            <p className="max-w-[38ch] overflow-hidden">
+              <span
                 data-reveal
-                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+                className="block text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
               >
-                <span
-                  aria-hidden
-                  className="reveal-dash mr-2 inline-block h-px w-4 bg-accent align-middle"
-                />
-                {t('feat4Label')}
-              </p>
-            </span>
-            <p
-              data-reveal-words
-              className="max-w-[38ch] text-pretty text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.6] text-ink"
-            >
-              {t('feat4Intro')}
+                {t('feat2Intro')}
+              </span>
             </p>
-            <ul className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted">
-              {(['feat4Item1', 'feat4Item2', 'feat4Item3'] as const).map((key) => (
-                <li key={key} className="overflow-hidden">
-                  <div data-reveal className="flex gap-2.5">
+            <div className="overflow-hidden">
+              <ul
+                data-reveal
+                className="mt-3 max-w-[38ch] space-y-2 text-[clamp(0.95rem,1.15vw,1.05rem)] leading-[1.55] text-ink-muted"
+              >
+                {(['feat2Item1', 'feat2Item2', 'feat2Item3'] as const).map((key) => (
+                  <li key={key} className="flex gap-2.5">
                     <span
                       aria-hidden
                       className="reveal-dash mt-[0.65em] h-px w-3.5 shrink-0 bg-accent"
                     />
                     <span className="text-pretty">{t(key)}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </RevealGroup>
         </div>
 
         {/* Usage réel (chiffres de prod) entre filets + la ligne « sous le capot » */}
         <RevealGroup className="mt-[clamp(56px,9vh,110px)] border-y border-hairline">
-          <div className="grid grid-cols-1 gap-x-6 gap-y-7 py-8 sm:grid-cols-3">
-            {(['stat1', 'stat2', 'stat3'] as const).map((key) => (
-              <div key={key} className="overflow-hidden text-center sm:text-left">
-                <div data-reveal>
+          {/* les 3 stats se révèlent en un seul bloc (allègement) */}
+          <div className="overflow-hidden">
+            <div
+              data-reveal
+              className="grid grid-cols-1 gap-x-6 gap-y-7 py-8 sm:grid-cols-3"
+            >
+              {(['stat1', 'stat2', 'stat3'] as const).map((key) => (
+                <div key={key} className="text-center sm:text-left">
                   <div className="font-display text-[clamp(2rem,2.8vw,2.8rem)] font-normal leading-none tracking-tight text-accent">
                     {t(`${key}Value`)}
                   </div>
@@ -386,8 +346,8 @@ export async function NpEvolution() {
                     {t(`${key}Label`)}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
           <div className="overflow-hidden border-t border-hairline">
             <p

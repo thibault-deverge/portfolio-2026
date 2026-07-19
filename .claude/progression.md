@@ -127,14 +127,16 @@ _Doublon tranché : le CONTACT garde « Le fil s'arrête ici. / À vous de le re
 
 _Notes M8 : 2 bugs attrapés en preview — `<p>` dans `<p>` (ScrambleText rend un `<p>` → wrapper `<div>` obligatoire, c'était une erreur d'hydratation) ; keyframe sans `to` explicite = retombe sur l'état de base caché (anim 0→0, connecteur invisible — fix `to { scaleY(1) }`, même pattern que reveal-dash). **LA PAGE EST COMPLÈTE** : arrivée → à propos → NP-E → elloha → manifeste → projets → contact._
 
-## ⬜ M9 — Le fil rouge (la couture finale)
+## ✅ M9 — Le fil rouge (la couture finale)
 
-_La signature : le SVG qui se dessine au scroll à travers toutes les scènes, avec ses nœuds qui s'allument. Architecture validée en annexe du plan (mesure des `data-fil-node`, spline, dashoffset par ref, ResizeObserver) — à confronter à la version plus simple du template (zigzag par section) au moment de choisir._
+_LA signature, livrée en 5 leçons (E1 tracé → E2 dessin → E4 naissance → E3 allumage → E5 robustesse) + rituel. Mécanisme : le vrai fil de portfolio-cinetique (la suite n'en avait pas), SANS GSAP — motion + refs. Décisions : fil DERRIÈRE le contenu (2 plongées narratives : sous l'encre du manifeste et sous le stage elloha pinné — la plongée elloha se coupe PILE au bord de la piste via une via dédiée) ; ancre About gardée sur le portrait ; hint scroll D4 = le fil seul qui pend après l'atterrissage ; **9 nœuds** (kicker « 02 » ajouté en cours de route) + **9 vias invisibles** (`FilVia`, guides de gouttières — plus aucun texte coupé)._
 
-- [ ] 9.1 Poser/vérifier les ancres `data-fil-node` dans chaque scène + tracé statique complet
-- [ ] 9.2 Dessin au scroll + nœuds qui s'allument au passage + intro au load
-- [ ] 9.3 Robustesse : resize, fonts, reduced-motion (fil complet statique), perf
-- [ ] 9.4 Rituel de fin de module
+- [x] 9.1 Tracé statique : `FilRouge` premier enfant de main (peint derrière), mesure deltas-de-rects (nœud elloha sticky = formule au-repos), spline **Catmull-Rom CENTRIPÈTE** (α=.5 — la version uniforme du template part en épingle sur segments inégaux), viewBox 1:1, build après fonts.ready
+- [x] 9.2 Dessin : dashoffset scrubbed, cible = regard (scrollY + 60%vh) via table longueur→y échantillonnée + **enveloppe monotone** + recherche binaire (le mapping linéaire du template est faux avec la piste elloha 190vh) ; naissance après l'événement `fil:origin-landed` du TravelingNode (couture 0.8s, filets timeout/voile-déjà-levé) ; allumage aux **seuils exacts en longueur de fil** (préfixes `toPartialPathD` + path de travail), réversible, nœuds 1 et pastille exclus (chorégraphies existantes)
+- [x] 9.3 Robustesse : `applyMode()` unique + bascules matchMedia VIVANTES (lg + rm) + premier **ResizeObserver** du repo (debounce 200ms, rebuild idempotent) ; reduced-motion = fil complet statique nœuds pleins ; mobile = 0 fil, nœuds pleins ; pas de useSpring (Lenis suffit) ; 1 écriture style/frame
+- [x] 9.4 Rituel : mobile 390 ✅ · rm ✅ · EN ✅ · parité ✅ · review ✅ · typecheck/lint/build SSG ✅ · merge ff `50359ae` → main
+
+_Notes M9 : bonus — fix lightbox elloha (overlay `fixed` piégé par le `transform` de la dérive → `createPortal(document.body)`, l'image zoomée était inclinée à −5°). Le connecteur statique du contact est `lg:invisible` : en desktop c'est le FIL qui descend sa ligne et se noue sur la pastille. LE SITE EST COMPLET ET COUSU — reste M10 (polish) → M11 (live)._
 
 ## ⬜ M10 — Polish global
 

@@ -73,12 +73,14 @@ _Le but : la première impression du template — preloader, levée du voile, he
 
 _Notes M2 : ScrambleText déménagé dans `components/motion/` (+ trigger 'in-view'), FilNode dans `components/fil/` ; ancre `data-fil-node` posée au coin du cadre portrait (Thibault envisage de la déplacer sur le « 01 — À propos » — à retrancher en M9) ; fix IntroLock : reload scrollé → retour en haut pendant l'intro ; leçon ICU : apostrophe droite = échappement → apostrophes typographiques partout dans les messages._
 
-## ⬜ M3 — Scène « NP-Evolution » (mission freelance)
+## ✅ M3 — Scène « NP-Evolution » (mission freelance) — mergé sur main le 2026-07-19
 
-- [ ] 3.1 Structure : header de section + tag, média 16/9, body + stat mise en avant
-- [ ] 3.2 Média : capture/vidéo de l'app ANONYMISÉE (vraie copy : bilans de compétences, Next/Prisma/eIDAS — pas le « cabinet de conseil » du placeholder)
-- [ ] 3.3 Atelier copy + vraie stat (ou formulation honnête sans chiffre inventé)
-- [ ] 3.4 Rituel de fin de module
+- [x] 3.1 Structure — GRAND ÉCART assumé vs template : « planche d'atelier » (idée Thibault) au lieu du média 16/9 unique — header éclaté (02 scramblé + titre accent + tag) · intro problème/réponse à kickers tirets · carte client avec TÉMOIGNAGE RÉEL (reco LinkedIn Nicolas Picaut, extraits verbatim, lien) · 3 moments en quinconce 12 col (supervision : dashboard en fenêtre navigateur + détail consultant · du livret à la signature : pile page+modale+cartes · tests+IA : radar + interprétation) · bande stats + ligne « sous le capot »
+- [x] 3.2 Médias : 7 captures RÉELLES croppées au labo canvas (résolution native, q92, données démo), lightbox au clic (`components/ui/ImageLightbox`, réutilisable M4), rangées dans `public/np-evolution/` — leçon : next/image cache par URL → un asset remplacé = un nom nouveau
+- [x] 3.3 Copy définitive : le BESOIN d'abord (cadre légal CPF/Qualiopi, paperasse), « plateforme privée » (pas SaaS — pas d'abonnement), listes intro+tirets, stats prod réelles (65 bénéficiaires · 298 signatures · 384 h — source NeonDB, archivé fiche refs), stop-slop passé (43/50)
+- [x] 3.4 Rituel : mobile/reduced/EN ✅, review ✅, build prod SSG ✅, merge → main
+
+_Notes M3 : grammaire de reveals V2 (validée par Thibault, réutilisable M4-M8) : mots en blur-in (`data-reveal-words`, wrap post-hydratation), wipes directionnels (`data-reveal-wipe="left|right|up"`), tirets qui se dessinent (`.reveal-dash`), listes item par item — inspirée 21st.dev, fabriquée maison. Passe Tailwind canonique faite (aspect-a/b). Capture discussion NON utilisée (messages de test) — refaire une demo propre si besoin un jour._
 
 ## ⬜ M4 — Scène « Elloha » (galerie pinnée)
 

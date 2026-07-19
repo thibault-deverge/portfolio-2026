@@ -82,14 +82,15 @@ _Notes M2 : ScrambleText déménagé dans `components/motion/` (+ trigger 'in-vi
 
 _Notes M3 : grammaire de reveals V2 (validée par Thibault, réutilisable M4-M8) : mots en blur-in (`data-reveal-words`, wrap post-hydratation), wipes directionnels (`data-reveal-wipe="left|right|up"`), tirets qui se dessinent (`.reveal-dash`), listes item par item — inspirée 21st.dev, fabriquée maison. Passe Tailwind canonique faite (aspect-a/b). Capture discussion NON utilisée (messages de test) — refaire une demo propre si besoin un jour._
 
-## ⬜ M4 — Scène « Elloha » (galerie pinnée)
+## ✅ M4 — Scène « elloha » (galerie pinnée) — mergé sur main le 2026-07-19
 
-_La plus technique : section 240vh, stage sticky, galerie inclinée −5° qui dérive en diagonale au scroll, 2 paragraphes en cross-fade selon la progression._
+- [x] 4.1 Squelette pinning : piste **190vh** (raccourcie vs 240vh template, décision Thibault) + stage sticky 100vh — layout pinné 100% CSS dans UN bloc `@media (min-width:64rem) and (prefers-reduced-motion: no-preference)` (`styles/elloha.css`), par défaut = flux empilé (mobile/reduced/no-JS servis par les utilities). Visuels **Vnext uniquement** (les mockups du site marketing = ANCIEN back-office, écartés — source : screenshots Google Play `fr.ellohapp` en `=w2400` + photo équipe 2024 du site) ; crops langue-neutres (zéro slogan FR incrusté).
+- [x] 4.2 Mécanique : `useScroll` offset `['start start','end end']` + `useMotionValueEvent` → CSS vars `--drift-x/y` + `--fade-0/1` écrites par ref sur la section (PAS de motion.div — un style inline translaterait aussi le layout mobile). Dérive finale **−21%/−6%** (adoucie vs −44/−15 template), cross-fade resserré : acte 1 sort à 26→38%, acte 2 installé à 46%. Fenêtres via `seg()` clampé du template.
+- [x] 4.3 Composition finale (≈6 itérations de feedback) : bande-collage basse de 5 éléments avec micro-rotations (photo équipe → planning tablette + 2 téléphones chevauchés → **carte avis HTML/CSS** qui ferme à droite : logo 2026 + 4,8★ 2 159 avis Google + Trustpilot « Excellent ») · voile terracotta `bg-accent/8 multiply` sur les vignettes (cohérence M3) · lightbox au clic · **constellation de 4 badges-anneaux** (écho curseur/nœuds : 60+ canaux · 19 000+ utilisateurs/jour · 106e Les Echos 2024 · 150 M+ résas/an) entre titre et couloir texte.
+- [x] 4.4 Copy définitive : « elloha » MINUSCULE partout (branding) · rôle « Développeur · CDI · SaaS tourisme » (PAS « front-end » — Thibault ne veut pas s'enfermer) · acte 1 « Le produit » 2 phrases · acte 2 « Mon travail » = intro (arrivée octobre 2025) + 4 tirets concrets issus du résumé de l'agent interne elloha (features Jira de bout en bout + reviews, écrans Material UI, chemins critiques + bugs QA, i18n 5 langues/Sentry/legacy/API C#) + ligne stack mono. FilNode près du « 03 » (6e ancre).
+- [x] 4.5 Rituel : mobile 390 (0 overflow, badges centrés 2×2, resserrage des paddings verticaux mobile de TOUTES les scènes `py-14`) ✅ · reduced-motion (flux statique, 0 classe reveal) ✅ · EN ✅ · SSR sans JS ✅ · IntroLock reload mi-section pinnée ✅ · build prod SSG ✅ · merge ff → main
 
-- [ ] 4.1 Squelette pinning (sticky + piste haute) + galerie statique (visuels PUBLICS)
-- [ ] 4.2 Dérive scrubbed de la galerie + cross-fade des paragraphes par fenêtres de progress
-- [ ] 4.3 Atelier copy (vrai rôle : dev front-end, vraie échelle 10 000+ clients / 60+ canaux)
-- [ ] 4.4 Rituel de fin de module
+_Notes M4 : le pinning sticky + scrub CSS vars = le socle réutilisable pour M6 (projets horizontaux). Chiffres écartés de la copy : « 10 000+ clients » (introuvable sur le site actuel — ⚠️ le hero M1 l'utilise encore, à re-vérifier avant mise en ligne), CA (non public), « Capital 2026 » (invérifiable). 180 M€ = volume traité pour les clients, jamais « CA ». Piège appris : la rotation −5° de la couche drift REMONTE les éléments éloignés du centre (~6-10vh) — les positions CSS des vignettes de droite compensent. Portrait M2 remplacé au passage par le portrait studio Soul Higgsfield (commit `b732228`, soul_id e0ce4b99, ~1 crédit/2 images — brutes dans le scratchpad `soul-portraits/`)._
 
 ## ⬜ M5 — Scène « Manifeste »
 

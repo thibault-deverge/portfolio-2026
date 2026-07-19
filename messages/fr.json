@@ -66,6 +66,6 @@
     "feat4Item2": "Les résultats s’affichent en radar — et l’IA rédige une première analyse du profil, que le consultant affine",
     "feat4Item3": "Une discussion intégrée pour en parler, jusqu’à la clôture du bilan",
     "hood": "Sous le capot : ~42 000 lignes de TypeScript · 561 tests · 22 modèles de données · Next.js 15",
-    "feat2Item4": "La feuille d’émargement officielle se génère toute seule, prête pour les contrôles CPF et Qualiopi"
+    "feat2Item4": "La signature déclenche la feuille d’émargement officielle, prête pour les contrôles CPF et Qualiopi"
   }
 }

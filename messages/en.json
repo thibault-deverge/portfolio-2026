@@ -62,10 +62,10 @@
     "feat2Item2": "Clients move at their own pace, time tracked — consultants follow live, exchange with them and unlock the next resources",
     "feat2Item3": "A signature drawn by finger or mouse — timestamped, tamper-proof, the workbook freezes",
     "feat4Intro": "The consultant builds questionnaires, the client takes them online.",
-    "feat4Item1": "Every questionnaire is built to measure: values, scales, questions",
+    "feat4Item1": "Every questionnaire is custom-built: values, scales, questions",
     "feat4Item2": "Results appear as a radar chart — and the AI drafts a first profile analysis the consultant refines",
     "feat4Item3": "A built-in discussion to talk it through, up to closing the assessment",
     "hood": "Under the hood: ~42,000 lines of TypeScript · 561 tests · 22 data models · Next.js 15",
-    "feat2Item4": "The official attendance sheet generates itself, ready for funding audits"
+    "feat2Item4": "The signature triggers the official attendance sheet, ready for funding audits"
   }
 }

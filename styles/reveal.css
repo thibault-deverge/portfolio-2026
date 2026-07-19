@@ -14,10 +14,40 @@
   .reveal-now .reveal-in {
     animation-delay: calc(150ms + var(--reveal-i, 0) * 90ms);
   }
+
+  /* variante wipe (médias) : le cache glisse vers le bas, l'image dé-zoome sur place */
+  .reveal-pending-wipe {
+    clip-path: inset(0 0 100% 0);
+  }
+  .reveal-pending-wipe .reveal-wipe-zoom {
+    scale: 1.12;
+  }
+  .reveal-in-wipe {
+    animation: reveal-wipe 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--reveal-i, 0) * 90ms);
+  }
+  .reveal-in-wipe .reveal-wipe-zoom {
+    animation: reveal-wipe-zoom 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--reveal-i, 0) * 90ms);
+  }
+  .reveal-now .reveal-in-wipe,
+  .reveal-now .reveal-in-wipe .reveal-wipe-zoom {
+    animation-delay: calc(150ms + var(--reveal-i, 0) * 90ms);
+  }
 }
 @keyframes reveal-up {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+@keyframes reveal-wipe {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes reveal-wipe-zoom {
+  to {
+    scale: 1;
   }
 }

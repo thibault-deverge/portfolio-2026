@@ -26,14 +26,16 @@ export function RevealGroup({
     if (!root) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    // 2. Préparer : cacher chaque élément et lui donner son rang de stagger
-    const items = Array.from(root.querySelectorAll<HTMLElement>('[data-reveal]'))
+    // 2. Préparer : cacher chaque élément (rise ou wipe) et lui donner son rang de stagger
+    const items = Array.from(root.querySelectorAll<HTMLElement>('[data-reveal], [data-reveal-wipe]'))
     if (items.length === 0) return
+    const isWipe = (el: HTMLElement) => el.hasAttribute('data-reveal-wipe')
     items.forEach((el, i) => {
       el.style.setProperty('--reveal-i', String(i))
-      el.classList.add('reveal-pending')
+      el.classList.add(isWipe(el) ? 'reveal-pending-wipe' : 'reveal-pending')
     })
-    const reveal = () => items.forEach((el) => el.classList.add('reveal-in'))
+    const reveal = () =>
+      items.forEach((el) => el.classList.add(isWipe(el) ? 'reveal-in-wipe' : 'reveal-in'))
 
     // 3. Groupe déjà à l'écran → révéler tout de suite (un trigger déjà dépassé ne tirerait jamais)
     if (root.getBoundingClientRect().top < window.innerHeight * ALREADY_VISIBLE_RATIO) {

@@ -12,11 +12,14 @@ export function ImageLightbox({
   src,
   label,
   className,
+  wipe = false,
   children,
 }: {
   src: string
   label: string
   className?: string
+  /** Marque la vignette pour le wipe reveal du RevealGroup parent. */
+  wipe?: boolean
   children: React.ReactNode
 }) {
   const [open, setOpen] = useState(false)
@@ -45,6 +48,7 @@ export function ImageLightbox({
         aria-label={label}
         className={cn('block w-full cursor-zoom-in text-left', className)}
         data-cursor="link"
+        data-reveal-wipe={wipe ? '' : undefined}
       >
         {children}
       </button>

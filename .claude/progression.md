@@ -116,14 +116,16 @@ _Notes M6 : validé SANS ajustement au checkpoint (module le plus court — 8 fi
 
 _Les vrais chiffres vivent déjà DANS les scènes (badges elloha, stats NP-Evolution) — une section count-up globale dupliquerait ou gonflerait artificiellement. Le marquee posait en plus un problème de copy employeur-safe. Page finale : arrivée → à propos → NP-Evolution → elloha → manifeste court → projets → contact._
 
-## ⬜ M8 — Contact + footer (référence : template suite section 06)
+## ✅ M8 — Contact + footer (référence : template suite section 06)
 
-_⚠️ Le titre du template (« Le fil s'arrête ici. / À vous de le reprendre. ») DOUBLE notre 404 — trancher lequel change. Le fil se termine visuellement sur un nœud (raccord M9)._
+_Doublon tranché : le CONTACT garde « Le fil s'arrête ici. / À vous de le reprendre. » (choix Thibault) → **404 retitrée** « Ce fil ne mène nulle part. » / « This thread leads nowhere. ». La phrase du template (« Une mission freelance… ») = signal de démarchage BANNI → « Un projet, une question, ou simplement envie d'en parler — »._
 
-- [ ] 8.1 Titre géant + CTA mailto italique souligné + email en clair
-- [ ] 8.2 Footer : localisation réelle, GitHub/LinkedIn (pas de Dribbble), année
-- [ ] 8.3 Atelier copy + branchement des ancres de nav restées en attente
-- [ ] 8.4 Rituel de fin de module
+- [x] 8.1 Section centrée : **connecteur fil** (trait dégradé `from-accent/0 to-accent` qui se dessine + anneau qui pop autour du FilNode — **8e et dernière ancre**, `styles/contact.css` branché sur RevealGroup via l'astuce `.contact-fil` qui neutralise son propre rise) + titre géant 2 lignes (2e italique accent) + **email en clair** mailto Fraunces italique souligné accent
+- [x] 8.2 Footer DANS la section (comme le template) : © année calculée (passée en `String` — ICU formaterait « 2 026 ») · GitHub ↗ / LinkedIn ↗ via `siteConfig.links` · `LocaleSwitcher` réutilisé (2e instance, stateless). SANS localisation (décision)
+- [x] 8.3 Copy validée du premier coup (EN : « The thread ends here. / Yours to pick up. ») + entrée nav « Contact »
+- [x] 8.4 Rituel : mobile 390 (0 overflow) ✅ · reduced-motion (connecteur statique visible) ✅ · EN ✅ · 404 fr/en ✅ · review ✅ · typecheck/lint/build SSG ✅ · merge ff `48037e9` → main
+
+_Notes M8 : 2 bugs attrapés en preview — `<p>` dans `<p>` (ScrambleText rend un `<p>` → wrapper `<div>` obligatoire, c'était une erreur d'hydratation) ; keyframe sans `to` explicite = retombe sur l'état de base caché (anim 0→0, connecteur invisible — fix `to { scaleY(1) }`, même pattern que reveal-dash). **LA PAGE EST COMPLÈTE** : arrivée → à propos → NP-E → elloha → manifeste → projets → contact._
 
 ## ⬜ M9 — Le fil rouge (la couture finale)
 

@@ -116,20 +116,20 @@ export async function NpEvolution() {
 
           {/* 02 — du livret à la signature : page interactive + modale + cartes, empilées */}
           <div className="relative lg:col-span-7 lg:col-start-6 lg:row-start-2">
-            <div className="relative aspect-[100/76]">
-              <ImageLightbox src="/images/np-livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[46%]">
+            <div className="relative aspect-[100/68]">
+              <ImageLightbox src="/images/np-livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[44%]">
                 <div className="relative aspect-[900/1180] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                  <Image src="/images/np-livret-page.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 46vw" className="object-cover" />
+                  <Image src="/images/np-livret-page.jpg" alt="" fill sizes="(min-width:1024px) 26vw, 44vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-signature-modal.jpg" label={t('zoom')} className="absolute right-0 top-0 w-[44%]">
+              <ImageLightbox src="/images/np-signature-pad.jpg" label={t('zoom')} className="absolute right-0 top-0 w-[42%]">
                 <div className="relative aspect-[566/597] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                  <Image src="/images/np-signature-modal.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 44vw" className="object-cover" />
+                  <Image src="/images/np-signature-pad.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 42vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-0 right-[3%] w-[58%]">
+              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-0 right-0 w-[62%]">
                 <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                  <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 30vw, 60vw" className="object-cover" />
+                  <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 32vw, 62vw" className="object-cover" />
                 </div>
               </ImageLightbox>
             </div>

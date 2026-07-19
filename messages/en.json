@@ -11,7 +11,8 @@
   },
   "Nav": {
     "about": "About",
-    "npEvolution": "NP-Evolution"
+    "npEvolution": "NP-Evolution",
+    "elloha": "elloha"
   },
   "About": {
     "num": "01 — About",
@@ -67,5 +68,32 @@
     "feat4Item3": "A built-in discussion to talk it through, up to closing the assessment",
     "hood": "Under the hood: ~42,000 lines of TypeScript · 561 tests · 22 data models · Next.js 15",
     "feat2Item4": "The signature triggers the official attendance sheet, ready for funding audits"
+  },
+  "Elloha": {
+    "num": "03 — On staff · elloha",
+    "title": "el<i>loha</i>",
+    "role": "Developer · Full-time · Tourism SaaS",
+    "reviewsScore": "4.8",
+    "reviewsCount": "2,159 Google reviews",
+    "reviewsTrustpilot": "Rated “Excellent” on Trustpilot",
+    "stat1Value": "60+",
+    "stat1Label": "channels in sync",
+    "stat2Value": "19,000+",
+    "stat2Label": "users a day",
+    "stat3Value": "106th",
+    "stat3Label": "in the Les Echos Top 500 (2024)",
+    "zoom": "Enlarge the screenshot",
+    "para1Label": "The product",
+    "para1": "A French booking platform for hospitality and tourism, used every day by <k>thousands of pros</k> — from independent guest houses to tourism offices.",
+    "para2Label": "My work",
+    "para2": "I joined elloha’s front-end team in <k>October 2025</k>, on the back office thousands of professionals open every morning.",
+    "para1b": "I build its back office: <k>planning, bookings, payments</k>.",
+    "stat4Value": "150M+",
+    "stat4Label": "bookings processed a year",
+    "para2Item1": "I ship features end to end from Jira tickets — requirements, code, PR — and review my teammates’ work before merge.",
+    "para2Item2": "I build the back-office screens with Material UI: forms, data grids, planning views — within the house design system.",
+    "para2Item3": "I work on the critical paths — bookings, rates and availability, Stripe payments — where I reproduce, isolate and fix QA-reported bugs without regressions.",
+    "para2Item4": "And I keep the rest alive: internationalization in 5 languages, production error tracking with Sentry, gradual legacy cleanup, wiring the front to the C# backend team’s API.",
+    "para2Stack": "React · TypeScript · Next.js · Material UI · Stripe · i18next · Sentry"
   }
 }

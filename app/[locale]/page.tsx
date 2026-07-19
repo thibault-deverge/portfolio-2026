@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import { About } from '@/features/about'
+import { Elloha } from '@/features/elloha'
 import { Hero } from '@/features/hero'
 import { NpEvolution } from '@/features/np-evolution'
 
@@ -13,6 +14,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Hero />
       <About />
       <NpEvolution />
+      <Elloha />
     </main>
   )
 }

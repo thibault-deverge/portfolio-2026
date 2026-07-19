@@ -11,7 +11,8 @@
   },
   "Nav": {
     "about": "À propos",
-    "npEvolution": "NP-Evolution"
+    "npEvolution": "NP-Evolution",
+    "elloha": "elloha"
   },
   "About": {
     "num": "01 — À propos",
@@ -67,5 +68,32 @@
     "feat4Item3": "Une discussion intégrée pour en parler, jusqu’à la clôture du bilan",
     "hood": "Sous le capot : ~42 000 lignes de TypeScript · 561 tests · 22 modèles de données · Next.js 15",
     "feat2Item4": "La signature déclenche la feuille d’émargement officielle, prête pour les contrôles CPF et Qualiopi"
+  },
+  "Elloha": {
+    "num": "03 — En poste · elloha",
+    "title": "el<i>loha</i>",
+    "role": "Développeur · CDI · SaaS tourisme",
+    "reviewsScore": "4,8",
+    "reviewsCount": "2 159 avis Google",
+    "reviewsTrustpilot": "Noté « Excellent » sur Trustpilot",
+    "stat1Value": "60+",
+    "stat1Label": "canaux synchronisés",
+    "stat2Value": "19 000+",
+    "stat2Label": "utilisateurs par jour",
+    "stat3Value": "106e",
+    "stat3Label": "au Top 500 Les Echos 2024",
+    "zoom": "Agrandir la capture",
+    "para1Label": "Le produit",
+    "para1": "Une plateforme française de réservation pour l’hôtellerie et le tourisme, utilisée chaque jour par <k>des milliers de pros</k> — du gîte indépendant à l’office de tourisme.",
+    "para2Label": "Mon travail",
+    "para2": "J’ai rejoint l’équipe front-end d’elloha en <k>octobre 2025</k>, sur le back-office que des milliers de professionnels ouvrent chaque matin.",
+    "para1b": "J’y développe le back-office : <k>plannings, réservations, encaissements</k>.",
+    "stat4Value": "150 M+",
+    "stat4Label": "réservations traitées par an",
+    "para2Item1": "J’implémente des features de bout en bout à partir de tickets Jira — analyse du besoin, code, PR — et je relis celles de l’équipe avant merge.",
+    "para2Item2": "Je construis les écrans du back-office avec Material UI : formulaires, tableaux de données, plannings — dans le respect du design system maison.",
+    "para2Item3": "J’interviens sur les chemins critiques — réservations, tarifs et disponibilités, paiements Stripe — où je reproduis, isole et corrige les bugs remontés par la QA, sans régression.",
+    "para2Item4": "Et je fais vivre le reste : internationalisation en 5 langues, suivi des erreurs en production avec Sentry, nettoyage progressif du legacy, branchement sur l’API de l’équipe backend C#.",
+    "para2Stack": "React · TypeScript · Next.js · Material UI · Stripe · i18next · Sentry"
   }
 }

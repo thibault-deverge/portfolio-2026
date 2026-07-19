@@ -1,0 +1,126 @@
+/* ===== Scène Elloha (M4) ===== */
+/* Une seule structure DOM, deux layouts :
+   - par défaut (mobile, reduced-motion, no-JS) : flux empilé, tout visible — les
+     utilities Tailwind posées dans le JSX font le travail ;
+   - bloc media ci-dessous (desktop + motion OK) : section haute, stage pinné,
+     galerie absolue inclinée qui dérive via les CSS vars écrites par EllohaStage. */
+
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+  /* la piste : 240vh de scroll pendant lesquels le stage reste collé */
+  .elloha-section {
+    height: 190vh;
+  }
+  .elloha-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    margin: 0;
+    max-width: none;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .elloha-title {
+    position: absolute;
+    left: clamp(20px, 5vw, 56px);
+    top: 11vh;
+    z-index: 3;
+    max-width: min(52vw, 520px);
+    pointer-events: none;
+  }
+
+  /* la couche qui dérive : translate (vars JS) AVANT rotate — même ordre que GSAP */
+  .elloha-drift {
+    position: absolute;
+    inset: 0;
+    display: block;
+    transform: translateX(var(--drift-x, 0px)) translateY(var(--drift-y, 0px))
+      rotate(-5deg);
+    will-change: transform;
+    z-index: 1;
+  }
+  /* la bande de spécimens : petite, basse, gaps VARIÉS (2 à 4.5vw, un chevauchement)
+     et micro-rotations propres — elle passe SOUS le couloir de texte, jamais dessus */
+  .elloha-fig {
+    position: absolute;
+    margin: 0;
+  }
+  .elloha-fig-1 {
+    left: 3vw;
+    top: 55vh;
+    width: 21vw;
+    rotate: -0.8deg;
+  }
+  .elloha-fig-2 {
+    left: 22vw;
+    top: 43vh;
+    width: 27vw;
+    rotate: 0.9deg;
+  }
+  .elloha-fig-3 {
+    left: 47vw;
+    top: 48vh;
+    width: 12vw;
+    z-index: 1;
+  }
+  .elloha-fig-4 {
+    left: 57vw;
+    top: 57vh;
+    width: 13.5vw;
+    rotate: -1.2deg;
+  }
+  .elloha-fig-5 {
+    /* dernière du collage : la bande s'arrête à 83vw pour être ENTIÈREMENT
+       sortie du couloir de texte (pleine hauteur) dès que l'acte 2 apparaît */
+    left: 67vw;
+    top: 47vh;
+    width: 17vw;
+    rotate: 0.6deg;
+    z-index: 1;
+  }
+  /* constellation de badges : remplit le vide entre le titre et le couloir de texte
+     (display:contents dissout le flex du mobile, les badges se posent sur le stage) */
+  .elloha-badges {
+    display: contents;
+  }
+  .elloha-badge {
+    position: absolute;
+    z-index: 2;
+  }
+  .elloha-badge-1 {
+    left: 24.5vw;
+    top: 10vh;
+  }
+  .elloha-badge-2 {
+    left: 34vw;
+    top: 17vh;
+  }
+  .elloha-badge-3 {
+    left: 43.5vw;
+    top: 7vh;
+  }
+  .elloha-badge-4 {
+    left: 53vw;
+    top: 14vh;
+  }
+
+  /* couloir de lecture : les DEUX blocs occupent le même emplacement haut-droite
+     (au-dessus de la bande) et se relaient par cross-fade — texte aligné à gauche */
+  .elloha-para {
+    position: absolute;
+    top: 16vh;
+    right: clamp(20px, 5vw, 56px);
+    z-index: 3;
+    margin: 0;
+    max-width: min(44vw, 480px);
+    pointer-events: none;
+  }
+  .elloha-para-0 {
+    opacity: var(--fade-0, 1);
+    transform: translateX(calc((1 - var(--fade-0, 1)) * 32px));
+  }
+  .elloha-para-1 {
+    opacity: var(--fade-1, 1);
+    transform: translateX(calc((1 - var(--fade-1, 1)) * 32px));
+  }
+}

@@ -92,24 +92,24 @@ _Notes M3 : grammaire de reveals V2 (validée par Thibault, réutilisable M4-M8)
 
 _Notes M4 : le pinning sticky + scrub CSS vars = le socle réutilisable pour M6 (projets horizontaux). Chiffres écartés de la copy : « 10 000+ clients » (introuvable sur le site actuel — ⚠️ le hero M1 l'utilise encore, à re-vérifier avant mise en ligne), CA (non public), « Capital 2026 » (invérifiable). 180 M€ = volume traité pour les clients, jamais « CA ». Piège appris : la rotation −5° de la couche drift REMONTE les éléments éloignés du centre (~6-10vh) — les positions CSS des vignettes de droite compensent. Portrait M2 remplacé au passage par le portrait studio Soul Higgsfield (commit `b732228`, soul_id e0ce4b99, ~1 crédit/2 images — brutes dans le scratchpad `soul-portraits/`)._
 
-## ⬜ M5 — Scène « Manifeste »
+## ⬜ M5 — Scène « Manifeste » (respiration courte — décision 2026-07-19)
 
-- [ ] 5.1 Titre géant 2 lignes indentées + body (reveals du système M2 — module léger)
-- [ ] 5.2 Atelier copy (sa vision du métier, ton juste, pas pompeux)
+_Reframé « manière de travailler » (ton artisan, PAS gourou) : la transition entre les deux scènes d'expérience et le rail projets. Liberté actée de dévier du template (plus à jour). Réversible : si l'atelier copy ne sort rien de naturel, on coupe la scène._
+
+- [ ] 5.1 Structure statique + reveals (100% briques M2-M4, zéro mécanique nouvelle)
+- [ ] 5.2 Atelier copy — LE cœur du module (concret, à sa hauteur, employeur-safe)
 - [ ] 5.3 Rituel de fin de module
 
-## ⬜ M6 — Scène « Projets » (scroll horizontal pinné)
+## ⬜ M6 — Scène « Projets » (scroll horizontal pinné — version SOBRE, 3-4 cartes)
 
 - [ ] 6.1 Track horizontal pinné (x = −(scrollWidth − viewport), scrub) + cartes
 - [ ] 6.2 Contenu réel : remplacer les 4 projets fictifs par les siens (42 : libft, minishell… + autres) — sélection et visuels avec Thibault
 - [ ] 6.3 Interactions cartes (hover zoom, numéros) + atelier copy des descriptions
 - [ ] 6.4 Rituel de fin de module
 
-## ⬜ M7 — Bandeau marquee + Chiffres
+## ❌ M7 — Bandeau marquee + Chiffres — SUPPRIMÉ (décision Thibault 2026-07-19)
 
-- [ ] 7.1 Marquee (vitesse couplée au scroll) — copy à reformuler (PAS « disponible pour de nouvelles missions » → employeur-safe, à décider ensemble)
-- [ ] 7.2 Chiffres : count-up au scroll — VRAIES stats à choisir (pas 48 projets/12 clients)
-- [ ] 7.3 Rituel de fin de module
+_Les vrais chiffres vivent déjà DANS les scènes (badges elloha, stats NP-Evolution) — une section count-up globale dupliquerait ou gonflerait artificiellement. Le marquee posait en plus un problème de copy employeur-safe. Page finale : arrivée → à propos → NP-Evolution → elloha → manifeste court → projets → contact._
 
 ## ⬜ M8 — Contact + footer
 

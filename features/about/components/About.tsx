@@ -64,7 +64,7 @@ export async function About() {
             <Parallax amount={0.16} className="absolute inset-0">
               <div className="absolute inset-x-0 inset-y-[-12%]">
                 <Image
-                  src="/images/portrait-about.jpg"
+                  src="/portrait/portrait-about.jpg"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 40vw, 92vw"

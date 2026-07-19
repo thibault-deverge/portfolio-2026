@@ -80,19 +80,19 @@ export async function NpEvolution() {
         <div className="grid grid-cols-1 gap-y-[clamp(40px,7vh,80px)] lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[clamp(56px,9vh,110px)]">
           {/* 01 — la supervision : dashboard admin + détail consultant (la hiérarchie en images) */}
           <div className="relative lg:col-span-7 lg:col-start-1 lg:row-start-1">
-            <ImageLightbox src="/images/np-dashboard.jpg" label={t('zoom')}>
+            <ImageLightbox src="/np-evolution/dashboard.jpg" label={t('zoom')}>
               <BrowserFrame>
                 <div className="relative aspect-[1988/1000]">
-                  <Image src="/images/np-dashboard.jpg" alt="" fill sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
+                  <Image src="/np-evolution/dashboard.jpg" alt="" fill sizes="(min-width:1024px) 54vw, 92vw" className="object-cover" />
                 </div>
                 <span className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">
                   {t('badge')}
                 </span>
               </BrowserFrame>
             </ImageLightbox>
-            <ImageLightbox src="/images/np-consultant.jpg" label={t('zoom')} className="absolute -bottom-[9%] -right-[3%] w-[46%]">
+            <ImageLightbox src="/np-evolution/consultant.jpg" label={t('zoom')} className="absolute -bottom-[9%] -right-[3%] w-[46%]">
               <div className="relative aspect-[965/530] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                <Image src="/images/np-consultant.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 46vw" className="object-cover" />
+                <Image src="/np-evolution/consultant.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 46vw" className="object-cover" />
               </div>
             </ImageLightbox>
             <FilNode className="absolute -left-1.5 -top-1.5" />
@@ -117,19 +117,19 @@ export async function NpEvolution() {
           {/* 02 — du livret à la signature : page interactive + modale + cartes, empilées */}
           <div className="relative lg:col-span-7 lg:col-start-6 lg:row-start-2">
             <div className="relative aspect-[100/70]">
-              <ImageLightbox src="/images/np-livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[48%]">
+              <ImageLightbox src="/np-evolution/livret-page.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[48%]">
                 <div className="relative aspect-[900/1180] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                  <Image src="/images/np-livret-page.jpg" alt="" fill sizes="(min-width:1024px) 28vw, 48vw" className="object-cover" />
+                  <Image src="/np-evolution/livret-page.jpg" alt="" fill sizes="(min-width:1024px) 28vw, 48vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-signature-pad.jpg" label={t('zoom')} className="absolute right-0 top-[2%] w-[53%]">
-                <div className="relative aspect-[566/597] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                  <Image src="/images/np-signature-pad.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 42vw" className="object-cover" />
+              <ImageLightbox src="/np-evolution/signature.jpg" label={t('zoom')} className="absolute right-0 top-[2%] w-[53%]">
+                <div className="relative aspect-[756/799] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
+                  <Image src="/np-evolution/signature.jpg" alt="" fill sizes="(min-width:1024px) 28vw, 53vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-livrets.jpg" label={t('zoom')} className="absolute bottom-0 right-0 w-[62%]">
+              <ImageLightbox src="/np-evolution/livrets.jpg" label={t('zoom')} className="absolute bottom-0 right-0 w-[62%]">
                 <div className="relative aspect-[1090/520] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                  <Image src="/images/np-livrets.jpg" alt="" fill sizes="(min-width:1024px) 32vw, 62vw" className="object-cover" />
+                  <Image src="/np-evolution/livrets.jpg" alt="" fill sizes="(min-width:1024px) 32vw, 62vw" className="object-cover" />
                 </div>
               </ImageLightbox>
             </div>
@@ -155,14 +155,14 @@ export async function NpEvolution() {
           {/* 03 — tests + rapport IA : radar + interprétation IA, empilés */}
           <div className="relative lg:col-span-5 lg:col-start-1 lg:row-start-3">
             <div className="relative aspect-[100/85]">
-              <ImageLightbox src="/images/np-radar.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[54%]">
+              <ImageLightbox src="/np-evolution/radar.jpg" label={t('zoom')} className="absolute left-0 top-0 w-[54%]">
                 <div className="relative aspect-[470/445] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
-                  <Image src="/images/np-radar.jpg" alt="" fill sizes="(min-width:1024px) 22vw, 54vw" className="object-cover" />
+                  <Image src="/np-evolution/radar.jpg" alt="" fill sizes="(min-width:1024px) 22vw, 54vw" className="object-cover" />
                 </div>
               </ImageLightbox>
-              <ImageLightbox src="/images/np-ia.jpg" label={t('zoom')} className="absolute bottom-0 right-0 w-[58%]">
+              <ImageLightbox src="/np-evolution/ia.jpg" label={t('zoom')} className="absolute bottom-0 right-0 w-[58%]">
                 <div className="relative aspect-[835/850] overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
-                  <Image src="/images/np-ia.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 58vw" className="object-cover" />
+                  <Image src="/np-evolution/ia.jpg" alt="" fill sizes="(min-width:1024px) 24vw, 58vw" className="object-cover" />
                 </div>
               </ImageLightbox>
             </div>

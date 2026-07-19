@@ -1,4 +1,5 @@
 import { setRequestLocale } from 'next-intl/server'
+import { FilRouge } from '@/components/fil/FilRouge'
 import { About } from '@/features/about'
 import { Contact } from '@/features/contact'
 import { Elloha } from '@/features/elloha'
@@ -14,6 +15,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <main className="relative bg-paper text-ink">
+      {/* Premier enfant positionné = peint sous toutes les sections (fil DERRIÈRE) */}
+      <FilRouge />
       <Hero />
       <About />
       <NpEvolution />

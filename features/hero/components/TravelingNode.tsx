@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { animate } from 'motion/react'
+import { FIL_ORIGIN_LANDED_EVENT } from '@/components/fil/fil-geometry'
 
 const FLIGHT_S = 1.05
 const ARC_PX = 110 // hauteur de l'arc au-dessus de la ligne de vol
@@ -55,6 +56,8 @@ export function TravelingNode() {
         traveler.style.visibility = 'hidden'
         target.classList.remove('fil-node-waiting')
         target.classList.add('fil-node-landing')
+        // le premier point du fil est posé — FilRouge peut coudre son premier bout
+        window.dispatchEvent(new CustomEvent(FIL_ORIGIN_LANDED_EVENT))
       })
     }
 

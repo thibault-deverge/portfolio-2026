@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useLenis } from 'lenis/react'
 import { cn } from '@/lib/utils'
 
@@ -52,19 +53,23 @@ export function ImageLightbox({
       >
         {children}
       </button>
-      {open && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={label}
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 z-85 flex cursor-zoom-out items-center justify-center bg-ink/85 p-[clamp(16px,4vw,56px)] backdrop-blur-sm"
-        >
-          {/* pleine résolution : le fichier source, sans passer par l'optimiseur */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt="" className="max-h-full max-w-full rounded-md shadow-2xl" />
-        </div>
-      )}
+      {/* Portal vers <body> : un ancêtre avec `transform` (ex. la dérive elloha)
+          capturerait un `fixed` inline — position fausse, rotation héritée, z piégé */}
+      {open &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={label}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-85 flex cursor-zoom-out items-center justify-center bg-ink/85 p-[clamp(16px,4vw,56px)] backdrop-blur-sm"
+          >
+            {/* pleine résolution : le fichier source, sans passer par l'optimiseur */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={src} alt="" className="max-h-full max-w-full rounded-md shadow-2xl" />
+          </div>,
+          document.body,
+        )}
     </>
   )
 }

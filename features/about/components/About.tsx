@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { FilNode } from '@/components/fil/FilNode'
+import { FilVia } from '@/components/fil/FilVia'
 import { Parallax } from '@/components/motion/Parallax'
 import { RevealGroup } from '@/components/motion/RevealGroup'
 import { ScrambleText } from '@/components/motion/ScrambleText'
@@ -85,6 +86,8 @@ export async function About() {
           </div>
           {/* le nœud épingle le cadre — ancre du fil rouge (M9) */}
           <FilNode className="absolute -right-1.5 -top-1.5" />
+          {/* sortie du fil : coin bas-gauche du portrait, vers NP-Evolution */}
+          <FilVia className="absolute -bottom-1.5 -left-1.5" />
         </div>
       </div>
     </section>

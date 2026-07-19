@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useMotionValueEvent, useScroll } from 'motion/react'
+import { FilVia } from '@/components/fil/FilVia'
 
 /** Progression linéaire clampée de v entre a et b (0 → 1) — le `seg` du template. */
 function seg(v: number, a: number, b: number) {
@@ -57,6 +58,10 @@ export function EllohaStage({
 
   return (
     <section ref={sectionRef} id="elloha" className="elloha-section relative">
+      {/* le fil plonge sous l'atelier PILE au bord de la piste (le nœud du kicker
+          est dans le stage sticky — inatteignable visuellement pendant le pin).
+          x = 68px : aligné sur le couloir de marge des stats NP-E, chute verticale */}
+      <FilVia className="absolute left-17 top-0" />
       {/* empilé par défaut (utilities) ; pinné plein écran en desktop+motion (elloha.css) */}
       <div className="elloha-stage mx-auto w-full max-w-310 bg-paper px-6 py-14 sm:px-10 lg:px-14">
         <div className="elloha-title relative mb-10">{title}</div>

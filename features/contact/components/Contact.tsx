@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { FilNode } from '@/components/fil/FilNode'
+import { FilVia } from '@/components/fil/FilVia'
 import { LocaleSwitcher } from '@/components/layout/LocaleSwitcher'
 import { RevealGroup } from '@/components/motion/RevealGroup'
 import { ScrambleText } from '@/components/motion/ScrambleText'
@@ -22,7 +23,10 @@ export async function Contact() {
         <RevealGroup>
           {/* Le fil atterrit : trait dégradé qui se dessine + pastille (8e ancre du fil) */}
           <span data-reveal aria-hidden className="contact-fil flex flex-col items-center">
-            <span className="contact-thread block h-[clamp(64px,12vh,120px)] w-px bg-gradient-to-b from-accent/0 to-accent" />
+            {/* via au sommet du connecteur : en desktop le FIL devient le trait
+                (le connecteur statique reste pour mobile — lg:invisible garde l'espace) */}
+            <FilVia />
+            <span className="contact-thread block h-[clamp(64px,12vh,120px)] w-px bg-gradient-to-b from-accent/0 to-accent lg:invisible" />
             <span className="contact-ring grid size-[22px] place-items-center rounded-full border border-accent/50">
               <FilNode />
             </span>

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { FilNode } from '@/components/fil/FilNode'
+import { FilVia } from '@/components/fil/FilVia'
 import { RevealGroup } from '@/components/motion/RevealGroup'
 import { ScrambleText } from '@/components/motion/ScrambleText'
 import { ImageLightbox } from '@/components/ui/ImageLightbox'
@@ -36,7 +37,9 @@ export async function NpEvolution() {
       <div className="mx-auto w-full max-w-310">
         {/* Header éclaté : numéro scramblé + titre sous masque, tag à droite */}
         <RevealGroup className="mb-[clamp(24px,4vh,40px)] flex flex-wrap items-end justify-between gap-6">
-          <div>
+          <div className="relative">
+            {/* nœud du kicker : le fil épingle le « 02 » puis descend la gouttière gauche */}
+            <FilNode className="absolute -left-6 top-1" />
             <ScrambleText
               text={t('num')}
               trigger="in-view"
@@ -175,6 +178,8 @@ export async function NpEvolution() {
               </div>
             </ImageLightbox>
             <FilNode className="absolute -left-1.5 -top-1.5" />
+            {/* sortie du fil : bas du dashboard, vers la planche livret */}
+            <FilVia className="absolute -bottom-1.5 -left-1.5" />
           </RevealGroup>
           <RevealGroup className="self-center lg:col-span-4 lg:col-start-9 lg:row-start-1">
             <span className="block overflow-hidden">
@@ -289,6 +294,8 @@ export async function NpEvolution() {
               </ImageLightbox>
             </div>
             <FilNode className="absolute -right-1.5 -top-1.5" />
+            {/* sortie du fil : derrière la planche livret, puis le blanc vers les stats */}
+            <FilVia className="absolute -bottom-1.5 left-0" />
           </RevealGroup>
           <RevealGroup className="self-center lg:col-span-4 lg:col-start-1 lg:row-start-2">
             <span className="block overflow-hidden">
@@ -331,7 +338,12 @@ export async function NpEvolution() {
         </div>
 
         {/* Usage réel (chiffres de prod) entre filets + la ligne « sous le capot » */}
-        <RevealGroup className="mt-[clamp(56px,9vh,110px)] border-y border-hairline">
+        <RevealGroup className="relative mt-[clamp(56px,9vh,110px)] border-y border-hairline">
+          {/* passage du fil : la gouttière gauche, pour ne pas couper les stats.
+              DEUX vias (haut/bas, même x) : la diagonale se pose, puis la descente
+              vers la plongée elloha est déjà verticale — pas de zigzag Catmull-Rom */}
+          <FilVia className="absolute -left-8 top-0" />
+          <FilVia className="absolute -bottom-16 -left-8" />
           {/* les 3 stats se révèlent en un seul bloc (allègement) */}
           <div className="overflow-hidden">
             <div

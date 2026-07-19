@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { FilNode } from '@/components/fil/FilNode'
+import { FilVia } from '@/components/fil/FilVia'
 import { RevealGroup } from '@/components/motion/RevealGroup'
 import { ScrambleText } from '@/components/motion/ScrambleText'
 import { siteConfig } from '@/lib/config/site'
@@ -63,7 +64,9 @@ export async function Projets() {
           </div>
 
           {/* Les lignes : chaque row monte sous masque avec son filet, stagger 90 ms */}
-          <div>
+          <div className="relative">
+            {/* sortie du fil : sous la liste, gouttière gauche — il évite les lignes */}
+            <FilVia className="absolute -bottom-6 left-0" />
             {PROJECTS.map((project, i) => (
               <div key={project.key} className="overflow-hidden">
                 <a

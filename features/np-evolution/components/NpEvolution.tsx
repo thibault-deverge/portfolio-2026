@@ -30,7 +30,7 @@ export async function NpEvolution() {
   return (
     <section
       id="np-evolution"
-      className="relative px-6 py-[clamp(80px,16vh,200px)] sm:px-10 lg:px-14"
+      className="relative px-6 py-14 sm:px-10 lg:px-14 lg:py-[clamp(80px,16vh,200px)]"
     >
       <div className="mx-auto w-full max-w-310">
         {/* Header éclaté : numéro scramblé + titre sous masque, tag à droite */}
@@ -377,7 +377,7 @@ export async function NpEvolution() {
         <RevealGroup className="mt-[clamp(56px,9vh,110px)] border-y border-hairline">
           <div className="grid grid-cols-1 gap-x-6 gap-y-7 py-8 sm:grid-cols-3">
             {(['stat1', 'stat2', 'stat3'] as const).map((key) => (
-              <div key={key} className="overflow-hidden">
+              <div key={key} className="overflow-hidden text-center sm:text-left">
                 <div data-reveal>
                   <div className="font-display text-[clamp(2rem,2.8vw,2.8rem)] font-normal leading-none tracking-tight text-accent">
                     {t(`${key}Value`)}
@@ -392,7 +392,7 @@ export async function NpEvolution() {
           <div className="overflow-hidden border-t border-hairline">
             <p
               data-reveal
-              className="py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted"
+              className="py-4 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted sm:text-left"
             >
               {t('hood')}
             </p>

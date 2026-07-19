@@ -80,7 +80,7 @@ export async function Elloha() {
         </RevealGroup>
       }
       badges={
-        <RevealGroup className="elloha-badges mb-10 flex flex-wrap items-start gap-x-10 gap-y-7">
+        <RevealGroup className="elloha-badges mb-10 flex flex-wrap items-start justify-center gap-x-10 gap-y-7">
           {(['stat1', 'stat2', 'stat3', 'stat4'] as const).map((key, i) => (
             <div key={key} className={`elloha-badge elloha-badge-${i + 1}`}>
               <span className="block overflow-hidden">

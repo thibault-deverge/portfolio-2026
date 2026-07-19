@@ -15,7 +15,7 @@ export async function About() {
   return (
     <section
       id="apropos"
-      className="relative px-6 py-[clamp(80px,16vh,200px)] sm:px-10 lg:px-14"
+      className="relative px-6 py-14 sm:px-10 lg:px-14 lg:py-[clamp(80px,16vh,200px)]"
     >
       <div className="mx-auto grid w-full max-w-310 gap-[clamp(32px,6vw,96px)] lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-start">
         {/* Colonne bio : numéro, titre, body — révélés sous masque à l'entrée */}

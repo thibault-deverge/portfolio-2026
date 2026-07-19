@@ -58,7 +58,7 @@ export function EllohaStage({
   return (
     <section ref={sectionRef} id="elloha" className="elloha-section relative">
       {/* empilé par défaut (utilities) ; pinné plein écran en desktop+motion (elloha.css) */}
-      <div className="elloha-stage mx-auto w-full max-w-310 bg-paper px-6 py-[clamp(80px,16vh,200px)] sm:px-10 lg:px-14">
+      <div className="elloha-stage mx-auto w-full max-w-310 bg-paper px-6 py-14 sm:px-10 lg:px-14">
         <div className="elloha-title relative mb-10">{title}</div>
         {badges}
         <div className="elloha-para elloha-para-0 mb-10">{para0}</div>

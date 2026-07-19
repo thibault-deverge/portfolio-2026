@@ -4,6 +4,7 @@ import { Elloha } from '@/features/elloha'
 import { Hero } from '@/features/hero'
 import { Manifeste } from '@/features/manifeste'
 import { NpEvolution } from '@/features/np-evolution'
+import { Projets } from '@/features/projets'
 
 // La page se remplit scène par scène : hero (M1), à propos (M2), NP-Evolution (M3)…
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -17,6 +18,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <NpEvolution />
       <Elloha />
       <Manifeste />
+      <Projets />
     </main>
   )
 }

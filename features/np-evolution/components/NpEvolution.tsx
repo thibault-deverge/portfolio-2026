@@ -4,6 +4,7 @@ import { FilNode } from '@/components/fil/FilNode'
 import { RevealGroup } from '@/components/motion/RevealGroup'
 import { ScrambleText } from '@/components/motion/ScrambleText'
 import { ImageLightbox } from '@/components/ui/ImageLightbox'
+import { siteConfig } from '@/lib/config/site'
 import { BrowserFrame } from './BrowserFrame'
 
 /**
@@ -123,7 +124,7 @@ export async function NpEvolution() {
                   {t('clientRole')}
                 </p>
                 <a
-                  href="https://www.linkedin.com/in/thibault-deverge/"
+                  href={siteConfig.links.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 inline-block font-mono text-xs uppercase tracking-[0.12em] text-ink-muted underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-accent"

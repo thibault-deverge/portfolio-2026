@@ -12,7 +12,8 @@
   "Nav": {
     "about": "About",
     "npEvolution": "NP-Evolution",
-    "elloha": "elloha"
+    "elloha": "elloha",
+    "projets": "Projects"
   },
   "About": {
     "num": "01 — About",
@@ -97,5 +98,18 @@
     "body": "A consultant getting a workbook signed, a hotelier opening their planning: I work <k>for them,</k> not for the demo. Interfaces that <k>explain themselves,</k> code the next developer picks up <k>without a manual,</k> details fixed before anyone notices.",
     "tagline": "From the first sketch to production — and to what lives after.",
     "roles": "Design · Code · Production"
+  },
+  "Projets": {
+    "num": "05 — Selected projects",
+    "title": "The rest of the <muted>workshop</muted>.",
+    "githubLink": "It’s all on GitHub",
+    "p1Title": "This portfolio",
+    "p1Meta": "Next.js 16 · Motion · 2026",
+    "p2Title": "ft_transcendence",
+    "p2Meta": "Real-time Pong · 42 School",
+    "p3Title": "minishell",
+    "p3Meta": "Unix shell · C · 42 School",
+    "p4Title": "cub3d",
+    "p4Meta": "Raycasting · C · 42 School"
   }
 }

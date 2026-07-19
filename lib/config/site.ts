@@ -12,7 +12,7 @@ export const siteConfig = {
   email: 'thibault.deverge@gmail.com',
   links: {
     github: 'https://github.com/thibault-deverge',
-    linkedin: 'https://www.linkedin.com/in/thibault-deverge-061724356',
+    linkedin: 'https://www.linkedin.com/in/thibault-deverge/',
   },
 } as const
 

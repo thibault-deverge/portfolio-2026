@@ -1,0 +1,49 @@
+/* ===== 06 Contact — l'atterrissage du fil ===== */
+
+/* Le connecteur porte data-reveal pour recevoir le signal de RevealGroup, mais ne
+   monte pas lui-même : le trait se dessine puis l'anneau pop — écho vertical du
+   nf-draw/nf-pop de la 404. Sans JS ou en reduced-motion : tout reste visible. */
+@media (prefers-reduced-motion: no-preference) {
+  .contact-fil.reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+  .contact-fil.reveal-in {
+    animation: none;
+  }
+  .contact-fil.reveal-pending .contact-thread {
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
+  .contact-fil.reveal-pending .contact-ring {
+    transform: scale(0);
+  }
+  .contact-fil.reveal-in .contact-thread {
+    animation: contact-draw 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--reveal-i, 0) * 90ms);
+  }
+  .contact-fil.reveal-in .contact-ring {
+    animation: contact-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: calc(var(--reveal-i, 0) * 90ms + 550ms);
+  }
+}
+
+/* `to` explicites : l'état de base des éléments est CACHÉ (reveal-pending) — un
+   keyframe sans `to` retomberait dessus en fin d'animation (anim 0 → 0, invisible). */
+@keyframes contact-draw {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes contact-pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -5,7 +5,7 @@
   },
   "NotFound": {
     "code": "404",
-    "title": "The thread ends here.",
+    "title": "This thread leads nowhere.",
     "body": "This page doesn’t exist — or not anymore.",
     "cta": "Pick up the thread"
   },
@@ -13,7 +13,8 @@
     "about": "About",
     "npEvolution": "NP-Evolution",
     "elloha": "elloha",
-    "projets": "Projects"
+    "projets": "Projects",
+    "contact": "Contact"
   },
   "About": {
     "num": "01 — About",
@@ -111,5 +112,14 @@
     "p3Meta": "Unix shell · C · 42 School",
     "p4Title": "cub3d",
     "p4Meta": "Raycasting · C · 42 School"
+  },
+  "Contact": {
+    "num": "06 — Contact",
+    "title1": "The thread ends here.",
+    "title2": "<accent>Yours to pick up.</accent>",
+    "body": "A project, a question, or simply something to talk over —",
+    "rights": "© {year} Thibault Deverge",
+    "footerGithub": "GitHub",
+    "footerLinkedin": "LinkedIn"
   }
 }

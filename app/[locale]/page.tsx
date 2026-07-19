@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import { About } from '@/features/about'
+import { Contact } from '@/features/contact'
 import { Elloha } from '@/features/elloha'
 import { Hero } from '@/features/hero'
 import { Manifeste } from '@/features/manifeste'
@@ -19,6 +20,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Elloha />
       <Manifeste />
       <Projets />
+      <Contact />
     </main>
   )
 }

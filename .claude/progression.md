@@ -147,11 +147,15 @@ _Notes M9 : bonus — fix lightbox elloha (overlay `fixed` piégé par le `trans
 - [ ] 10.5 Passe copy EN intégrale (relecture d'un bloc) + README du repo réécrit
 - [ ] 10.6 Rituel de fin de module
 
-## ⬜ M11 — Mise en ligne
+## 🟡 M11 — Mise en ligne (ANTICIPÉE le 2026-07-20, avant M10)
 
-- [ ] 11.1 Vercel : projet, domaine définitif (TODO site.ts), variables d'env
-- [ ] 11.2 Vérifs prod (Lighthouse, partage OG, 404, redirections /fr)
-- [ ] 11.3 Annonce LinkedIn/GitHub (profil à jour) 🎉
+_Repo GitHub **privé** créé et poussé (`portfolio-2026`, fiches NDA vérifiées absentes) ;
+déployé sur Vercel : **https://thibault-deverge.vercel.app** — vérifié en prod : `/` FR,
+`/en`, 404 thématisée. Chaque push sur `main` redéploie._
+
+- [x] 11.1a Vercel : projet en ligne sur `.vercel.app` · [ ] 11.1b domaine définitif (TODO site.ts) — aucune variable d'env nécessaire
+- [ ] 11.2 Vérifs prod (Lighthouse, partage OG, redirections /fr) — après le polish M10
+- [ ] 11.3 Annonce LinkedIn/GitHub (profil à jour) 🎉 — après M10
 
 ## 🧊 Phase 2 (backlog, après mise en ligne)
 

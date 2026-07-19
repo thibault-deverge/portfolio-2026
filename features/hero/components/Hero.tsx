@@ -69,7 +69,10 @@ export async function Hero() {
         </h1>
 
         {/* Sous-titre en deux voix : la thèse (Fraunces italique), la preuve (Geist muted) */}
-        <div className="hero-rise mt-[clamp(28px,5vh,52px)] pl-[8vw]" style={{ animationDelay: '2.95s' }}>
+        <div
+          className="hero-rise mt-[clamp(28px,5vh,52px)] pl-[8vw]"
+          style={{ animationDelay: '2.95s' }}
+        >
           <p className="text-pretty font-display text-[clamp(1.2rem,1.9vw,1.7rem)] italic leading-snug tracking-tight text-ink">
             {t('subtitle1')}
           </p>

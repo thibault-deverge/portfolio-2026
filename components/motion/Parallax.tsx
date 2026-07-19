@@ -21,7 +21,10 @@ export function Parallax({
   const reduceMotion = useReducedMotion()
 
   // progression 0 → 1 : le haut du bloc entre en bas d'écran → son bas sort en haut
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
   const travel = reduceMotion ? 0 : amount * 60
   const y = useTransform(scrollYProgress, [0, 1], [`${-travel}%`, `${travel}%`])
 

@@ -29,7 +29,11 @@
     linear-gradient(var(--loader-grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--loader-grid-line) 1px, transparent 1px);
   background-size: 46px 46px;
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 25%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse 90% 70% at 50% 45%,
+    #000 25%,
+    transparent 100%
+  );
   mask-image: radial-gradient(ellipse 90% 70% at 50% 45%, #000 25%, transparent 100%);
 }
 

@@ -27,7 +27,9 @@ export function RevealGroup({
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     // 2. Préparer : cacher chaque élément (rise ou wipe) et lui donner son rang de stagger
-    const items = Array.from(root.querySelectorAll<HTMLElement>('[data-reveal], [data-reveal-wipe]'))
+    const items = Array.from(
+      root.querySelectorAll<HTMLElement>('[data-reveal], [data-reveal-wipe]'),
+    )
     if (items.length === 0) return
     const isWipe = (el: HTMLElement) => el.hasAttribute('data-reveal-wipe')
     items.forEach((el, i) => {

@@ -11,8 +11,9 @@ Couleurs — TOUJOURS via `var(--*)`, jamais de hex en dur :
 LE SEUL accent) · `--color-hairline` #e5e0d8 (bordures 1px).
 
 Fonts : `--font-display` (Fraunces — titres ; classe utilitaire `.font-display` = opsz auto
-+ ss01 + tracking -0.025em ; l'italique = voix « signature ») · `--font-sans` (Geist — UI,
-corps) · `--font-mono` (Geist Mono — labels techniques, eyebrows, chiffres ; classe `.font-mono`).
+
+- ss01 + tracking -0.025em ; l'italique = voix « signature ») · `--font-sans` (Geist — UI,
+  corps) · `--font-mono` (Geist Mono — labels techniques, eyebrows, chiffres ; classe `.font-mono`).
 
 ## Classes fournies par `styles.css`
 
@@ -41,8 +42,13 @@ corps) · `--font-mono` (Geist Mono — labels techniques, eyebrows, chiffres ; 
 
 ```html
 <section style="background: var(--color-paper); color: var(--color-ink)">
-  <p class="font-mono" style="font-size:11px; letter-spacing:.18em; text-transform:uppercase;
-     color: var(--color-ink-muted)">01 · Parcours</p>
+  <p
+    class="font-mono"
+    style="font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+     color: var(--color-ink-muted)"
+  >
+    01 · Parcours
+  </p>
   <h2 class="font-display" style="font-size:clamp(1.8rem,3.4vw,2.8rem); font-weight:500">
     Un seul fil relie <span style="color:var(--color-accent)">tout</span> le parcours.
   </h2>

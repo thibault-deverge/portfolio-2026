@@ -11,8 +11,8 @@
 - Fonts via Google Fonts (`@import` dans styles.css) : Fraunces (+ italic), Geist, Geist Mono.
   Le repo utilise next/font ; les valeurs sont équivalentes visuellement.
 - Sortie locale : `ds-bundle/` (gitignoré). Source de vérité du style : `styles/theme.css`
-  + `styles/hero.css` du repo — toute évolution de tokens doit être répercutée à la main
-  dans le bundle avant re-sync.
+  - `styles/hero.css` du repo — toute évolution de tokens doit être répercutée à la main
+    dans le bundle avant re-sync.
 - 2026-07-15 : la direction design vit désormais côté Claude Design — template
   `templates/portfolio-cinetique/` = référence n°1 des scènes (lisible via DesignSync
   `get_file`). Les futures sections seront ajoutées à la vitrine après leur implémentation

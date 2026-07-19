@@ -41,12 +41,16 @@ export async function About() {
           <div className="max-w-[52ch] text-[clamp(1.02rem,1.35vw,1.2rem)] leading-[1.7] text-ink-muted">
             <p className="overflow-hidden">
               <span data-reveal className="block text-pretty">
-                {t.rich('body1', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+                {t.rich('body1', {
+                  k: (chunks) => <span className="text-ink">{chunks}</span>,
+                })}
               </span>
             </p>
             <p className="mt-6 overflow-hidden">
               <span data-reveal className="block text-pretty">
-                {t.rich('body2', { k: (chunks) => <span className="text-ink">{chunks}</span> })}
+                {t.rich('body2', {
+                  k: (chunks) => <span className="text-ink">{chunks}</span>,
+                })}
               </span>
             </p>
             <p className="mt-6 overflow-hidden">
@@ -74,7 +78,10 @@ export async function About() {
             </Parallax>
             {/* verre du cadre : grain papier + voile terracotta, fixes au-dessus du parallax */}
             <span aria-hidden className="hero-loader-grain absolute inset-0" />
-            <span aria-hidden className="absolute inset-0 bg-accent/10 mix-blend-multiply" />
+            <span
+              aria-hidden
+              className="absolute inset-0 bg-accent/10 mix-blend-multiply"
+            />
           </div>
           {/* le nœud épingle le cadre — ancre du fil rouge (M9) */}
           <FilNode className="absolute -right-1.5 -top-1.5" />

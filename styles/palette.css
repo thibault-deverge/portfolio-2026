@@ -1,0 +1,34 @@
+/* ===== Palette ⌘K — entrée du panneau + curseur de streaming ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .palette-panel {
+    animation: palette-in 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .palette-dot {
+    animation: palette-pulse 1s ease-in-out infinite;
+  }
+}
+
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes palette-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}

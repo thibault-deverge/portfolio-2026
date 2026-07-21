@@ -150,5 +150,23 @@
     "errorTooFast": "One moment — then try again.",
     "errorRateLimited": "Too many messages in a row — try again in a few minutes.",
     "errorServer": "Sending failed — email me directly instead."
+  },
+  "Palette": {
+    "trigger": "A question?",
+    "kbd": "⌘K",
+    "title": "A question about my profile?",
+    "placeholder": "Ask your question…",
+    "send": "Send",
+    "close": "close",
+    "suggested1": "What’s his background?",
+    "suggested2": "What’s his tech stack?",
+    "suggested3": "What does he do at elloha?",
+    "suggested4": "What is NP-Evolution?",
+    "suggested5": "What’s the “Xin chào” about?",
+    "disclaimer": "AI-generated answers from a public fact sheet.",
+    "errorRateLimited": "Easy there — try again in a few minutes.",
+    "errorQuota": "Today’s quota is used up. Email me: thibault.deverge@gmail.com",
+    "errorInvalid": "Empty or too-long question (500 characters max).",
+    "errorServer": "A technical hiccup — try again, or email me directly."
   }
 }

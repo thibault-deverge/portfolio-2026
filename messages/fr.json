@@ -150,5 +150,23 @@
     "errorTooFast": "Un instant — puis réessayez.",
     "errorRateLimited": "Trop de messages d’affilée — réessayez dans quelques minutes.",
     "errorServer": "L’envoi a échoué — écrivez-moi directement par email."
+  },
+  "Palette": {
+    "trigger": "Une question ?",
+    "kbd": "⌘K",
+    "title": "Une question sur mon profil ?",
+    "placeholder": "Posez votre question…",
+    "send": "Envoyer",
+    "close": "fermer",
+    "suggested1": "Quel est son parcours ?",
+    "suggested2": "Quelle est sa stack technique ?",
+    "suggested3": "Que fait-il chez elloha ?",
+    "suggested4": "C’est quoi, NP-Evolution ?",
+    "suggested5": "D’où vient le « Xin chào » ?",
+    "disclaimer": "Réponses générées par IA à partir d’une fiche publique.",
+    "errorRateLimited": "Doucement — réessayez dans quelques minutes.",
+    "errorQuota": "Le quota du jour est atteint. Écrivez-moi : thibault.deverge@gmail.com",
+    "errorInvalid": "Question vide ou trop longue (500 caractères max).",
+    "errorServer": "Un pépin technique — réessayez, ou écrivez-moi directement."
   }
 }

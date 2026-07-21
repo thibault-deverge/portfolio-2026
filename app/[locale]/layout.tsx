@@ -8,6 +8,7 @@ import { fraunces, geistSans, geistMono } from '@/styles/fonts'
 import { SmoothScrollProvider } from '@/components/layout/SmoothScrollProvider'
 import { Header } from '@/components/layout/Header'
 import { CustomCursor } from '@/components/layout/CustomCursor'
+import { CommandPalette } from '@/components/palette/CommandPalette'
 import '../globals.css'
 
 // Barre du navigateur assortie au papier.
@@ -89,6 +90,7 @@ export default async function LocaleLayout({
           <SmoothScrollProvider>
             <CustomCursor />
             <Header />
+            <CommandPalette />
             {children}
           </SmoothScrollProvider>
         </NextIntlClientProvider>

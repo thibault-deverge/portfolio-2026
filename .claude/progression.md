@@ -190,10 +190,34 @@ déployé sur Vercel : **https://thibault-deverge.vercel.app** — vérifié en 
   `replyTo` = visiteur, page restée ● SSG. `RESEND_API_KEY` en `.env.local` + Vercel
   (⚠️ leçon : une env Vercel ne s'applique qu'aux deploys lancés APRÈS — redeploy
   nécessaire). Testé en réel local ET prod.
-- [ ] 2.2 Palette ⌘K IA (Q&A sur son profil, claude-haiku) — SUIVANT. Garde-fous tokens
-  exigés par Thibault : rate limit + plafond de dépense + prompt verrouillé
-- Reste : prise de RDV Cal.com (⚠️ à jauger employeur-safe) · dark mode (déconseillé —
-  l'identité EST le papier) · études de cas MDX (quand plus de projets)
+- [x] **2.2 Palette ⌘K IA** — livrée en 5 leçons + extensions (2026-07-21/22, branche
+  `feat/palette-ia`). Bouton header + ⌘K/Ctrl+K → overlay portal (focus-trap, Escape,
+  scroll-lock, z-90) ; 5 questions suggérées + champ libre ; streaming texte brut lu en
+  chunks ; liens cliquables dans les réponses. Backend : PREMIER route handler du repo
+  (`app/api/assistant`), SDK Anthropic brut, `claude-haiku-4-5`, max_tokens 500.
+  **Gardes** (leçon 1, exigence tokens) : input ≤500 c + historique 12 msgs retronqués
+  serveur · rate limit Upstash 20/10 min/IP (ephemeralCache bonus) · budget global Redis
+  150/j + 1 000/mois (INCR+EXPIRE, fail-closed) · pire cas ~10 $/mois. **Fiche profil
+  publique committée** (`features/assistant/prompt.ts`) : parcours romancé (droit →
+  déclic Vietnam Covid → autodidacte → piscine 42 → elloha qui le recontacte), section
+  Vietnam (Win 125, bún chả, « Zet khoe ! »), goûts (raclette, Djokovic, OM, Leone/
+  Morricone…), atouts vendeurs PAR LES FAITS, interview 20 questions 2026-07-22.
+  **Persona** : « l'assistant personnel de Thibault », vouvoiement blindé (même sous
+  provocation — corrigé en batterie), pince-sans-rire 1 pointe max, relances sensées.
+  **Tool use** : outil `send_message` (email + message + accord explicite requis) →
+  Resend (to verrouillé siteConfig, replyTo visiteur, 10 envois/j max), boucle agentique
+  2 streams dans le route handler. **Calendly branché** (lien 30 min, formule neutre,
+  décision Thibault 2026-07-22 — signal doux assumé). Navbar allégée (À propos/Projets
+  retirés). Batterie adversariale PASSÉE : injection directe, historique empoisonné,
+  hors-sujet, CA elloha/lignes de code (NDA), France Travail, spam d'emails, EN
+  salary/open-to-work. Env : ANTHROPIC_API_KEY + KV_* (Marketplace Upstash).
+  Build ● SSG conservé + ƒ /api/assistant.
+- [ ] 2.3 Textes profil LinkedIn (headline, À propos, expériences) — alignés copy portfolio,
+  employeur-safe ; préalable à l'annonce 11.3b
+- [ ] 2.4 Résidus a11y : contraste petits labels accent + label-content-name-mismatch (96→100)
+- Écartés (arbitrage 2026-07-21) : Cal.com (signal de dispo, risqué employeur) · dark mode
+  (l'identité EST le papier) · études de cas MDX (quand plus de projets) · portraits
+  Higgsfield hors programme (opportuniste, si abonnement début août)
 
 **Backlog médias (décisions 2026-07-18)** : portrait actuel gardé (photo Vietnam traitée : grade + grain + voile terracotta, brutes sur `~/Desktop/photos-portrait/`) — Thibault envisage un abonnement Higgsfield début août pour retravailler les portraits (Soul entraîné sur ses photos) · boucle vidéo NP-Evolution reportée (outil pressenti : Cap, gratuit — sinon Screen Studio) ; M3 démarrera avec des captures fixes traitées.
 

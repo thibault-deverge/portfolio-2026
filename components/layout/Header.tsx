@@ -18,10 +18,10 @@ const SECTIONS: {
   id: string
   labelKey: 'about' | 'npEvolution' | 'elloha' | 'projets' | 'contact'
 }[] = [
-  { id: 'apropos', labelKey: 'about' },
+  // « À propos » et « Projets » retirés (navbar allégée avec l'arrivée de la palette,
+  // décision 2026-07-22) — réversibles, les clés Nav existent toujours
   { id: 'np-evolution', labelKey: 'npEvolution' },
   { id: 'elloha', labelKey: 'elloha' },
-  { id: 'projets', labelKey: 'projets' },
   { id: 'contact', labelKey: 'contact' },
 ]
 
@@ -33,6 +33,7 @@ export function Header() {
   const reduceMotion = useReducedMotion()
   const lenis = useLenis()
   const t = useTranslations('Nav')
+  const tPalette = useTranslations('Palette')
 
   useMotionValueEvent(scrollY, 'change', (y) => {
     const previous = scrollY.getPrevious() ?? 0
@@ -85,6 +86,17 @@ export function Header() {
               ))}
             </nav>
           )}
+          {/* Déclencheur de la palette — visible desktop ET mobile (pas de ⌘K au doigt) */}
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event('palette:open'))}
+            className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] whitespace-nowrap text-ink-muted transition-colors duration-200 hover:text-ink"
+          >
+            {tPalette('trigger')}
+            <kbd className="hidden rounded border border-hairline px-1.5 py-0.5 text-[10px] sm:inline">
+              {tPalette('kbd')}
+            </kbd>
+          </button>
           <LocaleSwitcher />
         </div>
       </div>

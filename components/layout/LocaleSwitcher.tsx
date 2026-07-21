@@ -20,7 +20,7 @@ export function LocaleSwitcher() {
             aria-current={loc === locale ? 'true' : undefined}
             className={
               loc === locale
-                ? 'text-accent'
+                ? 'text-accent-deep'
                 : 'text-ink-muted transition-colors duration-200 hover:text-ink'
             }
           >

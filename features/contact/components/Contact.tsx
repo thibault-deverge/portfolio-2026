@@ -37,7 +37,7 @@ export async function Contact() {
             <ScrambleText
               text={t('num')}
               trigger="in-view"
-              className="font-mono text-xs uppercase tracking-[0.2em] text-accent"
+              className="font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
             />
           </div>
           <h2 className="font-display text-[clamp(3rem,10vw,8rem)] font-normal leading-[0.92] tracking-[-0.03em] text-ink [font-optical-sizing:auto]">

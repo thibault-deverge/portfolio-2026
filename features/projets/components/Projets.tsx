@@ -37,7 +37,7 @@ export async function Projets() {
                 <ScrambleText
                   text={t('num')}
                   trigger="in-view"
-                  className="font-mono text-xs uppercase tracking-[0.2em] text-accent"
+                  className="font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
                 />
               </div>
               <h2 className="font-display text-[clamp(2.6rem,7vw,5.4rem)] font-normal leading-[0.95] tracking-[-0.03em] text-ink [font-optical-sizing:auto]">
@@ -80,7 +80,7 @@ export async function Projets() {
                     i === PROJECTS.length - 1 && 'border-b',
                   )}
                 >
-                  <span className="font-mono text-xs text-accent">
+                  <span className="font-mono text-xs text-accent-deep">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="font-display text-[clamp(1.7rem,3.4vw,2.7rem)] leading-none tracking-[-0.02em] text-ink [font-optical-sizing:auto]">

@@ -6,7 +6,8 @@ export default async function NotFound() {
   const t = await getTranslations('NotFound')
 
   return (
-    <main className="grid min-h-dvh place-items-center bg-paper text-ink">
+    // id="main" : cible du skip-link du layout (sinon il pointe dans le vide sur la 404)
+    <main id="main" className="grid min-h-dvh place-items-center bg-paper text-ink">
       <div className="px-6 text-center">
         {/* ---- Le fil interrompu ---- */}
         <div className="mx-auto flex w-fit items-center" aria-hidden>
@@ -16,7 +17,7 @@ export default async function NotFound() {
 
         {/* ---- Message ---- */}
         <div className="nf-copy">
-          <p className="mt-10 font-mono text-xs tracking-[0.2em] text-accent">
+          <p className="mt-10 font-mono text-xs tracking-[0.2em] text-accent-deep">
             {t('code')}
           </p>
           <h1 className="mt-4 font-display text-4xl italic sm:text-5xl">{t('title')}</h1>

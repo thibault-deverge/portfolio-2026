@@ -24,7 +24,7 @@ export async function About() {
           <ScrambleText
             text={t('num')}
             trigger="in-view"
-            className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+            className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
           />
           <h2 className="mb-7 font-display text-[clamp(2.4rem,6vw,4.6rem)] font-normal leading-none tracking-tight text-ink [font-optical-sizing:auto]">
             <span className="mb-[-0.18em] block overflow-hidden pb-[0.18em]">

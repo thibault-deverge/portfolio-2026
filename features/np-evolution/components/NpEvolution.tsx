@@ -44,7 +44,7 @@ export async function NpEvolution() {
             <ScrambleText
               text={t('num')}
               trigger="in-view"
-              className="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+              className="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
             />
             <h2 className="font-display text-[clamp(2.6rem,7vw,5.4rem)] font-normal leading-[0.95] tracking-tight text-ink [font-optical-sizing:auto]">
               <span className="mb-[-0.1em] block overflow-hidden pb-[0.1em]">
@@ -74,7 +74,7 @@ export async function NpEvolution() {
             <span className="block overflow-hidden">
               <p
                 data-reveal
-                className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+                className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
               >
                 <span
                   aria-hidden
@@ -93,7 +93,7 @@ export async function NpEvolution() {
             <span className="mt-7 block overflow-hidden">
               <p
                 data-reveal
-                className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+                className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
               >
                 <span
                   aria-hidden
@@ -116,7 +116,7 @@ export async function NpEvolution() {
               data-reveal
               className="rounded-lg border border-hairline bg-surface p-6"
             >
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep">
                 {t('clientLabel')}
               </p>
               <blockquote className="font-display text-[1.05rem] italic leading-snug text-ink">
@@ -186,7 +186,7 @@ export async function NpEvolution() {
             <span className="block overflow-hidden">
               <p
                 data-reveal
-                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
               >
                 <span
                   aria-hidden
@@ -302,7 +302,7 @@ export async function NpEvolution() {
             <span className="block overflow-hidden">
               <p
                 data-reveal
-                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+                className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
               >
                 <span
                   aria-hidden

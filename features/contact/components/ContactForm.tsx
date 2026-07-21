@@ -111,7 +111,7 @@ export function ContactForm() {
                 {isPending ? t('sending') : t('submit')}
               </button>
               {state.status === 'error' && (
-                <p role="alert" className="text-right text-sm text-accent">
+                <p role="alert" className="text-right text-sm text-accent-deep">
                   {t(
                     (
                       {

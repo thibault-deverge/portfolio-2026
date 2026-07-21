@@ -287,7 +287,7 @@ export function CommandPalette() {
 
         {/* ---- Erreur ---- */}
         {errorKey && (
-          <p role="alert" className="px-5 pb-2 text-sm text-accent">
+          <p role="alert" className="px-5 pb-2 text-sm text-accent-deep">
             {t(ERROR_MESSAGE_KEY[errorKey])}
           </p>
         )}
@@ -324,7 +324,7 @@ export function CommandPalette() {
         </form>
 
         {/* ---- Disclaimer ---- */}
-        <p className="border-t border-hairline bg-surface px-5 py-2 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-muted/80">
+        <p className="border-t border-hairline bg-surface px-5 py-2 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-muted">
           {t('disclaimer')}
         </p>
       </div>

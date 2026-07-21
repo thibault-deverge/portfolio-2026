@@ -5,6 +5,9 @@
   --color-ink: #1a1a18;
   --color-ink-muted: #6f6a60;
   --color-accent: #d85a30;
+  /* Même terracotta, assombri pour le PETIT texte sur fond clair (AA 4,6:1 vs 3,4:1).
+     L'accent graphique (fil, nœuds, gros titres) reste --color-accent. */
+  --color-accent-deep: #b84a26;
   --color-hairline: #e5e0d8;
 }
 

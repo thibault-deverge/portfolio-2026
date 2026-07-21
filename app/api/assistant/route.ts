@@ -130,7 +130,10 @@ export async function POST(req: Request) {
             emitted = true
           }
         }
-        return { final: await stream.finalMessage(), emitted }
+        const final = await stream.finalMessage()
+        // filet : si le plafond coupe malgré la discipline du prompt, on ferme proprement
+        if (final.stop_reason === 'max_tokens') controller.enqueue(encoder.encode('…'))
+        return { final, emitted }
       }
 
       try {

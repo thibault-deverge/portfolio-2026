@@ -60,7 +60,7 @@ export async function Elloha() {
           <ScrambleText
             text={t('num')}
             trigger="in-view"
-            className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+            className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep"
           />
           {/* l'ancre du fil rouge, épinglée près du numéro (décision M4) */}
           <FilNode className="absolute -left-4 top-1" />
@@ -114,7 +114,7 @@ export async function Elloha() {
       }
       para0={
         <>
-          <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep">
             <span
               aria-hidden
               className="mr-2 inline-block h-px w-4 bg-accent align-middle"
@@ -135,7 +135,7 @@ export async function Elloha() {
       }
       para1={
         <>
-          <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent-deep">
             <span
               aria-hidden
               className="mr-2 inline-block h-px w-4 bg-accent align-middle"

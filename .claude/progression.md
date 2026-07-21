@@ -214,7 +214,16 @@ déployé sur Vercel : **https://thibault-deverge.vercel.app** — vérifié en 
   Build ● SSG conservé + ƒ /api/assistant.
 - [ ] 2.3 Textes profil LinkedIn (headline, À propos, expériences) — alignés copy portfolio,
   employeur-safe ; préalable à l'annonce 11.3b
-- [ ] 2.4 Résidus a11y : contraste petits labels accent + label-content-name-mismatch (96→100)
+- [x] **2.4 Résidus a11y** (2026-07-22) : token `--color-accent-deep` #b84a26 (même
+  terracotta assombri, AA 4,6:1) sur TOUT petit texte accent sur fond clair (15 éléments,
+  10 fichiers — kickers, erreurs forms, 404, switcher, disclaimer palette) ; l'accent
+  graphique et le manifeste (accent sur encre, 4,5:1 ✓) inchangés. Bonus axe : le 404
+  n'avait pas d'`id="main"` (skip-link dans le vide depuis toujours) — réparé ; le
+  label-content-name-mismatch de M10 avait déjà disparu (bouton esc). Audit axe :
+  0 violation sur FR / FR+palette / EN / 404. + fix du soir : réponses assistant
+  tronquées (max_tokens 500→800 + discipline de longueur + filet « … » serveur) et
+  tutoiement des relances (règle ré-ancrée en fin de prompt, effet de récence).
+  PageSpeed prod à re-vérifier (pari : a11y 100).
 - Écartés (arbitrage 2026-07-21) : Cal.com (signal de dispo, risqué employeur) · dark mode
   (l'identité EST le papier) · études de cas MDX (quand plus de projets) · portraits
   Higgsfield hors programme (opportuniste, si abonnement début août)

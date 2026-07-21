@@ -5,6 +5,7 @@ import { LocaleSwitcher } from '@/components/layout/LocaleSwitcher'
 import { RevealGroup } from '@/components/motion/RevealGroup'
 import { ScrambleText } from '@/components/motion/ScrambleText'
 import { siteConfig } from '@/lib/config/site'
+import { ContactForm } from './ContactForm'
 
 /**
  * Scène 06 — Contact : la fin du fil. Connecteur qui se dessine (dernière ancre
@@ -70,6 +71,8 @@ export async function Contact() {
               {siteConfig.email}
             </a>
           </p>
+          {/* Alternative sans client mail : repli formulaire (server action Resend) */}
+          <ContactForm />
           {/* Footer de page : © · liens externes · langue */}
           <footer
             data-reveal

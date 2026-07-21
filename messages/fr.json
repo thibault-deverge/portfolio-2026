@@ -138,5 +138,17 @@
   "A11y": {
     "skipLink": "Aller au contenu",
     "newTab": "(nouvel onglet)"
+  },
+  "ContactForm": {
+    "toggle": "Pas de client mail ? Écrivez-moi d’ici",
+    "emailLabel": "Votre email",
+    "messageLabel": "Votre message",
+    "submit": "Envoyer",
+    "sending": "Envoi…",
+    "success": "Message envoyé — je vous réponds vite.",
+    "errorInvalid": "Email ou message invalide (10 caractères minimum).",
+    "errorTooFast": "Un instant — puis réessayez.",
+    "errorRateLimited": "Trop de messages d’affilée — réessayez dans quelques minutes.",
+    "errorServer": "L’envoi a échoué — écrivez-moi directement par email."
   }
 }

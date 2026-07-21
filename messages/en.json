@@ -138,5 +138,17 @@
   "A11y": {
     "skipLink": "Skip to content",
     "newTab": "(new tab)"
+  },
+  "ContactForm": {
+    "toggle": "No mail client? Write to me here",
+    "emailLabel": "Your email",
+    "messageLabel": "Your message",
+    "submit": "Send",
+    "sending": "Sending…",
+    "success": "Message sent — I’ll get back to you soon.",
+    "errorInvalid": "Invalid email or message (10 characters minimum).",
+    "errorTooFast": "One moment — then try again.",
+    "errorRateLimited": "Too many messages in a row — try again in a few minutes.",
+    "errorServer": "Sending failed — email me directly instead."
   }
 }

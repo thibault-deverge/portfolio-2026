@@ -183,7 +183,17 @@ déployé sur Vercel : **https://thibault-deverge.vercel.app** — vérifié en 
 
 ## 🧊 Phase 2 (backlog, après mise en ligne)
 
-Formulaire contact (Resend) · prise de RDV Cal.com · palette ⌘K IA (Q&A sur son profil, claude-haiku) · dark mode · étude de cas détaillée par projet si besoin (réintroduire MDX).
+- [x] **2.1 Formulaire contact (Resend)** — livré en prod le 2026-07-20 (`422239e`) : repli
+  « Pas de client mail ? » sous le mailto (email + message), server action + `useActionState`,
+  état discriminé à clés i18n, gardes anti-spam (honeypot faux-succès · time-trap 3 s ·
+  rate limit best-effort 3/10 min — invérifiable en dev, modules isolés par requête),
+  `replyTo` = visiteur, page restée ● SSG. `RESEND_API_KEY` en `.env.local` + Vercel
+  (⚠️ leçon : une env Vercel ne s'applique qu'aux deploys lancés APRÈS — redeploy
+  nécessaire). Testé en réel local ET prod.
+- [ ] 2.2 Palette ⌘K IA (Q&A sur son profil, claude-haiku) — SUIVANT. Garde-fous tokens
+  exigés par Thibault : rate limit + plafond de dépense + prompt verrouillé
+- Reste : prise de RDV Cal.com (⚠️ à jauger employeur-safe) · dark mode (déconseillé —
+  l'identité EST le papier) · études de cas MDX (quand plus de projets)
 
 **Backlog médias (décisions 2026-07-18)** : portrait actuel gardé (photo Vietnam traitée : grade + grain + voile terracotta, brutes sur `~/Desktop/photos-portrait/`) — Thibault envisage un abonnement Higgsfield début août pour retravailler les portraits (Soul entraîné sur ses photos) · boucle vidéo NP-Evolution reportée (outil pressenti : Cap, gratuit — sinon Screen Studio) ; M3 démarrera avec des captures fixes traitées.
 

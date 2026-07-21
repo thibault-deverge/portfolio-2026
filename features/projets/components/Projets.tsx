@@ -7,9 +7,8 @@ import { siteConfig } from '@/lib/config/site'
 import { cn } from '@/lib/utils'
 
 // Les URLs ne sont pas de la copy : elles vivent ici, adossées à siteConfig.
-// « Ce portfolio » pointe vers le profil tant que le repo reste privé (cf. M11).
 const PROJECTS = [
-  { key: 'p1', href: siteConfig.links.github },
+  { key: 'p1', href: `${siteConfig.links.github}/portfolio-2026` },
   { key: 'p2', href: `${siteConfig.links.github}/42-Cursus__Ft-Transcendence` },
   { key: 'p3', href: `${siteConfig.links.github}/42-Cursus__Minishell` },
   { key: 'p4', href: `${siteConfig.links.github}/42-Cursus__Cub3d` },

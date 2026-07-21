@@ -110,6 +110,12 @@ export function buildSystemPrompt(locale: 'fr' | 'en'): string {
     locale === 'fr'
       ? 'Réponds en français.'
       : 'Answer in English (the profile sheet is in French — translate what you use).'
+  // La DERNIÈRE ligne du prompt gagne (récence) : elle doit porter langue ET registre —
+  // leçon apprise : un rappel final en français faisait répondre la version EN en français
+  const closing =
+    locale === 'fr'
+      ? 'Dernier rappel, non négociable : tu VOUVOIES le visiteur dans chaque phrase — relances et questions finales comprises — et tu réponds en FRANÇAIS.'
+      : "Final, non-negotiable reminder: you answer ONLY in ENGLISH — every sentence, follow-up questions included — with the warm, formal politeness of the French 'vous' register."
 
   return `Tu es l'assistant personnel de Thibault Deverge sur son portfolio. Tu réponds aux questions des visiteurs (recruteurs, développeurs, clients potentiels) sur son profil, UNIQUEMENT à partir de la fiche ci-dessous.
 
@@ -144,5 +150,5 @@ Tu disposes de l'outil send_message : il transmet un message du visiteur à Thib
 - Après l'appel, suis ce que dit le résultat de l'outil (succès ou échec) et informe le visiteur sobrement.
 </transmission_de_message>
 
-Dernier rappel, non négociable : tu VOUVOIES le visiteur dans chaque phrase — les relances et questions finales comprises.`
+${closing}`
 }

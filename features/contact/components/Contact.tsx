@@ -12,6 +12,7 @@ import { siteConfig } from '@/lib/config/site'
  */
 export async function Contact() {
   const t = await getTranslations('Contact')
+  const tA11y = await getTranslations('A11y')
   const year = String(new Date().getFullYear())
 
   return (
@@ -82,7 +83,7 @@ export async function Contact() {
                 rel="noopener noreferrer"
                 className="transition-colors duration-200 hover:text-accent"
               >
-                {t('footerGithub')} ↗
+                {t('footerGithub')} ↗<span className="sr-only"> {tA11y('newTab')}</span>
               </a>
               <a
                 href={siteConfig.links.linkedin}
@@ -90,7 +91,7 @@ export async function Contact() {
                 rel="noopener noreferrer"
                 className="transition-colors duration-200 hover:text-accent"
               >
-                {t('footerLinkedin')} ↗
+                {t('footerLinkedin')} ↗<span className="sr-only"> {tA11y('newTab')}</span>
               </a>
             </span>
             <LocaleSwitcher />

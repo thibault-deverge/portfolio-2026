@@ -44,7 +44,8 @@ export function EllohaStage({
     style.setProperty('--drift-x', `${-21 * p}%`)
     style.setProperty('--drift-y', `${-6 * p}%`)
     // 2. Cross-fade : acte 1 installé dès 6% et tient jusqu'à 34%, acte 2 installé
-    //    dès 54% — le reste de la piste laisse simplement la dérive finir
+    //    dès 54%. (Le chevauchement transitoire carte avis/texte est ASSUMÉ — M10 :
+    //    la dérive ne dégage le couloir qu'en toute fin de piste, le texte reste lisible.)
     const fade0 = seg(p, 0, 0.06) * (1 - seg(p, 0.34, 0.46))
     const fade1 = seg(p, 0.42, 0.54)
     style.setProperty('--fade-0', String(fade0))

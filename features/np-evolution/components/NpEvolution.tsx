@@ -28,6 +28,7 @@ function CaptureVeil() {
  */
 export async function NpEvolution() {
   const t = await getTranslations('NpEvolution')
+  const tA11y = await getTranslations('A11y')
 
   return (
     <section
@@ -132,7 +133,7 @@ export async function NpEvolution() {
                   rel="noopener noreferrer"
                   className="mt-3 inline-block font-mono text-xs uppercase tracking-[0.12em] text-ink-muted underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-accent"
                 >
-                  {t('clientLink')} ↗
+                  {t('clientLink')} ↗<span className="sr-only"> {tA11y('newTab')}</span>
                 </a>
               </figcaption>
             </figure>
@@ -143,12 +144,12 @@ export async function NpEvolution() {
         <div className="grid grid-cols-1 gap-y-[clamp(40px,7vh,80px)] lg:grid-cols-12 lg:gap-x-8 lg:gap-y-[clamp(56px,9vh,110px)]">
           {/* 01 — la supervision : dashboard admin + détail consultant (la hiérarchie en images) */}
           <RevealGroup className="relative lg:col-span-7 lg:col-start-1 lg:row-start-1">
-            <ImageLightbox wipe src="/np-evolution/dashboard.jpg" label={t('zoom')}>
+            <ImageLightbox wipe src="/np-evolution/dashboard.jpg" label={t('zoom')} alt={t('altDashboard')}>
               <BrowserFrame>
                 <div className="relative aspect-1988/1000">
                   <Image
                     src="/np-evolution/dashboard.jpg"
-                    alt=""
+                    alt={t('altDashboard')}
                     fill
                     sizes="(min-width:1024px) 54vw, 92vw"
                     className="reveal-wipe-zoom object-cover"
@@ -163,13 +164,13 @@ export async function NpEvolution() {
             <ImageLightbox
               wipe="up"
               src="/np-evolution/consultant.jpg"
-              label={t('zoom')}
+              label={t('zoom')} alt={t('altConsultant')}
               className="absolute bottom-[-9%] right-[-3%] w-[46%]"
             >
               <div className="relative aspect-965/530 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                 <Image
                   src="/np-evolution/consultant.jpg"
-                  alt=""
+                  alt={t('altConsultant')}
                   fill
                   sizes="(min-width:1024px) 24vw, 46vw"
                   className="reveal-wipe-zoom object-cover"
@@ -227,13 +228,13 @@ export async function NpEvolution() {
               <ImageLightbox
                 wipe="left"
                 src="/np-evolution/livret-page.jpg"
-                label={t('zoom')}
+                label={t('zoom')} alt={t('altLivretPage')}
                 className="absolute left-0 top-0 w-[48%]"
               >
                 <div className="relative aspect-900/1180 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/10">
                   <Image
                     src="/np-evolution/livret-page.jpg"
-                    alt=""
+                    alt={t('altLivretPage')}
                     fill
                     sizes="(min-width:1024px) 28vw, 48vw"
                     className="reveal-wipe-zoom object-cover"
@@ -244,13 +245,13 @@ export async function NpEvolution() {
               <ImageLightbox
                 wipe
                 src="/np-evolution/signature.jpg"
-                label={t('zoom')}
+                label={t('zoom')} alt={t('altSignature')}
                 className="absolute right-0 top-[2%] w-[52%]"
               >
                 <div className="relative aspect-756/799 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                   <Image
                     src="/np-evolution/signature.jpg"
-                    alt=""
+                    alt={t('altSignature')}
                     fill
                     sizes="(min-width:1024px) 28vw, 52vw"
                     className="reveal-wipe-zoom object-cover"
@@ -261,13 +262,13 @@ export async function NpEvolution() {
               <ImageLightbox
                 wipe="up"
                 src="/np-evolution/livrets.jpg"
-                label={t('zoom')}
+                label={t('zoom')} alt={t('altLivrets')}
                 className="absolute bottom-[8%] left-0 w-[52%]"
               >
                 <div className="relative aspect-1090/520 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                   <Image
                     src="/np-evolution/livrets.jpg"
-                    alt=""
+                    alt={t('altLivrets')}
                     fill
                     sizes="(min-width:1024px) 32vw, 55vw"
                     className="reveal-wipe-zoom object-cover"
@@ -278,13 +279,13 @@ export async function NpEvolution() {
               <ImageLightbox
                 wipe="right"
                 src="/np-evolution/ia.jpg"
-                label={t('zoom')}
+                label={t('zoom')} alt={t('altIa')}
                 className="absolute bottom-0 right-0 w-[46%]"
               >
                 <div className="relative aspect-835/850 overflow-hidden rounded-lg border border-hairline bg-surface shadow-xl shadow-ink/15">
                   <Image
                     src="/np-evolution/ia.jpg"
-                    alt=""
+                    alt={t('altIa')}
                     fill
                     sizes="(min-width:1024px) 24vw, 44vw"
                     className="reveal-wipe-zoom object-cover"

@@ -13,6 +13,7 @@ const FIGURES = [
   {
     slot: 'elloha-fig-1',
     src: '/elloha/elloha-team.jpg',
+    altKey: 'altTeam',
     ratio: 'aspect-3/2',
     span: 'col-span-2',
     sizes: '(min-width: 1024px) 21vw, 92vw',
@@ -20,6 +21,7 @@ const FIGURES = [
   {
     slot: 'elloha-fig-2',
     src: '/elloha/elloha-vnext-planning-full.jpg',
+    altKey: 'altPlanning',
     ratio: 'aspect-3/2',
     span: 'col-span-2',
     sizes: '(min-width: 1024px) 27vw, 92vw',
@@ -27,6 +29,7 @@ const FIGURES = [
   {
     slot: 'elloha-fig-3',
     src: '/elloha/elloha-vnext-mobile.jpg',
+    altKey: 'altMobile',
     ratio: 'aspect-3/5',
     span: 'col-span-1',
     sizes: '(min-width: 1024px) 12vw, 46vw',
@@ -34,6 +37,7 @@ const FIGURES = [
   {
     slot: 'elloha-fig-4',
     src: '/elloha/elloha-vnext-direct.jpg',
+    altKey: 'altDirect',
     ratio: 'aspect-4/5',
     span: 'col-span-1',
     sizes: '(min-width: 1024px) 14vw, 46vw',
@@ -167,13 +171,13 @@ export async function Elloha() {
         <>
           {FIGURES.map((fig) => (
             <div key={fig.slot} className={`elloha-fig ${fig.slot} ${fig.span}`}>
-              <ImageLightbox src={fig.src} label={t('zoom')}>
+              <ImageLightbox src={fig.src} label={t('zoom')} alt={t(fig.altKey)}>
                 <div
                   className={`relative ${fig.ratio} overflow-hidden rounded-md border border-hairline bg-surface shadow-lg shadow-ink/15`}
                 >
                   <Image
                     src={fig.src}
-                    alt=""
+                    alt={t(fig.altKey)}
                     fill
                     sizes={fig.sizes}
                     // eager : les vignettes partent hors viewport et dérivent vite (pas de pop-in)
@@ -194,7 +198,7 @@ export async function Elloha() {
             <div className="flex aspect-3/2 flex-col items-center justify-center gap-2.5 rounded-md border border-hairline bg-surface p-5 shadow-lg shadow-ink/15">
               <Image
                 src="/elloha/elloha-logo.png"
-                alt="elloha"
+                alt={t('logoAlt')}
                 width={96}
                 height={118}
                 className="h-auto w-[clamp(44px,4vw,64px)]"

@@ -63,15 +63,16 @@ export async function About() {
         </RevealGroup>
 
         {/* Colonne portrait : photo épinglée (portrait studio — Soul, retouché au labo) */}
-        <div aria-hidden className="relative" data-cursor="link">
+        <div className="relative" data-cursor="link">
           <div className="relative aspect-3/4 overflow-hidden rounded-md border border-hairline bg-surface">
             {/* couche parallax : l'image déborde de ±12% pour couvrir la course */}
             <Parallax amount={0.16} className="absolute inset-0">
               <div className="absolute inset-x-0 inset-y-[-12%]">
                 <Image
                   src="/portrait/portrait-studio.jpg"
-                  alt=""
+                  alt={t('portraitAlt')}
                   fill
+                  priority
                   sizes="(min-width: 1024px) 40vw, 92vw"
                   className="object-cover"
                 />

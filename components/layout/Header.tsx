@@ -64,7 +64,10 @@ export function Header() {
         {/* Nav de sections + langue (la nav apparaît au fil des scènes livrées) */}
         <div className="flex items-center gap-[clamp(14px,2.2vw,30px)]">
           {SECTIONS.length > 0 && (
-            <nav className="hidden items-center gap-[clamp(14px,2.2vw,30px)] font-mono text-xs uppercase tracking-[0.08em] sm:flex">
+            <nav
+              aria-label={t('label')}
+              className="hidden items-center gap-[clamp(14px,2.2vw,30px)] font-mono text-xs uppercase tracking-[0.08em] sm:flex"
+            >
               {SECTIONS.map((section) => (
                 <a
                   key={section.id}

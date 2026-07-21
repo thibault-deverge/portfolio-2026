@@ -20,4 +20,11 @@
     background-color: var(--color-paper);
     color: var(--color-ink);
   }
+  /* Focus clavier visible partout — indispensable : le curseur natif est masqué
+     (cursor:none) et l'outline par défaut est atténué par le preflight. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }

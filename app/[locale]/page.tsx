@@ -14,7 +14,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   setRequestLocale(locale)
 
   return (
-    <main className="relative bg-paper text-ink">
+    <main id="main" className="relative bg-paper text-ink">
       {/* Premier enfant positionné = peint sous toutes les sections (fil DERRIÈRE) */}
       <FilRouge />
       <Hero />

@@ -15,7 +15,7 @@ export async function Hero() {
   const t = await getTranslations('Home')
 
   return (
-    <header className="relative flex min-h-dvh w-full flex-col overflow-hidden">
+    <section className="relative flex min-h-dvh w-full flex-col overflow-hidden">
       <Preloader />
       <TravelingNode />
       <IntroLock />
@@ -81,6 +81,6 @@ export async function Hero() {
           </p>
         </div>
       </div>
-    </header>
+    </section>
   )
 }

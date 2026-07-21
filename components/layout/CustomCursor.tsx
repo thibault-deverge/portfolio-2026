@@ -36,22 +36,29 @@ export function CustomCursor() {
     let ringY = y
     let frame = 0
 
-    // 3. Le point colle au pointeur, sans latence
+    // 3. Le point colle au pointeur, sans latence — et réveille l'anneau
     const onPointerMove = (e: PointerEvent) => {
       x = e.clientX
       y = e.clientY
       dot.style.transform = `translate(${x}px, ${y}px)`
       root.classList.add('cursor-seen')
+      if (!frame) frame = requestAnimationFrame(tick)
     }
 
-    // 4. L'anneau rattrape en douceur (lerp), une écriture par frame
+    // 4. L'anneau rattrape en douceur (lerp), puis S'ENDORT une fois convergé —
+    //    zéro travail par frame quand la souris ne bouge pas
     const tick = () => {
       ringX += (x - ringX) * RING_LERP
       ringY += (y - ringY) * RING_LERP
+      if (Math.abs(x - ringX) + Math.abs(y - ringY) < 0.2) {
+        ringX = x
+        ringY = y
+        frame = 0 // convergé : le prochain pointermove relancera la boucle
+      } else {
+        frame = requestAnimationFrame(tick)
+      }
       ring.style.transform = `translate(${ringX}px, ${ringY}px)`
-      frame = requestAnimationFrame(tick)
     }
-    frame = requestAnimationFrame(tick)
 
     // 5. L'anneau grossit sur l'interactif (délégation globale pointerover)
     const onPointerOver = (e: PointerEvent) => {

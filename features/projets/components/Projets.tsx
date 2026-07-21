@@ -21,6 +21,7 @@ const PROJECTS = [
  */
 export async function Projets() {
   const t = await getTranslations('Projets')
+  const tA11y = await getTranslations('A11y')
 
   return (
     <section
@@ -58,7 +59,7 @@ export async function Projets() {
                 rel="noopener noreferrer"
                 className="block font-mono text-xs uppercase tracking-[0.12em] text-ink-muted underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-accent"
               >
-                {t('githubLink')} ↗
+                {t('githubLink')} ↗<span className="sr-only"> {tA11y('newTab')}</span>
               </a>
             </p>
           </div>
@@ -84,7 +85,7 @@ export async function Projets() {
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="font-display text-[clamp(1.7rem,3.4vw,2.7rem)] leading-none tracking-[-0.02em] text-ink [font-optical-sizing:auto]">
-                    {t(`${project.key}Title`)}
+                    {t(`${project.key}Title`)}<span className="sr-only"> {tA11y('newTab')}</span>
                   </span>
                   <span className="col-start-2 row-start-2 mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted lg:col-start-3 lg:row-start-1 lg:mt-0 lg:text-right">
                     {t(`${project.key}Meta`)}

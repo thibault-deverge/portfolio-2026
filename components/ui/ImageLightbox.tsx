@@ -12,12 +12,15 @@ import { cn } from '@/lib/utils'
 export function ImageLightbox({
   src,
   label,
+  alt = '',
   className,
   wipe = false,
   children,
 }: {
   src: string
   label: string
+  /** Description de l'image agrandie (reprend l'alt de la vignette). */
+  alt?: string
   className?: string
   /** Marque la vignette pour le wipe reveal du RevealGroup parent (true = haut→bas). */
   wipe?: boolean | 'left' | 'right' | 'up'
@@ -66,7 +69,7 @@ export function ImageLightbox({
           >
             {/* pleine résolution : le fichier source, sans passer par l'optimiseur */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt="" className="max-h-full max-w-full rounded-md shadow-2xl" />
+            <img src={src} alt={alt} className="max-h-full max-w-full rounded-md shadow-2xl" />
           </div>,
           document.body,
         )}

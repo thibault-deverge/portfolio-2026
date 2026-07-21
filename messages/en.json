@@ -14,7 +14,8 @@
     "npEvolution": "NP-Evolution",
     "elloha": "elloha",
     "projets": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "label": "Portfolio sections"
   },
   "About": {
     "num": "01 — About",
@@ -22,7 +23,8 @@
     "title2": "Thibault Deverge.",
     "body1": "Web developer. Before code: a <k>law degree</k>, three years on the <k>roads of Asia</k>, then <k>École 42</k>, where I learned to break down problems and find my own answers.",
     "body2": "Now a full-time developer at <k>Elloha</k> and a <k>freelancer</k>, I bring that same rigor to every project, from the polished component to the <k>platform shipped to production</k>.",
-    "body3": "From here, my projects do the talking."
+    "body3": "From here, my projects do the talking.",
+    "portraitAlt": "Portrait of Thibault Deverge"
   },
   "Home": {
     "eyebrow": "Designer · Developer — Freelance",
@@ -63,7 +65,13 @@
     "feat2Item1": "Every field saves itself, progress recomputes from 0 to 100% — the client moves at their own pace, the consultant follows live",
     "feat2Item2": "Electronic signature — time-stamped, tamper-proof — triggering the official attendance sheet, ready for funding audits",
     "feat2Item3": "Tests run online, and the AI drafts a first profile analysis the consultant refines before sharing",
-    "hood": "Under the hood: ~42,000 lines of TypeScript · 561 tests · 22 data models · Next.js 15"
+    "hood": "Under the hood: ~42,000 lines of TypeScript · 561 tests · 22 data models · Next.js 15",
+    "altDashboard": "NP-Evolution admin dashboard: consultants and signatures overview",
+    "altConsultant": "Consultant space: tracking clients and their progress",
+    "altLivretPage": "A skills-assessment workbook turned into an online form",
+    "altSignature": "Electronic signature screen for the workbook",
+    "altLivrets": "The four official workbooks with their progress",
+    "altIa": "Assessment report drafted with AI"
   },
   "Elloha": {
     "num": "03 — On staff · elloha",
@@ -90,7 +98,12 @@
     "para2Item2": "I build the back-office screens with Material UI: forms, data grids, planning views — within the house design system.",
     "para2Item3": "I work on the critical paths — bookings, rates and availability, Stripe payments — where I reproduce, isolate and fix QA-reported bugs without regressions.",
     "para2Item4": "And I keep the rest alive: internationalization in 5 languages, production error tracking with Sentry, gradual legacy cleanup, wiring the front to the C# backend team’s API.",
-    "para2Stack": "React · TypeScript · Next.js · Material UI · Stripe · i18next · Sentry"
+    "para2Stack": "React · TypeScript · Next.js · Material UI · Stripe · i18next · Sentry",
+    "altTeam": "The elloha team gathered at the office",
+    "altPlanning": "The elloha booking planning on a tablet",
+    "altMobile": "The elloha dashboard on mobile: occupancy rate and today’s arrivals",
+    "altDirect": "The elloha app in hand: live booking statistics",
+    "logoAlt": "elloha logo"
   },
   "Manifeste": {
     "num": "04 — Manifesto",
@@ -121,5 +134,9 @@
     "rights": "© {year} Thibault Deverge",
     "footerGithub": "GitHub",
     "footerLinkedin": "LinkedIn"
+  },
+  "A11y": {
+    "skipLink": "Skip to content",
+    "newTab": "(new tab)"
   }
 }

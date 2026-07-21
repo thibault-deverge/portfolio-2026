@@ -155,28 +155,46 @@
   opacity: 0.7;
 }
 
-/* Couche « lumière » : même grille, lignes tirées vers l'accent, visible dans
-   un halo suivant le curseur (--mx/--my écrites par BlueprintGrid.tsx).
-   Défaut hors-écran : sans mouvement de souris, rien n'apparaît. */
+/* Couche « lumière » : une FENÊTRE halo déplacée en transform (composité, zéro
+   repaint — l'ancien mask repositionné repeignait toute la couche à chaque frame),
+   avec la grille accent contre-translatée à l'intérieur pour rester alignée sur la
+   grille de base. Positions écrites par BlueprintGrid.tsx. */
 .blueprint-grid-light {
-  --mx: -999px;
-  --my: -999px;
-  --grid-lit: color-mix(in oklab, var(--color-accent) 22%, var(--color-hairline));
-  background-image:
-    linear-gradient(var(--grid-lit) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-lit) 1px, transparent 1px);
-  background-size: 46px 46px;
-  /* halo curseur ∩ même enveloppe de fondu que la grille de base */
+  overflow: hidden;
+  /* même enveloppe de fondu que la grille de base */
   -webkit-mask-image:
-    radial-gradient(circle 220px at var(--mx) var(--my), #000 30%, transparent 75%),
     linear-gradient(90deg, transparent 4%, #000 48%),
     linear-gradient(0deg, transparent 6%, #000 26%, #000 82%, transparent 98%);
   mask-image:
-    radial-gradient(circle 220px at var(--mx) var(--my), #000 30%, transparent 75%),
     linear-gradient(90deg, transparent 4%, #000 48%),
     linear-gradient(0deg, transparent 6%, #000 26%, #000 82%, transparent 98%);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
+}
+.blueprint-halo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 480px;
+  overflow: hidden;
+  transform: translate3d(-999px, -999px, 0); /* hors-écran tant que la souris n'a pas bougé */
+  will-change: transform;
+  /* le fondu radial est FIXE dans la fenêtre — rasterisé une seule fois */
+  -webkit-mask-image: radial-gradient(circle 220px at center, #000 30%, transparent 75%);
+  mask-image: radial-gradient(circle 220px at center, #000 30%, transparent 75%);
+}
+.blueprint-halo-grid {
+  --grid-lit: color-mix(in oklab, var(--color-accent) 22%, var(--color-hairline));
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image:
+    linear-gradient(var(--grid-lit) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-lit) 1px, transparent 1px);
+  background-size: 46px 46px;
+  will-change: transform;
+  /* width/height posés par BlueprintGrid.tsx (= taille du conteneur) */
 }
 
 /* ===== Animations d'entrée ===== */

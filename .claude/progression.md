@@ -176,8 +176,10 @@ déployé sur Vercel : **https://thibault-deverge.vercel.app** — vérifié en 
   2026-07-20** (commenté dans site.ts ; un futur domaine se branchera sans rien casser)
 - [x] 11.2 Vérifs prod : Lighthouse mobile **87/96/100/100**, OG/sitemap/robots/icons 200,
   redirections/canonical fr-en OK
-- [ ] 11.3 Annonce LinkedIn/GitHub (profil à jour) 🎉 + trancher : repo public ? (→ README
-  à réécrire + ↗ « Ce portfolio » vers le repo)
+- [x] 11.3a **Repo PUBLIC** (décision 2026-07-20) : README réécrit (bannière og, concept
+  du fil, partis pris, archi), description + homepage GitHub, ↗ « Ce portfolio » →
+  github.com/thibault-deverge/portfolio-2026 (`ef8aa39`)
+- [ ] 11.3b Annonce LinkedIn (profil à jour) 🎉 — le moment de Thibault
 
 ## 🧊 Phase 2 (backlog, après mise en ligne)
 

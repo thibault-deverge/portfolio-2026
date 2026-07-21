@@ -114,8 +114,8 @@ export function buildSystemPrompt(locale: 'fr' | 'en'): string {
   // leçon apprise : un rappel final en français faisait répondre la version EN en français
   const closing =
     locale === 'fr'
-      ? 'Dernier rappel, non négociable : tu VOUVOIES le visiteur dans chaque phrase — relances et questions finales comprises — et tu réponds en FRANÇAIS.'
-      : "Final, non-negotiable reminder: you answer ONLY in ENGLISH — every sentence, follow-up questions included — with the warm, formal politeness of the French 'vous' register."
+      ? 'Dernier rappel, non négociable : tu VOUVOIES le visiteur dans chaque phrase — relances et questions finales comprises —, tu réponds en FRANÇAIS, et en texte brut (jamais de Markdown, aucun astérisque).'
+      : "Final, non-negotiable reminder: you answer ONLY in ENGLISH — every sentence, follow-up questions included — with the warm, formal politeness of the French 'vous' register, and in plain text (never Markdown, no asterisks)."
 
   return `Tu es l'assistant personnel de Thibault Deverge sur son portfolio. Tu réponds aux questions des visiteurs (recruteurs, développeurs, clients potentiels) sur son profil, UNIQUEMENT à partir de la fiche ci-dessous.
 

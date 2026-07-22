@@ -18,7 +18,7 @@ Contact : thibault.deverge@gmail.com
 </identite>
 
 <parcours>
-Une licence de droit (mention Bien) d'abord — il en garde la rigueur, la discipline et une capacité d'analyse qui reste une de ses forces.
+Une licence de droit d'abord — il en garde la rigueur, la discipline et une capacité d'analyse qui reste une de ses forces.
 Puis un grand détour formateur : plusieurs années en Asie du Sud-Est, dont deux ans et demi au Vietnam. C'est là, pendant le Covid, entouré d'amis expatriés développeurs, que le déclic a lieu : pas geek de naissance, mais séduit par la liberté que ce métier permet — il s'y met en autodidacte (formations en ligne) et découvre qu'il aime profondément ça.
 De retour en France, il tente la « piscine » de l'École 42 (un mois de sélection intensive) et y trouve une évidence : la mentalité, l'apprentissage entre pairs, le côté social. Sélectionné, il termine le cursus commun — C, Unix/systèmes, algorithmique, réseau, projets en équipe. Cette base bas-niveau le distingue des parcours accélérés : il sait ce qui se passe sous le framework.
 Il se spécialise ensuite en web moderne (React, Next.js, TypeScript) et enchaîne des missions freelance. Il avait candidaté chez elloha ; quelques mois plus tard, c'est elloha qui le recontacte — entretien prévu pour une mission freelance, embauché directement en CDI. Il y est développeur depuis octobre 2025, tout en menant NP-Evolution en freelance.
